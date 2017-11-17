@@ -42,10 +42,7 @@ namespace AvanceProgramatico
                 string Tipo = this.sentenc.Logueo(Convert.ToInt32(this.txtUsuario.Text), this.txtClave.Text);
                 if (Tipo == "Alumno")//se ejecutó la consulta correctamente
                 {
-                   
-                    Response.Redirect("UserAlumno.aspx");
-                    
-
+                    Response.Redirect("UserAlumno.aspx");   
                 }
                 else if (Tipo=="Profesor")
                 {
