@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace AvanceProgramatico.Pagina {
+namespace AvanceProgramatico.Paginas {
     
     
-    public partial class Registro_p {
+    public partial class RegistroProfesores {
         
         /// <summary>
         /// Control form1.
@@ -103,22 +103,13 @@ namespace AvanceProgramatico.Pagina {
         protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
-        /// Control Button3.
+        /// Control btnGuardar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
-        
-        /// <summary>
-        /// Control txtMatricula2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMatricula2;
+        protected global::System.Web.UI.WebControls.Button btnGuardar;
         
         /// <summary>
         /// Control GridView1.

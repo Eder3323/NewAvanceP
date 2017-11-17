@@ -1,53 +1,47 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registro_p.aspx.cs" Inherits="AvanceProgramatico.Pagina.Registro_p" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegistroProfesores.aspx.cs" Inherits="AvanceProgramatico.Paginas.RegistroProfesores" %>
 
 <!DOCTYPE html>
-<html lang="en">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-   <link rel="stylesheet" type="text/css" href="../Bootstrap/css/bootstrap.min.css"/>
-<LINK href="../Estilos/EstiloNavbar.css" rel="stylesheet" type="text/css"/>
+<head runat="server">
+       <link rel="stylesheet" type="text/css" href="../Bootstrap/css/bootstrap.min.css"/>
+<link href="../Estilos/EstiloNavbar.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="../Bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript"src="../Bootstrap/js/jquery-3.1.1.min.js"></script>
-     <meta charset="utf-8">
+     <meta charset="utf-8"/>
 
       <%--        DE FIRMAS--%>
-          <meta name="description" content="Signature Pad - HTML5 canvas based smooth signature drawing using variable width spline interpolation.">
+          <meta name="description" content="Signature Pad - HTML5 canvas based smooth signature drawing using variable width spline interpolation."/>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
 
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" type="text/css" href="../Paginas/scripts/ie9.css">
-
-  
-   
-
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../Paginas/scripts/ie9.css" >
 
   <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-39365077-1']);
-    _gaq.push(['_trackPageview']);
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39365077-1']);
+      _gaq.push(['_trackPageview']);
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
+      (function () {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
   </script>
-   <%--DE FIRMA TERIMINA--%>
 
-</head>
-    <div class="jumbotron" > 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+     <div class="jumbotron" > 
     <center>
     <h1>Universidad Politecnica de Tulancingo </h1>
       </div>
-      
- 
-     
-<body onselectstart="return false">
+</head>
+<body>
     <form id="form1" runat="server">
-    <div>
+        <div>
     
 
        <div style="width:100%;"> 
@@ -100,7 +94,7 @@
       </div>
     </div>
         <br />
-         <asp:Button ID="Button3" runat="server" Text="Guardar" CssClass="btn btn-info" OnClick="Button3_Click" />
+         <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-info" OnClick="Button3_Click" />
         </center>
        
   </div>
@@ -117,7 +111,6 @@
 
               
                <center>  <br> <br> <h1> 
-                   <asp:TextBox ID="txtMatricula2" runat="server"></asp:TextBox>
                    <span class='label label-default' > Profesores Registrados</span>  </h1> 
                     <br>
                <asp:GridView ID="GridView1" runat="server">
@@ -134,17 +127,6 @@
 
              
     <br>
-       
-      <div>
-
-
-
-      </div>
-      
-
-         
-
-       
     </form>
 </body>
 </html>

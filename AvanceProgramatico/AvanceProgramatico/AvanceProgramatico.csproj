@@ -195,7 +195,7 @@
     <Content Include="Paginas\Logueo.aspx" />
     <Content Include="Paginas\MenuProfesores.aspx" />
     <Content Include="Paginas\Profesores.aspx" />
-    <Content Include="Paginas\Registro_p.aspx" />
+    <Content Include="Paginas\RegistroProfesores.aspx" />
     <Content Include="Paginas\Reg_Jefe_Grupo.aspx" />
     <Content Include="Paginas\scripts\ai.0.22.9-build00167.js" />
     <Content Include="Paginas\scripts\ai.0.22.9-build00167.min.js" />
@@ -290,12 +290,12 @@
     <Compile Include="Paginas\Profesores.aspx.designer.cs">
       <DependentUpon>Profesores.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Paginas\Registro_p.aspx.cs">
-      <DependentUpon>Registro_p.aspx</DependentUpon>
+    <Compile Include="Paginas\RegistroProfesores.aspx.cs">
+      <DependentUpon>RegistroProfesores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Paginas\Registro_p.aspx.designer.cs">
-      <DependentUpon>Registro_p.aspx</DependentUpon>
+    <Compile Include="Paginas\RegistroProfesores.aspx.designer.cs">
+      <DependentUpon>RegistroProfesores.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Reg_Jefe_Grupo.aspx.cs">
       <DependentUpon>Reg_Jefe_Grupo.aspx</DependentUpon>

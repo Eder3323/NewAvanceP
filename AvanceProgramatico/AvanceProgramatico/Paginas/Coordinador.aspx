@@ -28,7 +28,7 @@
     
 
 <div id="wrap">
-<div id="showcase" class="noselect"> <a title="Registro de Profesores" href="../Paginas/Registro_p.aspx"><img class="cloud9-item" src="../images/ImaMenu/regpro.png" alt="Firefox" width="200px" height="200px"></a> <a title="Calendario" href="../Paginas/Registro_p.aspx"><img class="cloud9-item" src="../images/ImaMenu/Calendar_stu.png" alt="Wyzo"></a>  <a title="Registro de Alumnos" href="../Paginas/Reg_Jefe_Grupo.aspx"><img class="cloud9-item" src="../images/ImaMenu/Reg_Stu.png" alt="Chrome"></a>  <img class="cloud9-item" src="../images/ImaMenu/yoss.png" alt="Internet Explorer">  </div>
+<div id="showcase" class="noselect"> <a title="Registro de Profesores" href="../Paginas/RegistroProfesores.aspx"><img class="cloud9-item" src="../images/ImaMenu/regpro.png" alt="Firefox" width="200px" height="200px"></a> <a title="Calendario" href="../Paginas/Registro_p.aspx"><img class="cloud9-item" src="../images/ImaMenu/Calendar_stu.png" alt="Wyzo"></a>  <a title="Registro de Alumnos" href="../Paginas/Reg_Jefe_Grupo.aspx"><img class="cloud9-item" src="../images/ImaMenu/Reg_Stu.png" alt="Chrome"></a>  <img class="cloud9-item" src="../images/ImaMenu/yoss.png" alt="Internet Explorer">  </div>
 <p id="item-title">&nbsp;</p>
 <div class="nav" class="noselect">
 <button class="left">  ← </button>
