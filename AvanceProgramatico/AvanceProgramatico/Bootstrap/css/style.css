@@ -1,0 +1,14 @@
+.class(
+	nav.default ul.nav li {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+ 
+/* cambiar el color de fondo a la barra */
+nav.default {
+    background-color: #CC1414;
+}
+
+
+
+
+)

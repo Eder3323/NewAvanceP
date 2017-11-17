@@ -1,0 +1,22 @@
+﻿body {
+}
+ table { 
+  width: 100%; 
+  border-collapse: collapse; 
+}
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  background: #F7F9F9
+
+}
+th { 
+  background: #F5B7B1; 
+  color: black; 
+  font-weight: bold; 
+}
+td{ 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
+ background-color:white;
+}

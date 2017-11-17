@@ -1,0 +1,355 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{79F0FACD-7954-4978-86CB-0DAF648223A5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AvanceProgramatico</RootNamespace>
+    <AssemblyName>AvanceProgramatico</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="Bootstrap\css\bootstrap.css.map" />
+    <Content Include="Bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Bootstrap\Scripts\jquery-1.10.2.min.map" />
+    <Content Include="FontAwesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="FontAwesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="FontAwesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="FontAwesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="FontAwesome\fonts\FontAwesome.otf" />
+    <Content Include="FontAwesome\less\animated.less" />
+    <Content Include="FontAwesome\less\bordered-pulled.less" />
+    <Content Include="FontAwesome\less\core.less" />
+    <Content Include="FontAwesome\less\fixed-width.less" />
+    <Content Include="FontAwesome\less\font-awesome.less" />
+    <Content Include="FontAwesome\less\icons.less" />
+    <Content Include="FontAwesome\less\larger.less" />
+    <Content Include="FontAwesome\less\list.less" />
+    <Content Include="FontAwesome\less\mixins.less" />
+    <Content Include="FontAwesome\less\path.less" />
+    <Content Include="FontAwesome\less\rotated-flipped.less" />
+    <Content Include="FontAwesome\less\screen-reader.less" />
+    <Content Include="FontAwesome\less\stacked.less" />
+    <Content Include="FontAwesome\less\variables.less" />
+    <Content Include="FontAwesome\scss\font-awesome.scss" />
+    <Content Include="FontAwesome\scss\_animated.scss" />
+    <Content Include="FontAwesome\scss\_bordered-pulled.scss" />
+    <Content Include="FontAwesome\scss\_core.scss" />
+    <Content Include="FontAwesome\scss\_fixed-width.scss" />
+    <Content Include="FontAwesome\scss\_icons.scss" />
+    <Content Include="FontAwesome\scss\_larger.scss" />
+    <Content Include="FontAwesome\scss\_list.scss" />
+    <Content Include="FontAwesome\scss\_mixins.scss" />
+    <Content Include="FontAwesome\scss\_path.scss" />
+    <Content Include="FontAwesome\scss\_rotated-flipped.scss" />
+    <Content Include="FontAwesome\scss\_screen-reader.scss" />
+    <Content Include="FontAwesome\scss\_stacked.scss" />
+    <Content Include="FontAwesome\scss\_variables.scss" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Bootstrap\css\bootstrap.css" />
+    <Content Include="Bootstrap\css\bootstrap.min.css" />
+    <Content Include="Bootstrap\css\estilo.css" />
+    <Content Include="Bootstrap\css\style.css" />
+    <Content Include="Bootstrap\js\bootstrap.js" />
+    <Content Include="Bootstrap\js\bootstrap.min.js" />
+    <Content Include="Bootstrap\js\jquery-3.1.1.min.js" />
+    <Content Include="Bootstrap\js\main.js" />
+    <Content Include="Bootstrap\js\npm.js" />
+    <Content Include="Bootstrap\Scripts\bootstrap.js" />
+    <Content Include="Bootstrap\Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config" />
+    <None Include="Bootstrap\Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Bootstrap\Scripts\jquery-1.10.2.js" />
+    <Content Include="Bootstrap\Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Bootstrap\Scripts\modernizr-2.6.2.js" />
+    <Content Include="Bootstrap\Scripts\respond.js" />
+    <Content Include="Bootstrap\Scripts\respond.min.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\DetailsView.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\Focus.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\GridView.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\Menu.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\SmartNav.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\TreeView.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\WebForms.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\WebParts.js" />
+    <Content Include="Bootstrap\Scripts\WebForms\WebUIValidation.js" />
+    <None Include="Bootstrap\Scripts\_references.js" />
+    <Content Include="Estilos\cord.css" />
+    <Content Include="Estilos\cordi.css" />
+    <Content Include="Estilos\EstiloNavbar.css" />
+    <Content Include="Estilos\fontsaw.css" />
+    <Content Include="Estilos\gridview1.css" />
+    <Content Include="Estilos\piedepagina.css" />
+    <Content Include="Estilos\piedepagina1.css" />
+    <Content Include="Estilos\Tabla.css" />
+    <Content Include="FontAwesome\css\font-awesome.css" />
+    <Content Include="FontAwesome\css\font-awesome.min.css" />
+    <Content Include="FontAwesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="images\arrow.gif" />
+    <Content Include="images\cross.gif" />
+    <Content Include="images\descargar.jpg" />
+    <Content Include="images\hs.png" />
+    <Content Include="images\hv.png" />
+    <Content Include="images\ImaMenu\Calendar_stu.png" />
+    <Content Include="images\ImaMenu\opera.png" />
+    <Content Include="images\ImaMenu\regpro.png" />
+    <Content Include="images\ImaMenu\Reg_Stu.png" />
+    <Content Include="images\ImaMenu\safari.png" />
+    <Content Include="images\ImaMenu\yoss.png" />
+    <Content Include="images\jscolor.js" />
+    <Content Include="images\LogoUPT1234.png" />
+    <Content Include="images\logo_tec.gif" />
+    <Content Include="images\New.png" />
+    <Content Include="images\Pencil.png" />
+    <Content Include="images\Save.png" />
+    <Content Include="images\ShanuHTML5DRAWimg.png" />
+    <Content Include="images\sprites.png" />
+    <Content Include="images\upt.png" />
+    <Content Include="images\upt6.png" />
+    <Content Include="Paginas\Admin.aspx" />
+    <Content Include="Paginas\Ajuste_Calendario.aspx" />
+    <Content Include="Paginas\Alumnos.aspx" />
+    <Content Include="Paginas\Coordinador.aspx" />
+    <Content Include="Paginas\Cordinador1.aspx" />
+    <Content Include="Paginas\Firma.aspx" />
+    <Content Include="Paginas\Logueo.aspx" />
+    <Content Include="Paginas\MenuProfesores.aspx" />
+    <Content Include="Paginas\Profesores.aspx" />
+    <Content Include="Paginas\Registro_p.aspx" />
+    <Content Include="Paginas\Reg_Jefe_Grupo.aspx" />
+    <Content Include="Paginas\scripts\ai.0.22.9-build00167.js" />
+    <Content Include="Paginas\scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Paginas\scripts\app.js" />
+    <Content Include="Paginas\scripts\ie9.css" />
+    <Content Include="Paginas\scripts\jquery-1.10.2.min.js" />
+    <Content Include="Paginas\scripts\jquery.cloud9carousel.js" />
+    <Content Include="Paginas\scripts\jquery.reflection.js" />
+    <Content Include="Paginas\scripts\main.css" />
+    <Content Include="Paginas\scripts\signature-pad.css" />
+    <Content Include="Paginas\scripts\signature_pad.js" />
+    <None Include="Recursos\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Recursos\jquery-1.4.1.js" />
+    <Content Include="Recursos\jquery-1.4.1.min.js" />
+    <Content Include="Recursos\lapiz-de-dibujo-firma_318-9072.jpg" />
+    <Content Include="Recursos\menirh.ico" />
+    <Content Include="Recursos\Site.css" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <None Include="scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="scripts\jquery-1.4.1.js" />
+    <Content Include="scripts\jquery-1.4.1.min.js" />
+    <Content Include="scripts\Registro_p.aspx" />
+    <Content Include="scripts\signature.css" />
+    <Content Include="scripts\signature.js" />
+    <Content Include="scripts\Site.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\Conexion.cs" />
+    <Compile Include="Clases\Sentencias.cs" />
+    <Compile Include="Paginas\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Ajuste_Calendario.aspx.cs">
+      <DependentUpon>Ajuste_Calendario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Ajuste_Calendario.aspx.designer.cs">
+      <DependentUpon>Ajuste_Calendario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Alumnos.aspx.cs">
+      <DependentUpon>Alumnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Alumnos.aspx.designer.cs">
+      <DependentUpon>Alumnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Coordinador.aspx.cs">
+      <DependentUpon>Coordinador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Coordinador.aspx.designer.cs">
+      <DependentUpon>Coordinador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Cordinador1.aspx.cs">
+      <DependentUpon>Cordinador1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Cordinador1.aspx.designer.cs">
+      <DependentUpon>Cordinador1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Firma.aspx.cs">
+      <DependentUpon>Firma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Firma.aspx.designer.cs">
+      <DependentUpon>Firma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Logueo.aspx.cs">
+      <DependentUpon>Logueo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Logueo.aspx.designer.cs">
+      <DependentUpon>Logueo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\MenuProfesores.aspx.cs">
+      <DependentUpon>MenuProfesores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\MenuProfesores.aspx.designer.cs">
+      <DependentUpon>MenuProfesores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Profesores.aspx.cs">
+      <DependentUpon>Profesores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Profesores.aspx.designer.cs">
+      <DependentUpon>Profesores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Registro_p.aspx.cs">
+      <DependentUpon>Registro_p.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Registro_p.aspx.designer.cs">
+      <DependentUpon>Registro_p.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Reg_Jefe_Grupo.aspx.cs">
+      <DependentUpon>Reg_Jefe_Grupo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Reg_Jefe_Grupo.aspx.designer.cs">
+      <DependentUpon>Reg_Jefe_Grupo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="scripts\Registro_p.aspx.cs">
+      <DependentUpon>Registro_p.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="scripts\Registro_p.aspx.designer.cs">
+      <DependentUpon>Registro_p.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59278</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59278/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
