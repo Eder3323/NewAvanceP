@@ -25,7 +25,7 @@ namespace AvanceProgramatico.Paginas
         {
             if (IsValid)
             {
-                this.sentencias.InsertarProfesor(Convert.ToInt32());
+                
                 this.sentencias.InsertarProfesor(Convert.ToInt32( txtMatricula.Text), txtClave.Text,txtNombre.Text, txtCorreo.Text);
 
                 // Response.Redirect("Default.aspx");

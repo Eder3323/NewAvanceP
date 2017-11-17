@@ -88,7 +88,7 @@
       <div class="signature-pad--actions">
         <div>
           <button type="button" class="btn btn-danger" data-action="clear">Nueva</button>
-          <%--<button type="button" class="btn btn-warning" data-action="change-color">Cambiar color</button>--%>
+            <%--<button type="button" class="btn btn-warning" data-action="change-color">Cambiar color</button>--%>
           <button type="button" class="btn btn-primary" data-action="undo">Deshacer</button>
 
         </div>
@@ -116,7 +116,9 @@
            <div style="float:right; width:60%; ">
 
               
-               <center>  <br> <br> <h1> <span class='label label-default' > Profesores Registrados</span>  </h1> 
+               <center>  <br> <br> <h1> 
+                   <asp:TextBox ID="txtMatricula2" runat="server"></asp:TextBox>
+                   <span class='label label-default' > Profesores Registrados</span>  </h1> 
                     <br>
                <asp:GridView ID="GridView1" runat="server">
                </asp:GridView>
