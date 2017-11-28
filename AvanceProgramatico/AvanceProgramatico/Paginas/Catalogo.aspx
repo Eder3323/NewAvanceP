@@ -94,6 +94,42 @@
              <br />
             </center>
     </div>
+       <br>
+        <br/>
+          <%--AREA DE LAS FIRMAS--%>
+
+           <div class="form-group">
+       
+              
+
+                
+               
+
+              
+               
+           </div>
+        <table>
+
+   <tr>
+
+       <td>   <asp:Image ID="ImgFirmaAlumno" runat="server" /></td>
+
+       <td>  <asp:Image Istyle="padding-left:150px;" D="ImgFirmaProfesor" runat="server" /></td>
+       <td>  <asp:Image Istyle="padding-left:200px;" D="ImgFirmaCoordinador" runat="server" /> </td>
+       <td>  <asp:Image Istyle="padding-left:200px;" D="ImgFirmaDirector" runat="server" /> </td>
+
+   </tr>
+
+   <tr align="center">
+
+       <td >  <label for="nameField" class="col-xs-6">Jefe/a de Grupo Nombre y firma</label>  </td>
+       <td><label for="nameField" class="col-xs-4">Profesor/a Nombre y firma</label> </td>
+          <td><label   for="nameField" class="col-xs-14">Coordinador de Programa Educativo Nombre y firma</label>  </td>
+          <td> <label   for="nameField" class="col-xs-8">Director de Divición Nombre y firma</label> </td>
+
+   </tr>
+</table>
+         
     </form>
      <br/>
     <br/>
