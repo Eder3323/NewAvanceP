@@ -60,7 +60,7 @@ namespace AvanceProgramatico.Pagina
         {
             if (IsValid)
            
-                this.sentencias.InsertarProfesor(Convert.ToInt32( txtMatricula.Text), txtClave.Text,txtNombre.Text, txtCorreo.Text);
+             //   this.sentencias.InsertarProfesor(Convert.ToInt32( txtMatricula.Text), txtClave.Text,txtNombre.Text, txtCorreo.Text);
            grid();
             // Response.Redirect("Default.aspx");
         }

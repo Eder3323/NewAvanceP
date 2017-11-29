@@ -16,7 +16,7 @@
 </head>
    <div class="jumbotron" > 
     <center>
-    <h1>Universidad Politecnica de Tulancingo </h1>
+    <h1>Universidad Politécnica de Tulancingo </h1>
       </div>
       <div class="alert alert-danger" role="alert">
 <center> <strong>Ajuste Calendario</strong> </center> 

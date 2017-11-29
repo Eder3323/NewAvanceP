@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AvanceProgramatico1.Paginas {
+namespace AvanceProgramatico.Paginas {
     
     
     public partial class MenuProfesores {

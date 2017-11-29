@@ -66,6 +66,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\ImaMenu\editar.jpg" />
+    <Content Include="images\ImaMenu\hoth-blogger-icon.png" />
+    <Content Include="images\regresar.jpg" />
     <Content Include="packages.config" />
     <Content Include="Bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="Bootstrap\css\bootstrap-theme.min.css.map" />
@@ -105,6 +108,7 @@
     <Content Include="FontAwesome\scss\_screen-reader.scss" />
     <Content Include="FontAwesome\scss\_stacked.scss" />
     <Content Include="FontAwesome\scss\_variables.scss" />
+    <Content Include="Clases\ProcesarFirma.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -191,12 +195,15 @@
     <Content Include="Paginas\Ajuste_Calendario.aspx" />
     <Content Include="Paginas\Alumnos.aspx" />
     <Content Include="Paginas\Catalogo.aspx" />
+    <Content Include="Paginas\Configuracion.aspx" />
+    <Content Include="Paginas\controlador.asmx" />
     <Content Include="Paginas\Coordinador.aspx" />
     <Content Include="Paginas\Cordinador1.aspx" />
     <Content Include="Paginas\Firma.aspx" />
     <Content Include="Paginas\Logueo.aspx" />
     <Content Include="Paginas\MenuProfesores.aspx" />
     <Content Include="Paginas\Profesores.aspx" />
+    <Content Include="Paginas\PruebaImagen.aspx" />
     <Content Include="Paginas\RegistroProfesores.aspx" />
     <Content Include="Paginas\Reg_Jefe_Grupo.aspx" />
     <Content Include="Paginas\scripts\ai.0.22.9-build00167.js" />
@@ -228,6 +235,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Conexion.cs" />
+    <Compile Include="Clases\ProcesarFirma.ashx.cs">
+      <DependentUpon>ProcesarFirma.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Sentencias.cs" />
     <Compile Include="Paginas\Admin.aspx.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
@@ -256,6 +266,17 @@
     </Compile>
     <Compile Include="Paginas\Catalogo.aspx.designer.cs">
       <DependentUpon>Catalogo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Configuracion.aspx.cs">
+      <DependentUpon>Configuracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Configuracion.aspx.designer.cs">
+      <DependentUpon>Configuracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\controlador.asmx.cs">
+      <DependentUpon>controlador.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Paginas\Coordinador.aspx.cs">
       <DependentUpon>Coordinador.aspx</DependentUpon>
@@ -298,6 +319,13 @@
     </Compile>
     <Compile Include="Paginas\Profesores.aspx.designer.cs">
       <DependentUpon>Profesores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\PruebaImagen.aspx.cs">
+      <DependentUpon>PruebaImagen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\PruebaImagen.aspx.designer.cs">
+      <DependentUpon>PruebaImagen.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\RegistroProfesores.aspx.cs">
       <DependentUpon>RegistroProfesores.aspx</DependentUpon>

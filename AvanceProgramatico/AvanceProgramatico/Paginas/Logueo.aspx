@@ -18,7 +18,7 @@
 </head>
     <div class="jumbotron" > 
     <center>
-    <h1>Universidad Politecnica de Tulancingo </h1>
+    <h1>Universidad Politécnica de Tulancingo </h1>
       </div>
       
     
@@ -34,14 +34,25 @@
   <div class="panel-body" >
      <center style="width:100%;"> 
 
-<div style="float:left; width:60%;">
- 
+<div style="float:left; width:50%;">
+ <h5>
+     <DIV ALIGN="justify">
+         
+    <strong>Alumnos:</strong> <FONT COLOR="black"><P>Dentro de este portal podrán firmar el avance programático correspondiente a cada materia.</P></FONT>
+    
+
+     <strong>Docentes:</strong>  <FONT COLOR="black"><p> En este portal podrán capturar las actividades que se realizan en cada materia, además pueden firmar el avance programático y descargar el formato generado.</p></FONT>
+    
+
+  <strong> Administrador:</strong> <FONT COLOR="black">  <p> En este portal podrán registrar alumnos jefes de grupo, profesores, asignar el calendario escolar y firmar el avance programático correspondiente a cada materia.</p></FONT> 
+ </div>
+         </h5>
      </div>
   
        
            
               
-        <center style="float:right; width:40%; margin-left: 0px;">
+        <center style="float:right; width:50%; margin-left: 0px;">
 
            
             <div>

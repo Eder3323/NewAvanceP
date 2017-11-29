@@ -1,10 +1,11 @@
 ﻿body{
 background:#FFFFFF;
 color:#000000;
+
 }
 .jumbotron{
 background:#8A0808;
-
+ 
 co;
 
 color:#F1EAFA;
@@ -20,7 +21,7 @@ background-image: url(fondo.jpg);
 
 }
 th, td {
-   width: 25%;
+   width: 15%;
    text-align: left;
    vertical-align: top;
    font-size: 16px;
@@ -34,7 +35,7 @@ border-bottom-style: solid;
 border-right-color: #FFFFFF;
 }
 .submit {  
-    margin: -25px 0px 0px 380px;    /* margen con valores: arriba - derecha - abajo - izquierda */  
+    margin: -25px 0px 0px 340px;    /* margen con valores: arriba - derecha - abajo - izquierda */  
     background-color:#E97070;
     color:#FFFFFF;
 } 
@@ -44,5 +45,5 @@ border-right-color: #FFFFFF;
 } 
 .nav-pills > .active > a, .nav-pills > .active > a:hover {
     background-color: red;
-    font-size: 24px;
+    font-size: 20px;
 }

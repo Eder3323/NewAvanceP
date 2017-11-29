@@ -18,7 +18,7 @@
     <div class="jumbotron"  background-color: yellow;> 
     <center>
 
-    <h1>  Universidad Politecnica de Tulancingo    </h1>
+    <h1>  Universidad Politécnica de Tulancingo    </h1>
       </div>
 
 <body>

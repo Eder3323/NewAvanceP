@@ -15,12 +15,12 @@
 </head>
         <div class="jumbotron" > 
     <center>
-    <h1>Universidad Politecnica de Tulancingo </h1>
+    <h1>Universidad Politécnica de Tulancingo </h1>
       </div>
       
  
        
-           <h1> <span class='label label-default'>Alumno  </span></h1>
+          
 <body>
     <form id="form1" runat="server">
 
@@ -31,25 +31,16 @@
 
 
 
-             <div style="float:left; width:20%;">
-                 <center>
+           
+             <table>
 
-                 Alumno
+                 <td>
+                     <h1>Alumnos<h1>
 
+                 </td>
 
-
-
-
-                     </center>
-
-
-
-
-             </div>
-             
-             <div style="float:left; width:60%;">
-
-
+                 <td>
+                     
                  <asp:GridView ID="GridView1" runat="server" Width="670px" CssClass="table table-bordered bs-table" >
                           <HeaderStyle BackColor="#337ab7" Font-Bold="True" ForeColor="White" />
         <EditRowStyle BackColor="#ffffcc" />
@@ -60,25 +51,17 @@
                           <RowStyle BackColor="#990000" BorderColor="Black" />
                  </asp:GridView>
 
+                 </td>
+             </table>
+
 
              </div>
              
-             <div style="float:left; width:20%;">
-
-                 <br />
-                 <br />
-                 <br />
-                    <br />
-                 <br />
-                 <br />
-                     <br />
-                 <br />
-                     <br />
-                 <br />
+            
                  <asp:Button ID="Button1" runat="server" Text="Enviar" CssClass="btn btn-success"/>
 
 
-             </div>
+             
 
 
 
