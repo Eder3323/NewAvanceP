@@ -28,7 +28,7 @@ namespace AvanceProgramatico.Paginas
 
         }
 
-        protected void DropDownList1_SelectedIndexChanged1(object sender, EventArgs e)
+        protected void DropDLProgramaEdu_SelectedIndexChanged1(object sender, EventArgs e)
         {
             //DropDownList cmb = (DropDownList)sender;//objeto que dispara el evento
             //int valor = cmb.SelectedIndex;
