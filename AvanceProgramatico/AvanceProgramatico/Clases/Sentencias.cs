@@ -11,14 +11,14 @@ using System.Configuration;
 
 namespace AvanceProgramatico.Clases
 {
-    public class Sentencias:Conexion
+    public class Sentencias : Conexion
     {
 
         private SqlDataReader registro;
         private SqlConnection con;
 
-       
-       
+
+
         public Sentencias()
         {
             this.con = getConexion();
@@ -47,8 +47,8 @@ namespace AvanceProgramatico.Clases
         }
         public void cargarcombo()
         {
-          //  SqlConnection _conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString());
-          //  _conexion.Open();
+            //  SqlConnection _conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString());
+            //  _conexion.Open();
             SqlCommand cmd = new SqlCommand("select Nombre from Tbl_Carreras", con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -60,9 +60,9 @@ namespace AvanceProgramatico.Clases
 
         }
 
-        public void InsertarProfesor(int matricula, String clave, String nombre,String correo, String firma)
+        public void InsertarProfesor(int matricula, String clave, String nombre, String correo, String firma)
         {
-          
+
             String grupo = "";
             String tipo = "Profesor";
             int rol = 2;
@@ -70,17 +70,17 @@ namespace AvanceProgramatico.Clases
             conectar();
             String sql = "insert into Tbl_Usuarios " +
                             "values " +
-                            "(" + matricula + ",'" + clave + "','" + nombre + "','" + correo+ "','" + firma+ "','" + grupo + "','" + tipo + "'," + rol + ")";
+                            "(" + matricula + ",'" + clave + "','" + nombre + "','" + correo + "','" + firma + "','" + grupo + "','" + tipo + "'," + rol + ")";
             SqlCommand comando = new SqlCommand(sql, con);
             comando.ExecuteNonQuery();
-            
+
 
             cerrar();
         }
-        public void InsertarAlumno(int matricula, String clave, String nombre, String correo, String firma,String grupo)
+        public void InsertarAlumno(int matricula, String clave, String nombre, String correo, String firma, String grupo)
         {
 
-          
+
             String tipo = "Alumno";
             int rol = 1;
 
@@ -102,12 +102,12 @@ namespace AvanceProgramatico.Clases
             comando.ExecuteNonQuery();
             cerrar();
         }
-        public void CargarTabla(GridView grilla,Label lblestado)
+        public void CargarTabla(GridView grilla, Label lblestado)
         {
-         
+
             conectar();
-            
-            String sql =( "select * from Tbl_Usuarios where Tipo='Alumno' " );
+
+            String sql = ("select * from Tbl_Usuarios where Tipo='Alumno' ");
             SqlCommand comando = new SqlCommand(sql, con);
             SqlDataAdapter ad = new SqlDataAdapter(comando);
             DataTable dt = new DataTable();
@@ -115,13 +115,13 @@ namespace AvanceProgramatico.Clases
             grilla.DataSource = dt;
             grilla.DataBind();
 
-            int registro=comando.ExecuteNonQuery();
+            int registro = comando.ExecuteNonQuery();
             if (registro == 0) { lblestado.Visible = true; lblestado.Text = "TABLA VACIA"; }
-            else{lblestado.Visible = false;}
-            
+            else { lblestado.Visible = false; }
+
             cerrar();
         }
-        
+
         public SqlDataReader getUsuarioPorId(int id)
         {
             conectar();
@@ -167,20 +167,20 @@ namespace AvanceProgramatico.Clases
                 int cantidad3 = Convert.ToInt32(comando3.ExecuteScalar());
                 if (cantidad != 0)
                 {
-                   
-                    
+
+
                     Tipo = "Alumno";
 
                 }
-                else if (cantidad2 !=0)
+                else if (cantidad2 != 0)
                 {
-        
+
                     Tipo = "Profesor";
 
                 }
                 else if (cantidad3 != 0)
-               {
-    
+                {
+
                     Tipo = "Coordinador";
                 }
                 else
@@ -189,24 +189,24 @@ namespace AvanceProgramatico.Clases
                 }
                 cerrar();
                 return Tipo;
-                
+
             }
             catch (Exception e)
             {
                 throw;
-            
+
             }
-          
+
 
         }
         public String myfirma()
         {
             cerrar();
             conectar();
-           
+
             String sql = "Select Firma from Tbl_Usuarios where Matricula=1530353;";
             SqlCommand comando = new SqlCommand(sql, this.con);
-           String signature = Convert.ToString(comando.ExecuteScalar());
+            String signature = Convert.ToString(comando.ExecuteScalar());
 
             cerrar();
             return signature;
@@ -256,10 +256,57 @@ namespace AvanceProgramatico.Clases
                 throw;
             }
 
-            
+
 
         }
+
+
+        public int VerifiCoor(String tipo)
+        {
+
+          
+                int verificas2;
+                cerrar();
+                conectar();
+                String sql = "select count(*) Firma from Tbl_Usuarios where Tipo='Coordinador'";
+                SqlCommand comando = new SqlCommand(sql, this.con);
+                verificas2 = Convert.ToInt32(comando.ExecuteScalar());
+                cerrar();
+                return verificas2;
+
+          
+            
+
+
+
         }
+
+        public void InsertFirCor(String firma)
+        {
+          
+            try
+            {
+                cerrar();
+                conectar();
+              
+                String sql = "Update Tbl_Usuarios set Firma='"+firma+"' where Tipo='Coordinador'";
+                SqlCommand comando = new SqlCommand(sql, this.con);
+                comando.ExecuteNonQuery();
+                cerrar();
+               
+
+            }
+            catch (Exception E )
+            {
+
+                String mensaje= "Error:" + E.Message;
+                
+            }
+           
+
+
+        }
+    }
 }
 
        

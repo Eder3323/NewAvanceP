@@ -19,28 +19,65 @@ namespace AvanceProgramatico.Paginas
             this.con.conectar();
             this.sentencias = new Sentencias();
             this.sentencias.jquery();
-            
+            Actualizacion();
+
         }
-        
+
         protected void btn_guardar_Click(object sender, EventArgs e)
         {
+            if (url=="")
+            {
+                Response.Write("<script>alert('Por favor capture su firma  ');</script>");
+            }
+            else
+            {
+                lblEsta.Text = url;
+                this.sentencias.InsertFirCor(url);
+                Response.Write("<script>alert('Se ha registrado con éxito su fírma ');</script>");
+            }
+            
+
+
+
 
         }
         protected void Save(object sender, EventArgs e)
         {
             string signature = hfSign.Value;
-            saveimg.ImageUrl = signature;
-            saveimg.BorderStyle = BorderStyle.Solid;
 
+            lblEsta.Text = signature;
             url = signature;
 
 
         }
-       
+
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
             Response.Redirect("Coordinador.aspx");
+        }
+        public void Actualizacion()
+        {
+            String tipo = "Coordinador";
+            int verificacionfirma = this.sentencias.VerifiCoor(tipo);
+
+
+            if (verificacionfirma!=0)
+            {
+                lblEsta.Text = "La firma ya se encuentra en el sistema si desea actualizarla guarda una vez más";
+                    
+            }
+
+            else
+            {
+                lblEsta.Text = "!Usted no ha guardado su firma por favor guarde.!";
+            }       
+
         }
     }
 }

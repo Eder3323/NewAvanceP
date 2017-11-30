@@ -194,7 +194,7 @@
            
           <button type="button" class="btn btn-danger" data-action="clear">Nueva</button>
             <%--<button type="button" class="btn btn-warning" data-action="change-color">Cambiar color</button>--%>
-          <button type="button" class="btn btn-primary" data-action="undo">Deshacer</button>
+          <%--<button type="button" class="btn btn-primary" data-action="undo">Deshacer</button>--%>
          <%-- <button class="button clear" data-action="clear">
                 Clear</button>--%>
             
@@ -261,8 +261,6 @@
                   
              <br />
             </center>
-             
-           <asp:Image ID="saveimg" runat="server"  BorderColor="#FF9900" Height="331px" Width="388px" BorderStyle="Solid" />
              
            </div>
              
