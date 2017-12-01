@@ -73,8 +73,13 @@
     <Content Include="images\ImagesPlanAcademico\delete.png" />
     <Content Include="images\ImagesPlanAcademico\edit.png" />
     <Content Include="images\ImagesPlanAcademico\save.png" />
-    <Content Include="images\ImaMenu\editar.jpg" />
-    <Content Include="images\ImaMenu\hoth-blogger-icon.png" />
+    <Content Include="images\ImaMenu\alumnos.png" />
+    <Content Include="images\ImaMenu\avance.png" />
+    <Content Include="images\ImaMenu\Calendar_stut.png" />
+    <Content Include="images\ImaMenu\firmaCoordinador.png" />
+    <Content Include="images\ImaMenu\Firmar1.png" />
+    <Content Include="images\ImaMenu\generar.png" />
+    <Content Include="images\ImaMenu\regproff.png" />
     <Content Include="images\regresar.jpg" />
     <Content Include="packages.config" />
     <Content Include="Bootstrap\css\bootstrap-theme.css.map" />
@@ -182,12 +187,6 @@
     <Content Include="images\descargar.jpg" />
     <Content Include="images\hs.png" />
     <Content Include="images\hv.png" />
-    <Content Include="images\ImaMenu\Calendar_stu.png" />
-    <Content Include="images\ImaMenu\opera.png" />
-    <Content Include="images\ImaMenu\regpro.png" />
-    <Content Include="images\ImaMenu\Reg_Stu.png" />
-    <Content Include="images\ImaMenu\safari.png" />
-    <Content Include="images\ImaMenu\yoss.png" />
     <Content Include="images\jscolor.js" />
     <Content Include="images\LogoUPT1234.png" />
     <Content Include="images\logo_tec.gif" />
@@ -225,6 +224,7 @@
     <Content Include="Paginas\scripts\signature-pad.css" />
     <Content Include="Paginas\scripts\signature_pad.js" />
     <None Include="Recursos\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Paginas\scripts\Site.css" />
     <Content Include="Recursos\jquery-1.4.1.js" />
     <Content Include="Recursos\jquery-1.4.1.min.js" />
     <Content Include="Recursos\lapiz-de-dibujo-firma_318-9072.jpg" />

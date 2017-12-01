@@ -10,7 +10,7 @@
 	<script type="text/javascript"src="../Bootstrap/js/jquery-3.1.1.min.js"></script>
      <meta charset="utf-8"/>
 
-       <%--         de firmas 2we2323--%>
+       <%--         de firmas 2we2323--%><%--         de firmas 2we2323--%>
           <meta name="description" content="Signature Pad - HTML5 canvas based smooth signature drawing using variable width spline interpolation.">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
@@ -73,8 +73,7 @@
             $("#saveimg2").show();
         });
     });
-</script>--%>
-    <%--DE FIRMA TERIMINA--%>
+</script>--%><%--DE FIRMA TERIMINA--%>
 
 
 </head>
@@ -83,12 +82,10 @@
     <h1>Universidad Politécnica de Tulancingo </h1>
       </div>
       <div class="alert alert-danger" role="alert">
-<center> <strong> Registro de Profesores</strong> </center> 
+<center> <strong><h3> Registro de Profesores</h3></strong> </center> 
 </div>
+    <asp:Label ID="lblEsta" runat="server" Text="Label" Class="bg-primary"></asp:Label>
     <br>
-       <div class="alert alert-primary" role="alert">
-<center> <strong> Estado</strong> </center> 
-</div>
 <body >
     <form id="form1" runat="server">
       
@@ -98,10 +95,10 @@
      
         </div>
 
-       <div style="width:100%;"> 
+       <div class="nav-justified" id="lblEsta"> 
 
 <div style="float:left; width:50%;">
-    
+
     <body style='margin:30px'>
     <div class="container">
       <!-- Horizonatal Form -->
@@ -109,86 +106,61 @@
         <div class="col-xs-6">
            </div>
                 <br>
+  
+       </br>
+
+     
+              
+
+                        
     
-      
-        
-          </br>
-       
-                       <br>
-              <div class="form-group">
-              <label for="phoneField" class="col-xs-2">Mifirma</label>
-              <div class="col-xs-10"> 
-        
-              </div>
-   </div>
-         
-                
-          </br>
-        
       
                     <br>
                 <div class="form-group">
               <label for="descField" class="col-xs-2">Firma</label>
               <div class="col-xs-10">
              &nbsp;
-                   
- <div class="form-group">
-            <div id="signature-pad" >
-     
-    <div >
-      <canvas style="border: 10px solid #E18A77"  HEIGHT="250px" WIDTH="400px" id="micanvas"></canvas>
-    </div>
-     
-    <div >
-        <br />
-
-          </div>
+                    <a id="github" style="position: absolute; top: 0; right: 0; border: 0" href="https://github.com/szimek/signature_pad">
     
-          
-         
-        
+  </a>
+
+  <div id="signature-pad" >
      
+    <div class="signature-pad--body">
+      <canvas style="border: 10px solid #E18A77"  HEIGHT="200px" WIDTH="360px" id="micanvas"></canvas>
     </div>
-  </div>
-              <div class="col-xs-10"> 
-        
-              </div>
-   </div>
-  <br />
-                    <br />
-     <br />
-
      
-      
-            <br />
-                    <br />
-         <br/>
-                    <br />
-                    <br />
-                    <br />
+    <div >
+      <div >Firma aquí </div>
 
-              <button type="button" class="btn btn-danger" data-action="clear">Nueva</button>
+      <div >
+        <div>
+           
+          <button type="button" class="btn btn-danger" data-action="clear">Nueva</button>
             <%--<button type="button" class="btn btn-warning" data-action="change-color">Cambiar color</button>--%>
-          <button type="button" class="btn btn-primary" data-action="undo">Deshacer</button>
-          <%--<button class="button clear" data-action="clear">
+          <%--<button type="button" class="btn btn-primary" data-action="undo">Deshacer</button>--%>
+            <%-- <button class="button clear" data-action="clear">
                 Clear</button>--%>
             
             <input type="hidden" id="hfSign" runat="server" />
-            <asp:Button Text="Capturar" runat="server" class="btn btn-warning"   data-action="save"
+            <asp:Button Text="Capturar" runat="server" class="btn btn-warning" data-action="save"
                 OnClick="Save" />
-           
-                     
-         
             
-            
-      
+             <%-- <input type="button" id="btnSave" value="Save as Image" /><br />--%>
+        </div>
+    
+          
+          <%--<button type="button" class="btn btn-info" data-action="save-svg">Descarga SVG</button>--%>
+        
+      </div>
+    </div>
+  </div>
                  <img id="saveimg2" alt="" style="display: none; border: 1px solid #ccc" />
   <script src="../Paginas/scripts/signature_pad.js"></script>
   <script src="../Paginas/scripts/app.js"></script>
                   <br />
                   <br />
-                  <br />
-
+                  
          
 
                        </div>
@@ -214,30 +186,30 @@
         
            </br>        
     </div>
-
-           <div style="float:right; width:50%;">
-
-
-                <asp:Image ID="saveimg" runat="server"  BorderColor="#FF9900" Height="200px" Width="360px" BorderStyle="Solid" />
-             
-
-           </div>
-           
-         <link href="../Estilos/EstiloFooter.css" rel="stylesheet">
     <div class="panel">
           ©2017 Universidad Politécnica de Tulancingo.  
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
       </div>
     </div>
 
-  
+     <center style="float:right; width:50%; ">
+              <center>
+              <h1>    <i class="fa fa-street-view" aria-hidden="true"><asp:Label ID="lblEstado" runat="server" ><span class="label label-danger"> </span></asp:Label></i>  
+                  
+                  </h1>
+ <div class="EU_TableScroll" id="showData" style="display: block">
+                  
+             <br />
+            </center>
              
-          
- 
+           </div>
              
-  
+        </div>
+ </div>
+         <link href="../Estilos/EstiloFooter.css" rel="stylesheet">
         
 <!--footer start from here-->
     </form>
 </body>
 </html>
+

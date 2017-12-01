@@ -85,12 +85,12 @@
 
 
 </head>
-    <div class="jumbotron" > 
+    <div class="jumbotron text-center" > 
     <center>
-    <h1>Universidad Politécnica de Tulancingo </h1>
+    <h1>Universidad Politécnica de Tulancingo </h1><br /> <br />
       </div>
       <div class="alert alert-danger" role="alert">
-<center> <strong> <h3>Registro de Alumnos</h3></strong> </center> 
+<center> <strong> <h3>Registro de Alumnos</h3></strong></center> 
 </div>
     <br>
 <body >
