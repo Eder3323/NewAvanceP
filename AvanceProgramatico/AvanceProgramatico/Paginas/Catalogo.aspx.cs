@@ -23,25 +23,34 @@ namespace AvanceProgramatico.Paginas
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            cargarcomboCarreras();
+            if (!IsPostBack)
+            {
+                cargarcomboCarreras();
+            }
+            
           
 
         }
 
-        protected void DropDownList1_SelectedIndexChanged1(object sender, EventArgs e)
+        protected void DropDLProgramaEdu_SelectedIndexChanged1(object sender, EventArgs e)
         {
             //DropDownList cmb = (DropDownList)sender;//objeto que dispara el evento
             //int valor = cmb.SelectedIndex;
+           
 
+
+        }
+        public void cargarcomboCarreras()
+        {
             SqlConnection _conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString());
             _conexion.Open();
-            SqlCommand cmd = new SqlCommand("select Nombre from Tbl_Carreras", _conexion);
+            SqlCommand cmd = new SqlCommand("select Nombre,pk_Carrera from Tbl_Carreras", _conexion);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             sda.Fill(ds);
             DropDLProgramaEdu.DataSource = ds;
             DropDLProgramaEdu.DataTextField = "Nombre";                            // FieldName of Table in DataBase
-            DropDLProgramaEdu.DataValueField = "Nombre";
+            DropDLProgramaEdu.DataValueField = "pk_Carrera";
             DropDLProgramaEdu.DataBind();
 
             _conexion.Close();
@@ -59,11 +68,6 @@ namespace AvanceProgramatico.Paginas
                 //cbciudad.DataSource = null;
             }
 
-        }
-        public void cargarcomboCarreras()
-        {
-            
-
 
         }
 
@@ -78,14 +82,18 @@ namespace AvanceProgramatico.Paginas
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             sda.Fill(ds);
-            DropDLProgramaEdu.DataSource = ds;
-            DropDLProgramaEdu.DataTextField = "Nombre";                            // FieldName of Table in DataBase
-            DropDLProgramaEdu.DataValueField = "Nombre";
-            DropDLProgramaEdu.DataBind();
+            DropDLAsignatura.DataSource = ds;
+            DropDLAsignatura.DataTextField = "Nombre";                            // FieldName of Table in DataBase
+            DropDLAsignatura.DataValueField = "fk_Carrera";
+            DropDLAsignatura.DataBind();
             _conexion.Close();
 
         }
 
-      
+        protected void DropDownList1_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+            int numero = Convert.ToInt32(DropDLProgramaEdu.SelectedValue);
+            cargarcomboMaterias(numero);
+        }
     }
 }

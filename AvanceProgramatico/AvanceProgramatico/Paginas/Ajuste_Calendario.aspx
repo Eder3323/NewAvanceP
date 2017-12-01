@@ -13,6 +13,11 @@
 	<script type="text/javascript"src="../Bootstrap/js/jquery-3.1.1.min.js"></script>
     <link rel="stylesheet" href="../FontAwesome/css/font-awesome.min.css">
         <LINK href="../Estilos/gridview1.css" rel="stylesheet" type="text/css"/>
+    <style type="text/css">
+        .auto-style1 {
+            margin-top: 5px;
+        }
+    </style>
 </head>
    <div class="jumbotron" > 
     <center>
@@ -28,7 +33,7 @@
     
     </div>
 
-<div class="form-group">
+<div class="form-group" id="fechainic">
     
     <div class="col-xs-10">
         <div class="form-inline">
@@ -36,12 +41,13 @@
             <div class="form-group">
                  <label for="desde">Desde</label>  
                 
-                <input type="date" class="form-control" />
-            </div>
+                <input type="date" class="form-control"  runat="server"  id ="fechauno" dirname="uno" name="Funo" /><asp:TextBox   ID="TextBox1"  runat="server"></asp:TextBox>
+
+            &nbsp;</div>
            
             <div class="form-group">
                <label for="hasta">Hasta</label>
-                <input type="date" class="form-control" />
+                <input type="date" class="form-control" id="fechados" runat="server" />
             </div>
            <i class="fa fa-calendar-check-o" aria-hidden="true"></i> 
             <div class="form-group">
@@ -61,7 +67,11 @@
                
             </div>
                    <i class="fa fa-calendar-plus-o" aria-hidden="true">
-           
+
+                  
+              
+                            
+          
             </i>
         </div>
        
@@ -69,17 +79,31 @@
  
 
         </div>
+        <div>
+
+
+        </div>
+     >
          <br>
          <br>
         <br>
          <br>
-         <asp:GridView ID="GridView1" runat="server" CssClass="gridview">
-            </asp:GridView>
          <br>
          <br>
         <center>
         
-  <asp:Button ID="btn_guardar" runat="server" Text="Asignar"  class="btn btn-primary" Height="50px" Width="200px" OnClick="btn_guardar_Click"/>
+            <br />
+            <asp:Button ID="btn_guardar" runat="server" class="btn btn-primary" Height="50px" OnClick="btn_guardar_Click" Text="Asignar" Width="150px" />
+            &nbsp;&nbsp;
+            <asp:Button ID="Button1" runat="server" class="btn btn-danger" Height="50px" OnClick="Button2_Click1" Text="Vaciar Calendario" Width="150px" />
+            <br />
+            <br />
+            <asp:GridView ID="GridView1" runat="server" CssClass="auto-style1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+            </asp:GridView>
+            <br />
+             <div>
+              
+           </div>
         </center>
              <div class="panel-panel ">
             ©2017 Universidad Politécnica de Tulancingo. 

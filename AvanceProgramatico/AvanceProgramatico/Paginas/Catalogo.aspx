@@ -39,7 +39,7 @@
         <br>
          <div class="form-group">
               <label for="nameField" class="col-xs-2">Programa Educativo</label> 
-                 <div class="col-xs-10"> <asp:DropDownList ID="DropDLProgramaEdu" runat="server"  Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged1">
+                 <div class="col-xs-10"> <asp:DropDownList ID="DropDLProgramaEdu" runat="server"  AutoPostBack="True" Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged1">
                   </asp:DropDownList>
     </div>
           </div>
@@ -100,21 +100,8 @@
 
            <div class="form-group">
        
-              
 
-                
-               
-
-              
-               
                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-       
-              
-
-                
-               
-
-              
                
            </div>
         <table>
