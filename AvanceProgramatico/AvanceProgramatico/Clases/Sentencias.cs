@@ -72,7 +72,15 @@ namespace AvanceProgramatico.Clases
                             "values " +
                             "(" + matricula + ",'" + clave + "','" + nombre + "','" + correo + "','" + firma + "','" + grupo + "','" + tipo + "'," + rol + ")";
             SqlCommand comando = new SqlCommand(sql, con);
+            String matricula2 = "P_"+matricula.ToString();
+            String sql2 = "Create table " + matricula2 + "(pk_PlanAcademico int primary key identity (1,1),Semana varchar(5),Tema varchar(550),Ht varchar(50),Hp varchar(50),Bibl varchar(50),Actividad varchar(550),Fecha datetime)";
+
+
+
+            SqlCommand comando2 = new SqlCommand(sql2, con);
             comando.ExecuteNonQuery();
+            comando2.ExecuteNonQuery();
+
 
 
             cerrar();
