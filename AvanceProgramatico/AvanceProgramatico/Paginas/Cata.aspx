@@ -11,10 +11,12 @@
     <form id="form1" runat="server">
         <div>
            
-            <asp:GridView ID="dtgPlanAcademico" runat="server" ShowFooter="true" DataKeyNames="pk_PlanAcademico" 
-                CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged"
+            <asp:GridView ID="dtgPlanAcademico" runat="server" ShowFooter="True" DataKeyNames="pk_PlanAcademico" 
+                CellPadding="4" ForeColor="#333333" GridLines="None" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" 
+                
+                OnSelectedIndexChanged="GridView1_SelectedIndexChanged"
                  OnRowCancelingEdit="dtgPlanAcademico_RowCancelingEdit" OnRowCommand="dtgPlanAcademico_RowCommand" 
-                OnRowEditing="dtgPlanAcademico_RowEditing" OnRowUpdating="dtgPlanAcademico_RowUpdating" ShowHeaderWhenEmpty="true" OnRowDeleting="dtgPlanAcademico_RowDeleting">
+                OnRowEditing="dtgPlanAcademico_RowEditing" OnRowUpdating="dtgPlanAcademico_RowUpdating"  OnRowDeleting="dtgPlanAcademico_RowDeleting">
 
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
@@ -84,7 +86,7 @@
                             <asp:TextBox ID="txtActividadFooter" runat="server" />
                         </FooterTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Fecha">
+                    <asp:TemplateField HeaderText="Fecha" >
                            <ItemTemplate>
                             <asp:Label Text='<%# Eval("Fecha") %>' runat="server" />
                         </ItemTemplate>
