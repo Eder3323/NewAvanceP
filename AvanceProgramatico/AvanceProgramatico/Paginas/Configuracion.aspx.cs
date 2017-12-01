@@ -45,7 +45,7 @@ namespace AvanceProgramatico.Paginas
         {
             string signature = hfSign.Value;
 
-            lblEsta.Text = signature;
+            
             url = signature;
 
 
@@ -67,9 +67,9 @@ namespace AvanceProgramatico.Paginas
             int verificacionfirma = this.sentencias.VerifiCoor(tipo);
 
 
-            if (verificacionfirma!=0)
+            if (verificacionfirma==1)
             {
-                lblEsta.Text = "La firma ya se encuentra en el sistema si desea actualizarla guarda una vez más";
+                lblEsta.Text = "!La firma ya se encuentra en el sistema si desea actualizarla, guarde una vez más!";
                     
             }
 

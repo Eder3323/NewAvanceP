@@ -84,7 +84,7 @@
       <div class="alert alert-danger" role="alert">
 <center> <strong><h3> Registro de Profesores</h3></strong> </center> 
 </div>
-    <asp:Label ID="lblEsta" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="lblEsta" runat="server" Text="Label" Class="bg-primary"></asp:Label>
     <br>
 <body >
     <form id="form1" runat="server">
