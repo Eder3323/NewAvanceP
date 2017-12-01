@@ -130,6 +130,7 @@ namespace AvanceProgramatico.Paginas
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
             GridViewRow grd = GridView1.SelectedRow;
             TextBox1.Text = grd.Cells[1].Text;
         }
