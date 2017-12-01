@@ -5,6 +5,14 @@ color:#000000;
 }
 .jumbotron{
 background:#8A0808;
+ height:160px;
+  background-size: cover;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      font-size:150px;
+  
+
+
  
 co;
 
@@ -45,5 +53,5 @@ border-right-color: #FFFFFF;
 } 
 .nav-pills > .active > a, .nav-pills > .active > a:hover {
     background-color: red;
-    font-size: 20px;
+    font-size: 25px;
 }
