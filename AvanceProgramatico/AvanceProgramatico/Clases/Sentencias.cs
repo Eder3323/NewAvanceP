@@ -60,16 +60,9 @@ namespace AvanceProgramatico.Clases
 
         }
 
-        public void InsertarProfesor(int matricula, String clave, String nombre,String correo)
+        public void InsertarProfesor(int matricula, String clave, String nombre,String correo, String firma)
         {
-            //            Matricula int primary key,
-            //Clave varchar(30),
-            //Nombre varchar(75),
-            //Correo varchar(50),
-            //Firma image,
-            //Grupo varchar(30) null,
-            //Tipo varchar(30),
-            //fk_Rol int      insert into Tbl_Usuarios values (444,'hola','edeer','zorr@gmail.com','de','f113','Jefe_Grupo',2)
+          
             String grupo = "";
             String tipo = "Profesor";
             int rol = 2;
@@ -77,10 +70,27 @@ namespace AvanceProgramatico.Clases
             conectar();
             String sql = "insert into Tbl_Usuarios " +
                             "values " +
-                            "(" + matricula + ",'" + clave + "','" + nombre + "','" + correo + "','" + tipo + "','" + rol + ")";
+                            "(" + matricula + ",'" + clave + "','" + nombre + "','" + correo+ "','" + firma+ "','" + grupo + "','" + tipo + "'," + rol + ")";
             SqlCommand comando = new SqlCommand(sql, con);
             comando.ExecuteNonQuery();
             
+
+            cerrar();
+        }
+        public void InsertarAlumno(int matricula, String clave, String nombre, String correo, String firma,String grupo)
+        {
+
+          
+            String tipo = "Alumno";
+            int rol = 1;
+
+            conectar();
+            String sql = "insert into Tbl_Usuarios " +
+                            "values " +
+                            "(" + matricula + ",'" + clave + "','" + nombre + "','" + correo + "','" + firma + "','" + grupo + "','" + tipo + "'," + rol + ")";
+            SqlCommand comando = new SqlCommand(sql, con);
+            comando.ExecuteNonQuery();
+
 
             cerrar();
         }
@@ -189,6 +199,18 @@ namespace AvanceProgramatico.Clases
           
 
         }
+        public String myfirma()
+        {
+            cerrar();
+            conectar();
+           
+            String sql = "Select Firma from Tbl_Usuarios where Matricula=1530353;";
+            SqlCommand comando = new SqlCommand(sql, this.con);
+           String signature = Convert.ToString(comando.ExecuteScalar());
+
+            cerrar();
+            return signature;
+        }
         public DataSet LLenaComboGrid(string Tipo)
         {
             cerrar();
@@ -214,11 +236,30 @@ namespace AvanceProgramatico.Clases
             return ds;
         }
 
-       
-    
+        public int VerificaMatricula(int matricula)
+        {
 
-   
-}
+            try
+            {
+                int verificas;
+                cerrar();
+                conectar();
+                String sql = "Select Matricula  from Tbl_Usuarios where Matricula=" + matricula + ";";
+                SqlCommand comando = new SqlCommand(sql, this.con);
+                verificas = Convert.ToInt32(comando.ExecuteScalar());
+                cerrar();
+                return verificas;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            
+
+        }
+        }
 }
 
        

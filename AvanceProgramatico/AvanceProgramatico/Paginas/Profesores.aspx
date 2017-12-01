@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Profesores.aspx.cs" Inherits="AvanceProgramatico1.Paginas.Profesores" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Profesores.aspx.cs" Inherits="AvanceProgramatico.Paginas.Profesores" %>
 
 <!DOCTYPE html>
 
@@ -14,7 +14,7 @@
 </head>
      <div class="jumbotron" > 
     <center>
-    <h1>Universidad Politecnica de Tulancingo </h1>
+    <h1>Universidad Politécnica de Tulancingo </h1>
       </div>
       
  
