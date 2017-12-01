@@ -276,9 +276,19 @@ namespace AvanceProgramatico.Clases
                 int verificas2;
                 cerrar();
                 conectar();
-                String sql = "select count(*) Firma from Tbl_Usuarios where Tipo='Coordinador'";
+                String sql = "select Firma from Tbl_Usuarios where Tipo='Coordinador'";
                 SqlCommand comando = new SqlCommand(sql, this.con);
-                verificas2 = Convert.ToInt32(comando.ExecuteScalar());
+            String firm = comando.ExecuteScalar().ToString(); ;
+
+            if (firm=="")
+            {
+                verificas2 = 0;
+            }
+            else
+            {
+                verificas2 = 1;
+            }
+          
                 cerrar();
                 return verificas2;
 
