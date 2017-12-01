@@ -17,14 +17,16 @@ namespace AvanceProgramatico.Paginas
         private Sentencias sentencias;
         public static String url;
 
-        //SqlConnection _conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString());
-        //string connectionString= @"Data Source=(local)\sqle2012;Integrated Security=true;Initial Catalog=PhoneBookDB";
+        
         string connectionString = ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 PopulateGridview();
+            
+
+
             }
 
         }
@@ -85,7 +87,17 @@ namespace AvanceProgramatico.Paginas
                         lblErrorMessage.Text = "";
                     }
                 }
+                else if (e.CommandName.Equals("Calendar"))
+                {
+                    Calendar cal = (Calendar)sender;
+                    cal.Visible = true;
+                    TextBox text1 = (TextBox)((GridViewRow)cal.Parent.Parent).FindControl("txtFecha");
+
+                    text1.Text = cal.SelectedDate.ToShortDateString();
+                }
             }
+            
+            
             catch (Exception ex)
             {
                 lblSuccessMessage.Text = "";
@@ -112,15 +124,7 @@ namespace AvanceProgramatico.Paginas
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
-                    //string query = "INSERT INTO Tbl_PlanAcademico (Semana,Tema,Ht,Hp,Bibl,Actividad,Fecha) VALUES (@Semana,@Tema,@Ht,@Hp,@Bibl,@Actividad,@Fecha)";
-                    //SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                    //sqlCmd.Parameters.AddWithValue("@Semana", (dtgPlanAcademico.FooterRow.FindControl("txtSemanaFooter") as TextBox).Text.Trim());
-                    //sqlCmd.Parameters.AddWithValue("@Tema", (dtgPlanAcademico.FooterRow.FindControl("txtTemaFooter") as TextBox).Text.Trim());
-                    //sqlCmd.Parameters.AddWithValue("@Ht", (dtgPlanAcademico.FooterRow.FindControl("txtHtFooter") as TextBox).Text.Trim());
-                    //sqlCmd.Parameters.AddWithValue("@Hp", (dtgPlanAcademico.FooterRow.FindControl("txtHpFooter") as TextBox).Text.Trim());
-                    //sqlCmd.Parameters.AddWithValue("@Bibl", (dtgPlanAcademico.FooterRow.FindControl("txtBiblFooter") as TextBox).Text.Trim());
-                    //sqlCmd.Parameters.AddWithValue("@Actividad", (dtgPlanAcademico.FooterRow.FindControl("txtActividadFooter") as TextBox).Text.Trim());
-                    //sqlCmd.Parameters.AddWithValue("@Fecha", (dtgPlanAcademico.FooterRow.FindControl("txtFechaFooter") as TextBox).Text.Trim());
+                    
                     string query = "UPDATE Tbl_PlanAcademico SET Semana=@Semana,Tema=@Tema,Ht=@Ht,Hp=@Hp,Bibl=@Bibl,Actividad=@Actividad,Fecha=@Fecha WHERE pk_PlanAcademico = @id";
                     SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                     sqlCmd.Parameters.AddWithValue("@Semana", (dtgPlanAcademico.Rows[e.RowIndex].FindControl("txtSemana") as TextBox).Text.Trim());
@@ -167,5 +171,15 @@ namespace AvanceProgramatico.Paginas
                 lblErrorMessage.Text = ex.Message;
             }
         }
+        protected void Cal1_SelectionChanged(object sender, EventArgs e)
+        {
+            Calendar cal = (Calendar)sender;
+            TextBox text1 = (TextBox)((GridViewRow)cal.Parent.Parent).FindControl("txtFecha");
+
+            text1.Text = cal.SelectedDate.ToShortDateString();
+        }
+       
+        
+        
     }
 }

@@ -6,11 +6,12 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-           
+         
             <asp:GridView ID="dtgPlanAcademico" runat="server" ShowFooter="True" DataKeyNames="pk_PlanAcademico" 
                 CellPadding="4" ForeColor="#333333" GridLines="None" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" 
                 
@@ -91,12 +92,22 @@
                             <asp:Label Text='<%# Eval("Fecha") %>' runat="server" />
                         </ItemTemplate>
                          <EditItemTemplate>
-                            <asp:TextBox ID="txtFecha" Text='<%# Eval("Fecha") %>' runat="server" />
-                        </EditItemTemplate>
+                            <asp:TextBox ID="txtFecha"  CssClass="mTextFecha"  AutoPostBack="true" Text='<%# Eval("Fecha") %>' runat="server" />
+                              </EditItemTemplate>
+                     
                         <FooterTemplate>
                             <asp:TextBox ID="txtFechaFooter" runat="server" />
                         </FooterTemplate>
                     </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Calendar" >
+                     <ItemTemplate>   
+                         <asp:ImageButton ImageUrl="~/images/ImagesPlanAcademico/calendar.png" runat="server" CommandName="Calendar" ToolTip="Calendar" Width="20px" Height="20px"/>
+                     
+                         <asp:Calendar CssClass="mCalendar" ID="calendar"  runat="server" OnSelectionChanged="Cal1_SelectionChanged"></asp:Calendar>   
+                     </ItemTemplate>
+                    </asp:TemplateField>
+
                     <asp:TemplateField>
                         <ItemTemplate>
                             <asp:ImageButton ImageUrl="~/images/ImagesPlanAcademico/edit.png" runat="server" CommandName="Edit" ToolTip="Edit" Width="20px" Height="20px"/>
@@ -109,6 +120,7 @@
                         <FooterTemplate>
                             <asp:ImageButton ImageUrl="~/images/ImagesPlanAcademico/addnew.png" runat="server" CommandName="AddNew" ToolTip="Add New" Width="20px" Height="20px"/>
                         </FooterTemplate>
+                       
                     </asp:TemplateField>
                 </Columns>
                 <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
@@ -125,6 +137,10 @@
             <asp:Label ID="lblSuccessMessage" Text="" runat="server" ForeColor="Green" />
            <br />
             <asp:Label ID="lblErrorMessage" Text="" runat="server" ForeColor="Red" />
+            <br />
+
+        
+            
         </div>
     </form>
 </body>
