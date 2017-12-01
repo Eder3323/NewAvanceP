@@ -79,11 +79,11 @@ namespace AvanceProgramatico.Paginas
 
             //TextBox1.Text = Calendar1.SelectedDate.ToString();
            
-                SqlConnection _conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString());
-                _conexion.Open();
-                string sql = "insert into Tbl_fechas values " + "('" + fechauno.Value.ToString() + "')";
-                SqlCommand comando = new SqlCommand(sql, _conexion);
-                comando.ExecuteNonQuery();
+                //SqlConnection _conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString());
+                //_conexion.Open();
+                //string sql = "insert into Tbl_fechas values " + "('" + fechauno.Value.ToString() + "')";
+                //SqlCommand comando = new SqlCommand(sql, _conexion);
+                //comando.ExecuteNonQuery();
               
           
                 
@@ -131,8 +131,7 @@ namespace AvanceProgramatico.Paginas
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow grd = GridView1.SelectedRow;
-          //  Txt.Text = grd.Cells[1].Text;
-            fechauno.Value = grd.Cells[2].Text.ToString();
+            TextBox1.Text = grd.Cells[1].Text;
         }
 
         
