@@ -18,7 +18,7 @@
     <center>
     <h1>Universidad Politécnica de Tulancingo </h1>
       </div>
-      
+<%--      ggggg--%>
  
       
 <body>
