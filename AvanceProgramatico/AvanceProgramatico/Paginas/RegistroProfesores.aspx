@@ -255,8 +255,6 @@
              <br />
             </center>
              
-           <asp:Image ID="saveimg" runat="server"  BorderColor="#FF9900" Height="331px" Width="388px" BorderStyle="Solid" />
-             
            </div>
              
         </div>

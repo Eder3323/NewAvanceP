@@ -52,7 +52,7 @@ namespace AvanceProgramatico.Paginas
                     txtConfirmar.Text = "";
                     txtNombre.Text = "";
                     txtCorreo.Text = "";
-                    saveimg.ImageUrl = "";
+                    
 
                     Response.Write("<script>alert('La matricula ya se encuentra registrada');</script>");
 
@@ -73,7 +73,7 @@ namespace AvanceProgramatico.Paginas
                         txtConfirmar.Text = "";
                         txtNombre.Text = "";
                         txtCorreo.Text = "";
-                        saveimg.ImageUrl = "";
+                       
 
                         String tipo = "Alumno";
                        
@@ -113,8 +113,7 @@ namespace AvanceProgramatico.Paginas
         protected void Save(object sender, EventArgs e)
         {
             string signature = hfSign.Value;
-            saveimg.ImageUrl = signature;
-            saveimg.BorderStyle = BorderStyle.Solid;
+            
 
             url = signature;
 
