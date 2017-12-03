@@ -104,7 +104,7 @@
                      <ItemTemplate>   
                          <asp:ImageButton ImageUrl="~/images/ImagesPlanAcademico/calendar.png" runat="server" CommandName="Calendar" ToolTip="Calendar" Width="20px" Height="20px"/>
                      
-                         <asp:Calendar CssClass="mCalendar" ID="calendar"  runat="server" OnSelectionChanged="Cal1_SelectionChanged"></asp:Calendar>   
+<%--                         <asp:Calendar CssClass="mCalendar" ID="calendar"  runat="server" OnSelectionChanged="Cal1_SelectionChanged"></asp:Calendar>   --%>
                      </ItemTemplate>
                     </asp:TemplateField>
 

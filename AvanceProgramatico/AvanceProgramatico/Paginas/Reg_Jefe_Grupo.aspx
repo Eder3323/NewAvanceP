@@ -85,12 +85,12 @@
 
 
 </head>
-    <div class="jumbotron" > 
+    <div class="jumbotron text-center" > 
     <center>
-    <h1>Universidad Politécnica de Tulancingo </h1>
+    <h1>Universidad Politécnica de Tulancingo </h1><br /> <br />
       </div>
       <div class="alert alert-danger" role="alert">
-<center> <strong> <h3>Registro de Alumnos</h3></strong> </center> 
+<center> <strong> <h3>Registro de Alumnos</h3></strong></center> 
 </div>
     <br>
 <body >
@@ -194,7 +194,7 @@
            
           <button type="button" class="btn btn-danger" data-action="clear">Nueva</button>
             <%--<button type="button" class="btn btn-warning" data-action="change-color">Cambiar color</button>--%>
-          <%--<button type="button" class="btn btn-primary" data-action="undo">Deshacer</button>--%>
+          <button type="button" class="btn btn-primary" data-action="undo">Deshacer</button>
          <%-- <button class="button clear" data-action="clear">
                 Clear</button>--%>
             
@@ -261,6 +261,8 @@
                   
              <br />
             </center>
+             
+           <asp:Image ID="saveimg" runat="server"  BorderColor="#FF9900" Height="331px" Width="388px" BorderStyle="Solid" />
              
            </div>
              

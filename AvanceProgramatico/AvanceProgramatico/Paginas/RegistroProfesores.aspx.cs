@@ -56,7 +56,7 @@ namespace AvanceProgramatico.Paginas
                     txtconfirmar.Text = "";
                     txtNombre.Text = "";
                     txtCorreo.Text = "";
-                   
+                    saveimg.ImageUrl = "";
 
                     Response.Write("<script>alert('La matricula ya se encuentra registrada');</script>");
 
@@ -79,7 +79,7 @@ namespace AvanceProgramatico.Paginas
                         txtconfirmar.Text = "";
                         txtNombre.Text = "";
                         txtCorreo.Text = "";
-                       
+                        saveimg.ImageUrl = "";
                         String tipo = "Profesor";
                         DataTable dt;
                         String SQL = "Select Matricula,Nombre,Correo from Tbl_Usuarios where Tipo='" + tipo + "'";
@@ -121,7 +121,8 @@ namespace AvanceProgramatico.Paginas
         protected void Save(object sender, EventArgs e)
         {
             string signature = hfSign.Value;
-           
+            saveimg.ImageUrl = signature;
+            saveimg.BorderStyle = BorderStyle.Solid;
 
             url = signature;
 
