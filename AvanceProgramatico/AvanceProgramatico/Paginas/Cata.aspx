@@ -6,8 +6,24 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <%--<script type="text/javascript" src="../Bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Bootstrap/css/bootstrap.min.css"/>
+	<script type="text/javascript"src="../Bootstrap/js/jquery-3.1.1.min.js"></script>--%>
+
+    
+
     <link href="../Estilos/calendarshow.css" rel="stylesheet" />
 </head>
+      <div class="jumbotron" > 
+    <center>
+    <h1>Universidad Politécnica de Tulancingo </h1>
+      </div>
+     
+
+      <div class="alert alert-danger" role="alert">
+<center> <strong><h3> Registro de plan academico</h3></strong> </center> 
+</div>
+    <br>
 <body>
     <form id="form1" runat="server">
         <div>
@@ -17,7 +33,8 @@
 
                 OnSelectedIndexChanged="GridView1_SelectedIndexChanged"
                  OnRowCancelingEdit="dtgPlanAcademico_RowCancelingEdit" OnRowCommand="dtgPlanAcademico_RowCommand" 
-                OnRowEditing="dtgPlanAcademico_RowEditing" OnRowUpdating="dtgPlanAcademico_RowUpdating"  OnRowDeleting="dtgPlanAcademico_RowDeleting" CellPadding="4" ForeColor="#333333" GridLines="None">
+                OnRowEditing="dtgPlanAcademico_RowEditing" OnRowUpdating="dtgPlanAcademico_RowUpdating"  
+                OnRowDeleting="dtgPlanAcademico_RowDeleting" CellPadding="4" ForeColor="#333333" GridLines="None" >
 
                 
 
@@ -131,6 +148,18 @@
             <TodayDayStyle BackColor="#CCCCCC" />
                           </asp:Calendar>   
                         </FooterTemplate>
+                    </asp:TemplateField>
+                     <asp:TemplateField HeaderText="Grupo" >
+                           <ItemTemplate>
+                            <asp:Label Text='<%# Eval("Grupo") %>' runat="server" />
+                        </ItemTemplate>
+                         <EditItemTemplate>
+                            <asp:TextBox ID="txtGrupo"    Text='<%# Eval("Grupo") %>' runat="server" />
+                        </EditItemTemplate>
+                        <FooterTemplate>
+                            <asp:TextBox ID="txtFechaGrupo" runat="server" />
+                        </FooterTemplate>
+
                     </asp:TemplateField>
 
                     <asp:TemplateField>

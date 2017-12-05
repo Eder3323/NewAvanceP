@@ -26,7 +26,7 @@ namespace AvanceProgramatico.Paginas
             if (!IsPostBack)
             {
                 cargarcomboCarreras();
-               // PopulateGridview();
+                PopulateGridview();
             }
             
           
@@ -38,7 +38,7 @@ namespace AvanceProgramatico.Paginas
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT (Semana,Tema,Ht,Hp,Bibl,Actividad,Fecha) FROM Tbl_PlanAcademico", sqlCon);
+                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM Tbl_PlanAcademico", sqlCon);
                 sqlDa.Fill(dtbl);
             }
             int ED = dtbl.Rows.Count;

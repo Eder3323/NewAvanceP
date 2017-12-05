@@ -15,6 +15,12 @@
            /* border-top: solid;
             color:#000000;*/ 
         }
+ .mGrid{
+
+     font-size:large;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+         
+ }
 .mTextFecha:focus {
     
         border:solid 2px green !important;

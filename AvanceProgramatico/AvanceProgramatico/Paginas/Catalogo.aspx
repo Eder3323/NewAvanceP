@@ -159,32 +159,14 @@
                             <asp:TextBox ID="txtFecha"  CssClass="mTextFecha"  AutoPostBack="true" Text='<%# Eval("Fecha") %>' runat="server" />
                         </EditItemTemplate>
                       </asp:TemplateField>
-                      <asp:TemplateField HeaderText="Si/No">
+                      <asp:TemplateField HeaderText="Grupo">
                           <ItemTemplate>
-                            <asp:Label Text='<%# Eval("txtSiNo") %>' runat="server" />
-                        </ItemTemplate>
-                       <EditItemTemplate>
-                            <asp:TextBox ID="txtSiNo"   Text='<%# Eval("txtSiNo") %>' runat="server" />
-                        </EditItemTemplate>
-                         
-                      </asp:TemplateField>
-                      <asp:TemplateField HeaderText="Firma del Personal">
-                          <EditItemTemplate>
-                           <asp:Image ID="ImgFirmaPer" runat="server"></asp:Image>
-                        </EditItemTemplate>
-                      </asp:TemplateField>
-                      <asp:TemplateField HeaderText="Firma jefe de Grupo">
-                             <EditItemTemplate>
-                           <asp:Image ID="ImgFirmaJef" runat="server"></asp:Image>
-                        </EditItemTemplate>
-                      </asp:TemplateField>
-                      <asp:TemplateField HeaderText="Observaciones">
-                           <ItemTemplate>
-                            <asp:Label Text='<%# Eval("Observaciones") %>' runat="server" />
+                            <asp:Label Text='<%# Eval("Grupo") %>' runat="server" />
                         </ItemTemplate>
                          <EditItemTemplate>
-                            <asp:TextBox ID="txtObservaciones"    Text='<%# Eval("Observaciones") %>' runat="server" />
+                            <asp:TextBox ID="txtGrupo"  CssClass="mTextGrupo"  AutoPostBack="true" Text='<%# Eval("Grupo") %>' runat="server" />
                         </EditItemTemplate>
+                         
                       </asp:TemplateField>
                  </Columns>
                   </asp:GridView>
