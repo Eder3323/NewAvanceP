@@ -17,9 +17,11 @@ namespace AvanceProgramatico.Paginas
         private Sentencias sentencias;
         public static String url;
         public int eder;
-      
-        
+       
+
+
         string connectionString = ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -43,21 +45,9 @@ namespace AvanceProgramatico.Paginas
            
             if (dtbl.Rows.Count > 0 )
             {
-                if (dtbl.Rows.Count <=15)
-                {
                     dtgPlanAcademico.DataSource = dtbl;
-                    dtgPlanAcademico.DataBind();
-                    
-                }
-                       
-                else
-                    {
-
-                    lblSuccessMessage.Text = "";
-                    lblErrorMessage.Text = "YA HAS REGISTRADO 15 SEMANAS";
-                   
-                }
-            }
+                    dtgPlanAcademico.DataBind();   
+                }         
             else
             {
                 dtbl.Rows.Add(dtbl.NewRow());
@@ -91,17 +81,20 @@ namespace AvanceProgramatico.Paginas
                     SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM Tbl_PlanAcademico", sqlCon);
                     sqlDa.Fill(dtbl);
                 }
-                
-                if (dtbl.Rows.Count <= 15)
-                {
-                    using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                   
+                    if (dtbl.Rows.Count <15)
                     {
+                        int ED = dtbl.Rows.Count;
+                        int ederr = ED + 1;
 
-                        sqlCon.Open();
+                        using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                        {
+
+                            sqlCon.Open();
                         string query = "INSERT INTO Tbl_PlanAcademico (Semana,Tema,Ht,Hp,Bibl,Actividad,Fecha) VALUES (@Semana,@Tema,@Ht,@Hp,@Bibl,@Actividad,@Fecha)";
                         SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                        sqlCmd.Parameters.AddWithValue("@Semana", (dtgPlanAcademico.FooterRow.FindControl("txtSemanaFooter") as TextBox).Text.Trim());
-                        sqlCmd.Parameters.AddWithValue("@Tema", (dtgPlanAcademico.FooterRow.FindControl("txtTemaFooter") as TextBox).Text.Trim());
+                        sqlCmd.Parameters.AddWithValue("@Semana", Convert.ToInt32(ederr.ToString()));
+                            sqlCmd.Parameters.AddWithValue("@Tema", (dtgPlanAcademico.FooterRow.FindControl("txtTemaFooter") as TextBox).Text.Trim());
                         sqlCmd.Parameters.AddWithValue("@Ht", (dtgPlanAcademico.FooterRow.FindControl("txtHtFooter") as TextBox).Text.Trim());
                         sqlCmd.Parameters.AddWithValue("@Hp", (dtgPlanAcademico.FooterRow.FindControl("txtHpFooter") as TextBox).Text.Trim());
                         sqlCmd.Parameters.AddWithValue("@Bibl", (dtgPlanAcademico.FooterRow.FindControl("txtBiblFooter") as TextBox).Text.Trim());
@@ -111,20 +104,15 @@ namespace AvanceProgramatico.Paginas
                         PopulateGridview();
                         lblSuccessMessage.Text = "New Record Added";
                         lblErrorMessage.Text = "";
+                        }
                     }
-                }
                 else
                 {
                         lblSuccessMessage.Text = "";
-                        lblErrorMessage.Text = "YA HAS REGISTRADO 15 SEMANAS";
-                        
+                        lblErrorMessage.Text = "YA HAS REGISTRADO 15 SEMANAS";   
                     }
-     
                 }
-                
-            }
-            
-            
+                }
             catch (Exception ex)
             {
                 lblSuccessMessage.Text = "";
@@ -148,6 +136,8 @@ namespace AvanceProgramatico.Paginas
         {
             try
             {
+                //,my code
+                DataTable dtbl = new DataTable();
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
@@ -167,6 +157,7 @@ namespace AvanceProgramatico.Paginas
                     PopulateGridview();
                     lblSuccessMessage.Text = "Selected Record Updated";
                     lblErrorMessage.Text = "";
+
                 }
             }
             catch (Exception ex)
