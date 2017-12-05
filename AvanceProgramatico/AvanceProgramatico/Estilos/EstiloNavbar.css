@@ -6,12 +6,15 @@ color:#000000;
 .jumbotron{
 background:#8A0808;
  height:160px;
-  background-size: cover;
+text-align:right;
+  background-size: auto;
       padding-top: 20px;
       padding-bottom: 20px;
       font-size:150px;
-  co;
-
+background-image: url(../images/upt.png);
+background-size:auto;
+background-repeat: no-repeat;
+ background-position: 0% 40%;
 color:#F1EAFA;
 } 
 .navbar-inverse {

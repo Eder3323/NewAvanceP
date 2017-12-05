@@ -18,8 +18,8 @@
 </head>
     <div class="jumbotron" > 
     <center>
-    <h1>Universidad Politécnica de Tulancingo </h1>
-
+    <h1>&nbsp&nbsp&nbsp  Universidad Politécnica de Tulancingo </h1>
+        </center>
       </div>
       
     
@@ -45,7 +45,7 @@
      <strong>Docentes:</strong>  <FONT COLOR="black"><p> Permite  capturar los temas y actividades correspondientes a cada Avance Programático.</p></FONT>
     
 
-  <strong> Administrador:</strong> <FONT COLOR="black">  <p>pPodrán registrar alumnos jefes de grupo, profesores, asignar el calendario escolar y firmar el avance programático correspondiente a cada materia.</p></FONT> 
+  <strong> Administrador:</strong> <FONT COLOR="black">  <p>Podrán registrar alumnos jefes de grupo, profesores, asignar el calendario escolar<br /> y firmar el avance programático correspondiente a cada materia.</p></FONT> 
  </div>
          </h5>
      </div>

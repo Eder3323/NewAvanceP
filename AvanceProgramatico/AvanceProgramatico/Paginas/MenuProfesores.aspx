@@ -16,7 +16,7 @@
 </head>
      <div class="jumbotron" > 
     <center>
-    <h1>Universidad Politécnica de Tulancingo </h1>
+    <h1>&nbsp&nbsp&nbsp Universidad Politécnica de Tulancingo </h1>
       </div>
       
  
@@ -24,7 +24,7 @@
 <body>
    
    <div id="wrap">
-<div id="showcase" class="noselect"> <a title="Generar Avance Programático" href="../Paginas/Admin.aspx"><img class="cloud9-item" src="../images/ImaMenu/avancep.png" alt="Firefox" width="200px" height="200px"></a> <a title="Realizar Firma" href="../Paginas/Admin.aspx"><img class="cloud9-item" src="../images/ImaMenu/firma-c.png" alt="Wyzo"></a>    </div>
+<div id="showcase" class="noselect"> <a title="Generar Avance Programático" href="../Paginas/Admin.aspx"><img class="cloud9-item" src="../images/ImaMenu/avance.png" alt="Firefox" width="200px" height="200px"></a> <a title="Realizar Firma" href="../Paginas/Admin.aspx"><img class="cloud9-item" src="../images/ImaMenu/firma-c.png" alt="Wyzo"></a>    </div>
 <p id="item-title">&nbsp;</p>
 <div class="nav" class="noselect">
 <button class="left">  ← </button>
