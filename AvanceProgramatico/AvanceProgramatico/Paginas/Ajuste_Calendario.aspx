@@ -23,6 +23,8 @@
     <center>
     <h1>Universidad Politécnica de Tulancingo </h1>
       </div>
+   <asp:button runat="server" text="Cerrar Sessíon" Class="btn btn-xs" OnClick="Unnamed1_Click"/>
+
       <div class="alert alert-danger" role="alert">
 <center> <strong>Ajuste Calendario</strong> </center> 
 </div>
@@ -41,7 +43,7 @@
             <div class="form-group">
                  <label for="desde">Desde</label>  
                 
-                <input type="date" class="form-control"  runat="server"  id ="fechauno" dirname="uno" name="Funo" /><asp:TextBox   ID="TextBox1"  runat="server"></asp:TextBox>
+                <input type="date" class="form-control"  runat="server"  id ="fechauno" dirname="uno" name="Funo" /><asp:TextBox   ID="Txt"  runat="server"></asp:TextBox>
 
             &nbsp;</div>
            
@@ -99,6 +101,9 @@
             <br />
             <br />
             <asp:GridView ID="GridView1" runat="server" CssClass="auto-style1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                <Columns>
+                    <asp:CommandField ShowSelectButton="True" />
+                </Columns>
             </asp:GridView>
             <br />
              <div>

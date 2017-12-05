@@ -11,6 +11,23 @@ namespace AvanceProgramatico1.Paginas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ((Session["logCoor"] == null) || ((bool)Session["logCoor"] == false))
+
+            {
+                Response.Redirect("Logueo.aspx");
+
+
+            }
+
+
+        }
+
+        public void LogOut(object sender, EventArgs e)
+        {
+
+            Session.Remove("logCoor");
+            Response.Redirect("Logueo.aspx");
+
 
         }
     }

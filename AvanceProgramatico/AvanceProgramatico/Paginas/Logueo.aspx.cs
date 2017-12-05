@@ -42,14 +42,20 @@ namespace AvanceProgramatico
                 string Tipo = this.sentenc.Logueo(Convert.ToInt32(this.txtUsuario.Text), this.txtClave.Text);
                 if (Tipo == "Alumno")//se ejecutó la consulta correctamente
                 {
-                    Response.Redirect("Alumnos.aspx");   
+                    Session["logalum"] = true;
+                    Response.Redirect("Alumnos.aspx");
+                    
                 }
                 else if (Tipo=="Profesor")
                 {
+                    Session["logpro"] = true;
                     Response.Redirect("MenuProfesores.aspx");
+                    
                 }
                 else if (Tipo == "Coordinador")
+
                 {
+                    Session["logCoor"] = true;
                     Response.Redirect("Coordinador.aspx");
                 }
                 else//se produjo error con ñandú porque mi muñeca me habló

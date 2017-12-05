@@ -21,6 +21,15 @@ namespace AvanceProgramatico.Paginas
         string cadena;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ((Session["logCoor"] == null) || ((bool)Session["logCoor"] == false))
+
+            {
+                Response.Redirect("Logueo.aspx");
+
+
+            }
+
+
             cadena = ConfigurationManager.ConnectionStrings["CadenaConexion"].ConnectionString;
             SqlConnection _conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString());
             //Act();
@@ -131,7 +140,7 @@ namespace AvanceProgramatico.Paginas
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow grd = GridView1.SelectedRow;
-            //TextBox1.Text = grd.Cells[1].Text;
+            Txt.Text = grd.Cells[1].Text;
         }
 
         
@@ -144,6 +153,20 @@ namespace AvanceProgramatico.Paginas
             SqlCommand comando = new SqlCommand(sql, _conexion);
             comando.ExecuteNonQuery();
             cargarcalendario();
+        }
+
+        public void LogOut()
+        {
+
+            Session.Remove("logCoor");
+            Response.Redirect("Logueo.aspx");
+
+
+        }
+
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+            LogOut();
         }
     }
 

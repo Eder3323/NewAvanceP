@@ -246,6 +246,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\CerrarSesion.cs" />
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\ProcesarFirma.ashx.cs">
       <DependentUpon>ProcesarFirma.ashx</DependentUpon>
@@ -369,6 +370,7 @@
       <DependentUpon>Registro_p.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

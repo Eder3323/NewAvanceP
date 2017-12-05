@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <link rel="stylesheet" type="text/css" href="../Bootstrap/css/bootstrap.min.css"/>
 <link href="../Estilos/EstiloNavbar.css" rel="stylesheet" type="text/css"/>
-  <%--  <link href="../Estilos/gridview1.css" rel="stylesheet" type="text/css"/>--%>
+    <link href="../Estilos/gridview1.css" rel="stylesheet" type="text/css"/>
   
 	<script type="text/javascript" src="../Bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript"src="../Bootstrap/js/jquery-3.1.1.min.js"></script>
@@ -51,40 +51,8 @@
     })();
 
    
-
-
   </script>
 
- <%--   Gridview--%>
-    <style type="text/css">
-       .gridview th {
-font-size:large;
-font-weight:bold;
-color:black;
-border:1px solid black;
-padding:9px;
-}
-
-        td {
-            cursor: pointer;
-             background-color: white;
-              padding: 8px;
-    border: 1px solid black;
-        }
-        .hover_row {
-            background-color: #E6B0AA     ;
-        }
-    </style>
-
-    <script type="text/javascript">
-        $(function () {
-            $("[id*=GridView2] td").hover(function () {
-                $("td", $(this).closest("tr")).addClass("hover_row");
-            }, function () {
-                $("td", $(this).closest("tr")).removeClass("hover_row");
-            });
-        });
-    </script>
 
 
 
@@ -119,8 +87,9 @@ padding:9px;
 </head>
     <div class="jumbotron text-center" > 
     <center>
-    <h1>&nbsp&nbsp&nbsp&nbsp&nbsp Universidad Politécnica de Tulancingo </h1><br /> <br />
+    <h1>Universidad Politécnica de Tulancingo </h1><br /> <br />
       </div>
+
       <div class="alert alert-danger" role="alert">
 <center> <strong> <h3>Registro de Alumnos</h3></strong></center> 
 </div>
@@ -255,7 +224,8 @@ padding:9px;
                     <center>
                      <div class="col-xs-10 col-xs-offset-2">
                   <asp:Button ID="btn_guardar" runat="server" OnClick="btn_guardar_Click" Text="GUARDAR"  class="btn btn-success" Height="50px" Width="200px"/>
-                        <asp:Button ID="Button1" runat="server" Text="Regresar" class="btn btn-danger" Height="50px" Width="200px" OnClick="Button1_Click"/>
+                        <asp:Button ID="Button1" runat="server" Text="Regresar" class="btn btn-warning" Height="50px" Width="200px" OnClick="Button1_Click"/>
+                         <asp:Button ID="Button2" runat="server" Text="Cerrar Sessión" class="btn btn-danger"  Height="50px" Width="200px" OnClick="Button2_Click"/>
                    </div>
                         
             </center>
@@ -287,14 +257,12 @@ padding:9px;
                   </h1>
  <div class="EU_TableScroll" id="showData" style="display: block">
                   
-             <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="True" CssClass="gridview"  CellPadding="4"  ForeColor="#333333" GridLines="None"    >
+             <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="True" CssClass="gridview"  CellPadding="4"  ForeColor="#333333" GridLines="None"    rowheadercolumn="CustomerID">
     
                   </asp:GridView>
                   
              <br />
             </center>
-             
-           <%--<asp:Image ID="saveimg" runat="server"  BorderColor="#FF9900" Height="331px" Width="388px" BorderStyle="Solid" />--%>
              
            </div>
              
