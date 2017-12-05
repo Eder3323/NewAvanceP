@@ -23,6 +23,8 @@
     <center>
     <h1>Universidad Politécnica de Tulancingo </h1>
       </div>
+   <asp:button runat="server" text="Cerrar Sessíon" Class="btn btn-xs" OnClick="Unnamed1_Click"/>
+
       <div class="alert alert-danger" role="alert">
 <center> <strong>Ajuste Calendario</strong> </center> 
 </div>

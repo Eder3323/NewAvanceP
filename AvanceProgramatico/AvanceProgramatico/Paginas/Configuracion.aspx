@@ -82,9 +82,11 @@
     <h1>Universidad Politécnica de Tulancingo </h1>
       </div>
       <div class="alert alert-danger" role="alert">
-<center> <strong><h3> Registro de Profesores</h3></strong> </center> 
+<center> <strong>Fírma Coordinador</strong> </center> 
 </div>
-    <asp:Label ID="lblEsta" runat="server" Text="Label" Class="bg-primary"></asp:Label>
+    <a href="Configuracion.aspx">Configuracion.aspx</a><br>
+<body>
+    <center><asp:Label ID="lblEsta" runat="server" Class="bg-primary" Font-Size="Larger"></asp:Label></center>
     <br>
 <body >
     <form id="form1" runat="server">
@@ -167,7 +169,8 @@
                     <center>
                      <div class="col-xs-10 col-xs-offset-2">
                   <asp:Button ID="btn_guardar" runat="server" OnClick="btn_guardar_Click" Text="GUARDAR"  class="btn btn-success" Height="50px" Width="200px"/>
-                        <asp:Button ID="Button1" runat="server" Text="Regresar" class="btn btn-danger" Height="50px" Width="200px"/>
+                        <asp:Button ID="Button1" runat="server" Text="Regresar" class="btn btn-warning" Height="50px" Width="200px" OnClick="Button1_Click2"/>
+                         <asp:Button ID="Button2" runat="server" Text="Cerrar Sesión" CssClass="btn btn-danger" Height="50px" Width="200px" />
                    </div>
                         
             </center>
@@ -194,9 +197,7 @@
 
      <center style="float:right; width:50%; ">
               <center>
-              <h1>    <i class="fa fa-street-view" aria-hidden="true"><asp:Label ID="lblEstado" runat="server" ><span class="label label-danger"> </span></asp:Label></i>  
-                  
-                  </h1>
+              
  <div class="EU_TableScroll" id="showData" style="display: block">
                   
              <br />

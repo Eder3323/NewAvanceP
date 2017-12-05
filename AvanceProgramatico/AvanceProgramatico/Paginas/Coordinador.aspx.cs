@@ -21,5 +21,14 @@ namespace AvanceProgramatico1.Paginas
 
 
         }
+
+        public void LogOut(object sender, EventArgs e)
+        {
+
+            Session.Remove("logCoor");
+            Response.Redirect("Logueo.aspx");
+
+
+        }
     }
 }
