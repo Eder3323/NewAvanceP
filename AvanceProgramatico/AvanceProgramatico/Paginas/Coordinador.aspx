@@ -16,24 +16,23 @@
 <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
    
      <meta charset="utf-8">
-
+</head>
   <div class="jumbotron" > 
     <center>
-    <h1>Universidad Politécnica de Tulancingo </h1>
+    <h1>&nbsp&nbsp&nbsp Universidad Politécnica de Tulancingo </h1>
       </div>
-
- 
+      
      
-    </head>
+    
 <body>
     
 
 <div id="wrap">
-<div id="showcase" class="noselect"> <a title="Registro de Profesores" href="../Paginas/RegistroProfesores.aspx"><img class="cloud9-item" src="../images/ImaMenu/regproff.png" alt="Firefox" width="200px" height="200px"></a> <a title="Calendario" href="../Paginas/Ajuste_Calendario.aspx"><img class="cloud9-item" src="../images/ImaMenu/Calendar_stut.png" alt="Wyzo"></a>  <a title="Registro de Alumnos" href="../Paginas/Reg_Jefe_Grupo.aspx"><img class="cloud9-item" src="../images/ImaMenu/alumnos.png" alt="Chrome"></a> <a title="Realizar Firma" href="../Paginas/Configuracion.aspx"> <img class="cloud9-item" src="../images/ImaMenu/firmaCoordinador.png" alt="Internet Explorer"> </a> </div>
+<div id="showcase" class="noselect"> <a title="Registro de Profesores" href="../Paginas/RegistroProfesores.aspx"><img class="cloud9-item" src="../images/ImaMenu/profesores.png" alt="Firefox" width="200px" height="200px"></a> <a title="Cerrar sesión" href="../Paginas/Ajuste_Calendario.aspx"><img class="cloud9-item" src="../images/ImaMenu/sesion.png" alt="Wyzo"></a>  <a title="Registro de Alumnos" href="../Paginas/Reg_Jefe_Grupo.aspx"><img class="cloud9-item" src="../images/ImaMenu/alumnos.png" alt="Chrome"></a> <a title="Realizar Firma" href="../Paginas/firmaCoordinador.aspx"> <img class="cloud9-item" src="../images/ImaMenu/firma-c.png" alt="Internet Explorer"> </a> </div>
 <p id="item-title">&nbsp;&nbsp;</p>
 <div class="nav" class="noselect">
-<button class="left">  ←</button>
-<button class="right">→ </button>
+<button class="left">  ← </button>
+<button class="right"> → </button>
 </div>
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
@@ -115,6 +114,8 @@
     
     </div>
 
+
+
     
 
    
@@ -125,7 +126,7 @@
    
      <div class="panel-footer panel-primary">
           © Universidad Politécnica de Tulancingo.  Calle Ingenierías # 100. Col. Huapalcalco, Tulancingo, Hidalgo, México. C.P. 43629, Teléfono: 01(775) 75 5 82 02, Fax: 01(775) 75 5 83 21.
-       </div>
+      </div>
 </body>
 
 </html>

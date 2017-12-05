@@ -192,12 +192,17 @@ namespace AvanceProgramatico.Paginas
 
         protected void Button1_Click1(object sender, EventArgs e)
         {
-            Response.Redirect("Coordinador.aspx");
+            LogOut();
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
             LogOut();
+        }
+
+        protected void Button1_Click2(object sender, EventArgs e)
+        {
+            Response.Redirect("Coordinador.aspx");
         }
     }
 }
