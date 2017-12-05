@@ -89,6 +89,7 @@
     <center>
     <h1>Universidad Politécnica de Tulancingo </h1><br /> <br />
       </div>
+
       <div class="alert alert-danger" role="alert">
 <center> <strong> <h3>Registro de Alumnos</h3></strong></center> 
 </div>
@@ -223,7 +224,8 @@
                     <center>
                      <div class="col-xs-10 col-xs-offset-2">
                   <asp:Button ID="btn_guardar" runat="server" OnClick="btn_guardar_Click" Text="GUARDAR"  class="btn btn-success" Height="50px" Width="200px"/>
-                        <asp:Button ID="Button1" runat="server" Text="Regresar" class="btn btn-danger" Height="50px" Width="200px" OnClick="Button1_Click"/>
+                        <asp:Button ID="Button1" runat="server" Text="Regresar" class="btn btn-warning" Height="50px" Width="200px" OnClick="Button1_Click"/>
+                         <asp:Button ID="Button2" runat="server" Text="Cerrar Sessión" class="btn btn-danger"  Height="50px" Width="200px" OnClick="Button2_Click"/>
                    </div>
                         
             </center>

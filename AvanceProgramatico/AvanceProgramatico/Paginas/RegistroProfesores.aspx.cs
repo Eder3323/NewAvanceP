@@ -17,6 +17,15 @@ namespace AvanceProgramatico.Paginas
         public static String url;
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if ((Session["logCoor"] == null) || ((bool)Session["logCoor"] == false))
+
+            {
+                Response.Redirect("Logueo.aspx");
+
+
+            }
+
             this.con = new Conexion();
             this.con.conectar();
             this.sentencias = new Sentencias();
@@ -136,7 +145,7 @@ namespace AvanceProgramatico.Paginas
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Coordinador.aspx");
+           
         }
         public void grid()
         {
@@ -166,6 +175,29 @@ namespace AvanceProgramatico.Paginas
                 GridView2.DataBind();
             }
 
+        }
+        public void LogOut()
+        {
+
+            Session.Remove("logCoor");
+            Response.Redirect("Logueo.aspx");
+
+
+        }
+
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("Coordinador.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            LogOut();
         }
     }
 }

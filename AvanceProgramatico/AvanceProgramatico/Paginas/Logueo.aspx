@@ -68,7 +68,7 @@
 
       </div>
                   <br/>
-        <asp:Button ID="Button1" runat="server" Text="Iniciar Sesión" CssClass="btn btn-primary" Height="50px" Width="250px"  OnClick="ProcesarFormulario" />
+        <asp:Button ID="Button1" runat="server" Text="Iniciar Sesión" CssClass="btn btn-danger" Height="50px" Width="250px"  OnClick="ProcesarFormulario" />
            </center>
          <asp:Image ID="Image1" runat="server" ImageUrl="~/images/upt6.png" />
        </div>
