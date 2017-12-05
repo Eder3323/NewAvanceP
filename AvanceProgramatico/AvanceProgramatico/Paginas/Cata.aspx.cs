@@ -16,7 +16,8 @@ namespace AvanceProgramatico.Paginas
         private Conexion con;
         private Sentencias sentencias;
         public static String url;
-
+        public int eder;
+      
         
         string connectionString = ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString();
         protected void Page_Load(object sender, EventArgs e)
@@ -24,9 +25,7 @@ namespace AvanceProgramatico.Paginas
             if (!IsPostBack)
             {
                 PopulateGridview();
-            
-
-
+                
             }
 
         }
@@ -39,10 +38,25 @@ namespace AvanceProgramatico.Paginas
                 SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM Tbl_PlanAcademico", sqlCon);
                 sqlDa.Fill(dtbl);
             }
-            if (dtbl.Rows.Count > 0)
+            int ED = dtbl.Rows.Count;
+           
+           
+            if (dtbl.Rows.Count > 0 )
             {
-                dtgPlanAcademico.DataSource = dtbl;
-                dtgPlanAcademico.DataBind();
+                if (dtbl.Rows.Count <=15)
+                {
+                    dtgPlanAcademico.DataSource = dtbl;
+                    dtgPlanAcademico.DataBind();
+                    
+                }
+                       
+                else
+                    {
+
+                    lblSuccessMessage.Text = "";
+                    lblErrorMessage.Text = "YA HAS REGISTRADO 15 SEMANAS";
+                   
+                }
             }
             else
             {
@@ -69,8 +83,20 @@ namespace AvanceProgramatico.Paginas
             {
                 if (e.CommandName.Equals("AddNew"))
                 {
+                    //new code
+                    DataTable dtbl = new DataTable();
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM Tbl_PlanAcademico", sqlCon);
+                    sqlDa.Fill(dtbl);
+                }
+                
+                if (dtbl.Rows.Count <= 15)
+                {
                     using (SqlConnection sqlCon = new SqlConnection(connectionString))
                     {
+
                         sqlCon.Open();
                         string query = "INSERT INTO Tbl_PlanAcademico (Semana,Tema,Ht,Hp,Bibl,Actividad,Fecha) VALUES (@Semana,@Tema,@Ht,@Hp,@Bibl,@Actividad,@Fecha)";
                         SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
@@ -87,14 +113,15 @@ namespace AvanceProgramatico.Paginas
                         lblErrorMessage.Text = "";
                     }
                 }
-                else if (e.CommandName.Equals("Calendar"))
+                else
                 {
-                    Calendar cal = (Calendar)sender;
-                    cal.Visible = true;
-                    TextBox text1 = (TextBox)((GridViewRow)cal.Parent.Parent).FindControl("txtFecha");
-
-                    text1.Text = cal.SelectedDate.ToShortDateString();
+                        lblSuccessMessage.Text = "";
+                        lblErrorMessage.Text = "YA HAS REGISTRADO 15 SEMANAS";
+                        
+                    }
+     
                 }
+                
             }
             
             
@@ -178,8 +205,40 @@ namespace AvanceProgramatico.Paginas
 
             text1.Text = cal.SelectedDate.ToShortDateString();
         }
-       
-        
-        
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton img = (ImageButton)sender;
+            Calendar cal = (Calendar)((GridViewRow)img.Parent.Parent).FindControl("calendar");
+            if (cal.Visible == false)
+            {
+                cal.Visible = true;
+            }
+            else
+            {
+                cal.Visible = false;
+            }
+        }
+        protected void Cal2_SelectionChanged(object sender, EventArgs e)
+        {
+            Calendar cal = (Calendar)sender;
+            
+            TextBox text1 = (TextBox)((GridViewRow)cal.Parent.Parent).FindControl("txtFechaFooter");
+
+            text1.Text = cal.SelectedDate.ToShortDateString();
+        }
+        protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton img = (ImageButton)sender;
+            Calendar cal = (Calendar)((GridViewRow)img.Parent.Parent).FindControl("calendar2");
+            if (cal.Visible == false)
+            {
+                cal.Visible = true;
+            }
+            else
+            {
+                cal.Visible = false;
+            }
+        }
+
     }
 }
