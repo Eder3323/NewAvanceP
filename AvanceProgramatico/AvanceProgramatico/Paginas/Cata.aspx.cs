@@ -91,7 +91,7 @@ namespace AvanceProgramatico.Paginas
                         {
 
                             sqlCon.Open();
-                        string query = "INSERT INTO Tbl_PlanAcademico (Semana,Tema,Ht,Hp,Bibl,Actividad,Fecha,Grupo) VALUES (@Semana,@Tema,@Ht,@Hp,@Bibl,@Actividad,@Fecha,@Grupo)";
+                        string query = "INSERT INTO Tbl_PlanAcademico (Semana,Tema,Ht,Hp,Bibl,Actividad,Fecha) VALUES (@Semana,@Tema,@Ht,@Hp,@Bibl,@Actividad,@Fecha)";
                         SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                         sqlCmd.Parameters.AddWithValue("@Semana", Convert.ToInt32(ederr.ToString()));
                             sqlCmd.Parameters.AddWithValue("@Tema", (dtgPlanAcademico.FooterRow.FindControl("txtTemaFooter") as TextBox).Text.Trim());
@@ -100,7 +100,7 @@ namespace AvanceProgramatico.Paginas
                         sqlCmd.Parameters.AddWithValue("@Bibl", (dtgPlanAcademico.FooterRow.FindControl("txtBiblFooter") as TextBox).Text.Trim());
                         sqlCmd.Parameters.AddWithValue("@Actividad", (dtgPlanAcademico.FooterRow.FindControl("txtActividadFooter") as TextBox).Text.Trim());
                         sqlCmd.Parameters.AddWithValue("@Fecha", (dtgPlanAcademico.FooterRow.FindControl("txtFechaFooter") as TextBox).Text.Trim());
-                            sqlCmd.Parameters.AddWithValue("@Grupo", (dtgPlanAcademico.FooterRow.FindControl("txtGrupoFooter") as TextBox).Text.Trim());
+                           
                             sqlCmd.ExecuteNonQuery();
                         PopulateGridview();
                         lblSuccessMessage.Text = "New Record Added";
@@ -143,7 +143,7 @@ namespace AvanceProgramatico.Paginas
                 {
                     sqlCon.Open();
                     
-                    string query = "UPDATE Tbl_PlanAcademico SET Semana=@Semana,Tema=@Tema,Ht=@Ht,Hp=@Hp,Bibl=@Bibl,Actividad=@Actividad,Fecha=@Fecha,@Grupo WHERE pk_PlanAcademico = @id";
+                    string query = "UPDATE Tbl_PlanAcademico SET Semana=@Semana,Tema=@Tema,Ht=@Ht,Hp=@Hp,Bibl=@Bibl,Actividad=@Actividad,Fecha=@Fecha WHERE pk_PlanAcademico = @id";
                     SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                     sqlCmd.Parameters.AddWithValue("@Semana", (dtgPlanAcademico.Rows[e.RowIndex].FindControl("txtSemana") as TextBox).Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Tema", (dtgPlanAcademico.Rows[e.RowIndex].FindControl("txtTema") as TextBox).Text.Trim());
@@ -152,7 +152,7 @@ namespace AvanceProgramatico.Paginas
                     sqlCmd.Parameters.AddWithValue("@Bibl", (dtgPlanAcademico.Rows[e.RowIndex].FindControl("txtBibl") as TextBox).Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Actividad", (dtgPlanAcademico.Rows[e.RowIndex].FindControl("txtActividad") as TextBox).Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Fecha", (dtgPlanAcademico.Rows[e.RowIndex].FindControl("txtFecha") as TextBox).Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Grupo", (dtgPlanAcademico.Rows[e.RowIndex].FindControl("txtGrupo") as TextBox).Text.Trim());
+                   
                     sqlCmd.Parameters.AddWithValue("@id", Convert.ToInt32(dtgPlanAcademico.DataKeys[e.RowIndex].Value.ToString()));
                     sqlCmd.ExecuteNonQuery();
                     dtgPlanAcademico.EditIndex = -1;

@@ -9,8 +9,12 @@
     <%--<script type="text/javascript" src="../Bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../Bootstrap/css/bootstrap.min.css"/>
 	<script type="text/javascript"src="../Bootstrap/js/jquery-3.1.1.min.js"></script>--%>
-
-    
+    <link href="../Estilos/EstiloNavbar.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../Bootstrap/css/bootstrap.min.css"/>
+<link href="../Estilos/EstiloNavbar.css" rel="stylesheet" type="text/css"/>
+    <%--<link href="../Estilos/gridview1.css" rel="stylesheet" type="text/css"/>--%>
+	<script type="text/javascript" src="../Bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript"src="../Bootstrap/js/jquery-3.1.1.min.js"></script>
 
     <link href="../Estilos/calendarshow.css" rel="stylesheet" />
 </head>
@@ -149,18 +153,7 @@
                           </asp:Calendar>   
                         </FooterTemplate>
                     </asp:TemplateField>
-                     <asp:TemplateField HeaderText="Grupo" >
-                           <ItemTemplate>
-                            <asp:Label Text='<%# Eval("Grupo") %>' runat="server" />
-                        </ItemTemplate>
-                         <EditItemTemplate>
-                            <asp:TextBox ID="txtGrupo"    Text='<%# Eval("Grupo") %>' runat="server" />
-                        </EditItemTemplate>
-                        <FooterTemplate>
-                            <asp:TextBox ID="txtFechaGrupo" runat="server" />
-                        </FooterTemplate>
-
-                    </asp:TemplateField>
+                
 
                     <asp:TemplateField>
                         <ItemTemplate>
