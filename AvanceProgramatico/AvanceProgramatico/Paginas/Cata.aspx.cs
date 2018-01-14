@@ -16,17 +16,18 @@ namespace AvanceProgramatico.Paginas
         private Conexion con;
         private Sentencias sentencias;
         public static String url;
+        public int eder;
+       
 
-        
+
         string connectionString = ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 PopulateGridview();
-            
-
-
+                
             }
 
         }
@@ -39,11 +40,14 @@ namespace AvanceProgramatico.Paginas
                 SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM Tbl_PlanAcademico", sqlCon);
                 sqlDa.Fill(dtbl);
             }
-            if (dtbl.Rows.Count > 0)
+            int ED = dtbl.Rows.Count;
+           
+           
+            if (dtbl.Rows.Count > 0 )
             {
-                dtgPlanAcademico.DataSource = dtbl;
-                dtgPlanAcademico.DataBind();
-            }
+                    dtgPlanAcademico.DataSource = dtbl;
+                    dtgPlanAcademico.DataBind();   
+                }         
             else
             {
                 dtbl.Rows.Add(dtbl.NewRow());
@@ -69,35 +73,47 @@ namespace AvanceProgramatico.Paginas
             {
                 if (e.CommandName.Equals("AddNew"))
                 {
-                    using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                    //new code
+                    DataTable dtbl = new DataTable();
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM Tbl_PlanAcademico", sqlCon);
+                    sqlDa.Fill(dtbl);
+                }
+                   
+                    if (dtbl.Rows.Count <15)
                     {
-                        sqlCon.Open();
+                        int ED = dtbl.Rows.Count;
+                        int ederr = ED + 1;
+
+                        using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                        {
+
+                            sqlCon.Open();
                         string query = "INSERT INTO Tbl_PlanAcademico (Semana,Tema,Ht,Hp,Bibl,Actividad,Fecha) VALUES (@Semana,@Tema,@Ht,@Hp,@Bibl,@Actividad,@Fecha)";
                         SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                        sqlCmd.Parameters.AddWithValue("@Semana", (dtgPlanAcademico.FooterRow.FindControl("txtSemanaFooter") as TextBox).Text.Trim());
-                        sqlCmd.Parameters.AddWithValue("@Tema", (dtgPlanAcademico.FooterRow.FindControl("txtTemaFooter") as TextBox).Text.Trim());
+                        sqlCmd.Parameters.AddWithValue("@Semana", Convert.ToInt32(ederr.ToString()));
+                            sqlCmd.Parameters.AddWithValue("@Tema", (dtgPlanAcademico.FooterRow.FindControl("txtTemaFooter") as TextBox).Text.Trim());
                         sqlCmd.Parameters.AddWithValue("@Ht", (dtgPlanAcademico.FooterRow.FindControl("txtHtFooter") as TextBox).Text.Trim());
                         sqlCmd.Parameters.AddWithValue("@Hp", (dtgPlanAcademico.FooterRow.FindControl("txtHpFooter") as TextBox).Text.Trim());
                         sqlCmd.Parameters.AddWithValue("@Bibl", (dtgPlanAcademico.FooterRow.FindControl("txtBiblFooter") as TextBox).Text.Trim());
                         sqlCmd.Parameters.AddWithValue("@Actividad", (dtgPlanAcademico.FooterRow.FindControl("txtActividadFooter") as TextBox).Text.Trim());
                         sqlCmd.Parameters.AddWithValue("@Fecha", (dtgPlanAcademico.FooterRow.FindControl("txtFechaFooter") as TextBox).Text.Trim());
-                        sqlCmd.ExecuteNonQuery();
+                           
+                            sqlCmd.ExecuteNonQuery();
                         PopulateGridview();
                         lblSuccessMessage.Text = "New Record Added";
                         lblErrorMessage.Text = "";
+                        }
+                    }
+                else
+                {
+                        lblSuccessMessage.Text = "";
+                        lblErrorMessage.Text = "YA HAS REGISTRADO 15 SEMANAS";   
                     }
                 }
-                else if (e.CommandName.Equals("Calendar"))
-                {
-                    Calendar cal = (Calendar)sender;
-                    cal.Visible = true;
-                    TextBox text1 = (TextBox)((GridViewRow)cal.Parent.Parent).FindControl("txtFecha");
-
-                    text1.Text = cal.SelectedDate.ToShortDateString();
                 }
-            }
-            
-            
             catch (Exception ex)
             {
                 lblSuccessMessage.Text = "";
@@ -121,6 +137,8 @@ namespace AvanceProgramatico.Paginas
         {
             try
             {
+                //,my code
+                DataTable dtbl = new DataTable();
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
@@ -134,12 +152,14 @@ namespace AvanceProgramatico.Paginas
                     sqlCmd.Parameters.AddWithValue("@Bibl", (dtgPlanAcademico.Rows[e.RowIndex].FindControl("txtBibl") as TextBox).Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Actividad", (dtgPlanAcademico.Rows[e.RowIndex].FindControl("txtActividad") as TextBox).Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Fecha", (dtgPlanAcademico.Rows[e.RowIndex].FindControl("txtFecha") as TextBox).Text.Trim());
+                   
                     sqlCmd.Parameters.AddWithValue("@id", Convert.ToInt32(dtgPlanAcademico.DataKeys[e.RowIndex].Value.ToString()));
                     sqlCmd.ExecuteNonQuery();
                     dtgPlanAcademico.EditIndex = -1;
                     PopulateGridview();
                     lblSuccessMessage.Text = "Selected Record Updated";
                     lblErrorMessage.Text = "";
+
                 }
             }
             catch (Exception ex)
@@ -178,8 +198,40 @@ namespace AvanceProgramatico.Paginas
 
             text1.Text = cal.SelectedDate.ToShortDateString();
         }
-       
-        
-        
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton img = (ImageButton)sender;
+            Calendar cal = (Calendar)((GridViewRow)img.Parent.Parent).FindControl("calendar");
+            if (cal.Visible == false)
+            {
+                cal.Visible = true;
+            }
+            else
+            {
+                cal.Visible = false;
+            }
+        }
+        protected void Cal2_SelectionChanged(object sender, EventArgs e)
+        {
+            Calendar cal = (Calendar)sender;
+            
+            TextBox text1 = (TextBox)((GridViewRow)cal.Parent.Parent).FindControl("txtFechaFooter");
+
+            text1.Text = cal.SelectedDate.ToShortDateString();
+        }
+        protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton img = (ImageButton)sender;
+            Calendar cal = (Calendar)((GridViewRow)img.Parent.Parent).FindControl("calendar2");
+            if (cal.Visible == false)
+            {
+                cal.Visible = true;
+            }
+            else
+            {
+                cal.Visible = false;
+            }
+        }
+
     }
 }

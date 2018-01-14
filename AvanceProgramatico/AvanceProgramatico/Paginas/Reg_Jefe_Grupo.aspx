@@ -87,7 +87,7 @@
 </head>
     <div class="jumbotron text-center" > 
     <center>
-    <h1>Universidad Politécnica de Tulancingo </h1><br /> <br />
+    <h1>&nbsp&nbsp&nbsp&nbsp&nbsp Universidad Politécnica de Tulancingo </h1><br /> <br />
       </div>
      <a href="Logueo.aspx"><h4>Cerrar mi sesión</h4></a>
       <div class="alert alert-danger" role="alert">

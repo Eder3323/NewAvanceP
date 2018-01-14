@@ -18,7 +18,8 @@
 </head>
     <div class="jumbotron" > 
     <center>
-    <h1>Universidad Politécnica de Tulancingo </h1>
+    <h1>&nbsp&nbsp&nbsp  Universidad Politécnica de Tulancingo </h1>
+        </center>
       </div>
       
     
@@ -32,19 +33,19 @@
   <div class="panel-heading" >
       <h1 class="panel-title">Avance Programático   </h1>
   <div class="panel-body" >
-     <center style="width:100%;"> 
+     <center class="nav-justified"> 
 
 <div style="float:left; width:50%;">
  <h5>
      <DIV ALIGN="justify">
          
-    <strong>Alumnos:</strong> <FONT COLOR="black"><P>Dentro de este portal podrán firmar el avance programático correspondiente a cada materia.</P></FONT>
+    <strong>Alumnos:</strong> <FONT COLOR="black"><P> Podrá firmar el avance programático correspondiente a cada materia.</P></FONT>
     
 
-     <strong>Docentes:</strong>  <FONT COLOR="black"><p> En este portal podrán capturar las actividades que se realizan en cada materia, además pueden firmar el avance programático y descargar el formato generado.</p></FONT>
+     <strong>Docentes:</strong>  <FONT COLOR="black"><p> Permite  capturar los temas y actividades correspondientes a cada Avance Programático.</p></FONT>
     
 
-  <strong> Administrador:</strong> <FONT COLOR="black">  <p> En este portal podrán registrar alumnos jefes de grupo, profesores, asignar el calendario escolar y firmar el avance programático correspondiente a cada materia.</p></FONT> 
+  <strong> Administrador:</strong> <FONT COLOR="black">  <p>Podrán registrar alumnos jefes de grupo, profesores, asignar el calendario escolar<br /> y firmar el avance programático correspondiente a cada materia.</p></FONT> 
  </div>
          </h5>
      </div>
@@ -70,7 +71,7 @@
                   <br/>
         <asp:Button ID="Button1" runat="server" Text="Iniciar Sesión" CssClass="btn btn-danger" Height="50px" Width="250px"  OnClick="ProcesarFormulario" />
            </center>
-         <asp:Image ID="Image1" runat="server" ImageUrl="~/images/upt6.png" />
+       
        </div>
             </div>
              </div>

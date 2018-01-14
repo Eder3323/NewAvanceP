@@ -19,16 +19,47 @@ namespace AvanceProgramatico.Paginas
         public static String url;
         SqlConnection _conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString());
 
-
+        string connectionString = ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 cargarcomboCarreras();
+                PopulateGridview();
             }
             
           
+
+        }
+        void PopulateGridview()
+        {
+            DataTable dtbl = new DataTable();
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM Tbl_PlanAcademico", sqlCon);
+                sqlDa.Fill(dtbl);
+            }
+            int ED = dtbl.Rows.Count;
+
+
+            if (dtbl.Rows.Count > 0)
+            {
+                GridView2.DataSource = dtbl;
+                GridView2.DataBind();
+            }
+            else
+            {
+                dtbl.Rows.Add(dtbl.NewRow());
+                GridView2.DataSource = dtbl;
+                GridView2.DataBind();
+                GridView2.Rows[0].Cells.Clear();
+                GridView2.Rows[0].Cells.Add(new TableCell());
+                GridView2.Rows[0].Cells[0].ColumnSpan = dtbl.Columns.Count;
+                GridView2.Rows[0].Cells[0].Text = "No Data Found ..!";
+                GridView2.Rows[0].Cells[0].HorizontalAlign = HorizontalAlign.Center;
+            }
 
         }
 

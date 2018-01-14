@@ -192,7 +192,7 @@ namespace AvanceProgramatico.Paginas
 
         protected void Button1_Click1(object sender, EventArgs e)
         {
-            Response.Redirect("Coordinador.aspx");
+            LogOut();
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -200,12 +200,9 @@ namespace AvanceProgramatico.Paginas
             LogOut();
         }
 
-        protected void GridView2_SelectedIndexChanged(object sender, EventArgs e)
+        protected void Button1_Click2(object sender, EventArgs e)
         {
-
-            txtMatricula.Text = GridView2.Rows[GridView2.SelectedIndex].Cells[1].Text;
-
-
+            Response.Redirect("Coordinador.aspx");
         }
     }
 }

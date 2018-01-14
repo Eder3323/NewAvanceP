@@ -1,17 +1,29 @@
 ﻿
     
    
-.mCalendar {  
-    visibility: visible;
-    opacity: 0;
-    position: absolute;
-    z-index : 9999 !important;
-}  
 
+.mGrid .pgr a:hover {  
+                color: #B40431;  
+                text-decoration: none;  
+            }  
 
+     
+
+ .GvGrid:hover
+        {
+            background-color: #B40431;
+           /* border-top: solid;
+            color:#000000;*/ 
+        }
+ .mGrid{
+
+     font-size:large;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+         
+ }
 .mTextFecha:focus {
     
-        border:solid 4px green !important;
+        border:solid 2px green !important;
       
  }
 

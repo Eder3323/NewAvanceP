@@ -69,6 +69,18 @@
         <div class="form-group">
               <label for="nameField" class="col-xs-2">Grupo</label> 
                  <div class="col-xs-10"> <asp:DropDownList ID="DropDLGrupo" runat="server"  Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged1">
+                     <asp:ListItem>F11</asp:ListItem>
+                     <asp:ListItem>F12</asp:ListItem>
+                     <asp:ListItem>F13</asp:ListItem>
+                     <asp:ListItem>F14</asp:ListItem>
+                     <asp:ListItem>F15</asp:ListItem>
+                     <asp:ListItem>F21</asp:ListItem>
+                     <asp:ListItem>F22</asp:ListItem>
+                     <asp:ListItem>F23</asp:ListItem>
+                     <asp:ListItem>F24</asp:ListItem>
+                     <asp:ListItem>F25</asp:ListItem>
+                     <asp:ListItem>F31</asp:ListItem>
+                     <asp:ListItem>F32</asp:ListItem>
                   </asp:DropDownList>
           </div> 
         </div>
@@ -84,11 +96,79 @@
       <center>
               
  <div class="EU_TableScroll" id="showData" style="display: block">
-              <h1 >    <i class="fa fa-street-view" aria-hidden="true"><asp:Label ID="lblEstado" runat="server" ><span class="label label-danger"> </span></asp:Label></i>  
+              <h1 >    <i class="fa fa-street-view" aria-hidden="true">
+                  <asp:Label ID="lblEstado" Visible="false" runat="server" ><span class="label label-danger"> </span></asp:Label></i>  
                   
                   </h1>    
-             <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="True" CssClass="gridview"  CellPadding="4"  ForeColor="#333333" GridLines="None"    rowheadercolumn="CustomerID">
+             <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CssClass="gridview"  CellPadding="4"  ForeColor="#333333" GridLines="None"    rowheadercolumn="CustomerID">
     <AlternatingRowStyle BackColor="White" ForeColor="#284775"  />
+                  <Columns>
+                      <asp:TemplateField HeaderText="Semanas">
+                          <ItemTemplate>
+                            <asp:Label  Width="120px" Text='<%# Eval("Semana") %>' runat="server" />
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox Width="120px" ID="txtSemana" Text='<%# Eval("Semana") %>' runat="server" />
+                        </EditItemTemplate>
+                      </asp:TemplateField>
+                      <asp:TemplateField HeaderText="Temas o prácticas plaenadas">
+                          <ItemTemplate>
+                            <asp:Label Width="400px" Text='<%# Eval("Tema") %>' runat="server" />
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox Width="400px" ID="txtTema" Text='<%# Eval("Tema") %>' runat="server" />
+                        </EditItemTemplate>
+                      </asp:TemplateField>
+                      <asp:TemplateField HeaderText="H/T">
+                          <ItemTemplate>
+                            <asp:Label Width="50px" Text='<%# Eval("Ht") %>' runat="server" />
+                        </ItemTemplate>
+                         <EditItemTemplate>
+                            <asp:TextBox Width="50px" ID="txtHt" Text='<%# Eval("Ht") %>' runat="server" />
+                        </EditItemTemplate>
+                      </asp:TemplateField>
+                      <asp:TemplateField HeaderText="H/P">
+                          <ItemTemplate>
+                            <asp:Label Width="50px" Text='<%# Eval("Hp") %>' runat="server" />
+                        </ItemTemplate>
+                         <EditItemTemplate>
+                            <asp:TextBox Width="50px" ID="txtHp" Text='<%# Eval("Hp") %>' runat="server" />
+                        </EditItemTemplate>
+                      </asp:TemplateField>
+                      <asp:TemplateField HeaderText="BIBL">
+                           <ItemTemplate>
+                            <asp:Label Width="50px" Text='<%# Eval("Bibl") %>' runat="server" />
+                        </ItemTemplate>
+                         <EditItemTemplate>
+                            <asp:TextBox Width="50px" ID="txtBibl" Text='<%# Eval("Bibl") %>' runat="server" />
+                        </EditItemTemplate>
+                      </asp:TemplateField>
+                      <asp:TemplateField HeaderText="Actividad">
+                          <ItemTemplate>
+                            <asp:Label Width="400px" Text='<%# Eval("Actividad") %>' runat="server" />
+                        </ItemTemplate>
+                         <EditItemTemplate>
+                            <asp:TextBox Width="400px" ID="txtActividad" Text='<%# Eval("Actividad") %>' runat="server" />
+                        </EditItemTemplate>
+                      </asp:TemplateField>
+                      <asp:TemplateField HeaderText="Fecha">
+                           <ItemTemplate>
+                            <asp:Label Text='<%# Eval("Fecha") %>' runat="server" />
+                        </ItemTemplate>
+                         <EditItemTemplate>
+                            <asp:TextBox ID="txtFecha"  CssClass="mTextFecha"  AutoPostBack="true" Text='<%# Eval("Fecha") %>' runat="server" />
+                        </EditItemTemplate>
+                      </asp:TemplateField>
+                      <asp:TemplateField HeaderText="Grupo">
+                          <ItemTemplate>
+                            <asp:Label Text='<%# Eval("Grupo") %>' runat="server" />
+                        </ItemTemplate>
+                         <EditItemTemplate>
+                            <asp:TextBox ID="txtGrupo"  CssClass="mTextGrupo"  AutoPostBack="true" Text='<%# Eval("Grupo") %>' runat="server" />
+                        </EditItemTemplate>
+                         
+                      </asp:TemplateField>
+                 </Columns>
                   </asp:GridView>
                   
              <br />
