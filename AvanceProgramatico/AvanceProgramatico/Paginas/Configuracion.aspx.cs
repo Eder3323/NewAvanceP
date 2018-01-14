@@ -28,7 +28,7 @@ namespace AvanceProgramatico.Paginas
             this.sentencias = new Sentencias();
             this.sentencias.jquery();
             Actualizacion();
-
+          
         }
 
         protected void btn_guardar_Click(object sender, EventArgs e)
@@ -40,7 +40,8 @@ namespace AvanceProgramatico.Paginas
             else
             {
                 lblEsta.Text = url;
-                this.sentencias.InsertFirCor(url);
+                String tipo = "Coordinador";
+                this.sentencias.InsertFirCor(url,tipo);
                 Response.Write("<script>alert('Se ha registrado con éxito su fírma ');</script>");
             }
             

@@ -81,12 +81,14 @@
     <center>
     <h1>Universidad Politécnica de Tulancingo </h1>
       </div>
+     <a href="Logueo.aspx"><h4>Cerrar mi sesión</h4></a>
       <div class="alert alert-danger" role="alert">
+         
 <center> <strong>Fírma Coordinador</strong> </center> 
 </div>
-    <a href="Configuracion.aspx">Configuracion.aspx</a><br>
+    <br>
 <body>
-    <center><asp:Label ID="lblEsta" runat="server" Class="bg-primary" Font-Size="Larger"></asp:Label></center>
+    <center><asp:Label ID="lblEsta" runat="server" Class="bg-primary" Font-Size="X-Large"></asp:Label></center>
     <br>
 <body >
     <form id="form1" runat="server">
@@ -170,7 +172,6 @@
                      <div class="col-xs-10 col-xs-offset-2">
                   <asp:Button ID="btn_guardar" runat="server" OnClick="btn_guardar_Click" Text="GUARDAR"  class="btn btn-success" Height="50px" Width="200px"/>
                         <asp:Button ID="Button1" runat="server" Text="Regresar" class="btn btn-warning" Height="50px" Width="200px" OnClick="Button1_Click2"/>
-                         <asp:Button ID="Button2" runat="server" Text="Cerrar Sesión" CssClass="btn btn-danger" Height="50px" Width="200px" />
                    </div>
                         
             </center>

@@ -1,20 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegistroProfesores.aspx.cs" Inherits="AvanceProgramatico.Paginas.RegistroProfesores" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="signatureDirec.aspx.cs" Inherits="AvanceProgramatico.Paginas.signatureDirec" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head runat="server">
-       <link rel="stylesheet" type="text/css" href="../Bootstrap/css/bootstrap.min.css"/>
+   <link rel="stylesheet" type="text/css" href="../Bootstrap/css/bootstrap.min.css"/>
 <link href="../Estilos/EstiloNavbar.css" rel="stylesheet" type="text/css"/>
-    <link href="../Estilos/gridview1.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="../Bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript"src="../Bootstrap/js/jquery-3.1.1.min.js"></script>
-    
-    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.min.css">
      <meta charset="utf-8"/>
 
-       <%--         de firmas 2we2323--%>
+       <%--         de firmas 2we2323--%><%--         de firmas 2we2323--%>
           <meta name="description" content="Signature Pad - HTML5 canvas based smooth signature drawing using variable width spline interpolation.">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
@@ -77,8 +73,7 @@
             $("#saveimg2").show();
         });
     });
-</script>--%>
-    <%--DE FIRMA TERIMINA--%>
+</script>--%><%--DE FIRMA TERIMINA--%>
 
 
 </head>
@@ -86,11 +81,12 @@
     <center>
     <h1>Universidad Politécnica de Tulancingo </h1>
       </div>
-      <a href="Logueo.aspx"><h4>Cerrar mi sesión</h4></a>
-
       <div class="alert alert-danger" role="alert">
-<center> <strong><h3> Registro de Profesores</h3></strong> </center> 
+<center> <strong>Registro Director </strong> </center> 
 </div>
+    <br>
+<body>
+    <center><asp:Label ID="lblEsta" runat="server" Class="bg-primary" Font-Size="X-Large"></asp:Label></center>
     <br>
 <body >
     <form id="form1" runat="server">
@@ -101,7 +97,7 @@
      
         </div>
 
-       <div class="nav-justified"> 
+       <div class="nav-justified" id="lblEsta"> 
 
 <div style="float:left; width:50%;">
 
@@ -112,59 +108,14 @@
         <div class="col-xs-6">
            </div>
                 <br>
-            <div class="form-group">
-              <label for="nameField" class="col-xs-2">Matrícula</label> 
-                 <div class="col-xs-10"><asp:TextBox ID="txtMatricula" runat="server" class="form-control" placeholder="Matricula" Height="30px" Width="300px" aria-describedby="sizing-addon3"></asp:TextBox>
-    
-    </div>
-          </div>
+  
        </br>
 
-       <br>
-           <div class="form-group">
-              <label for="nameField" class="col-xs-2">Contraseña</label>
-              <div class="col-xs-10"><asp:TextBox ID="txtClave" runat="server"  class="form-control" placeholder="Contraseña" Height="30px" Width="300px" aria-describedby="sizing-addon3" Type="Password"></asp:TextBox>
-         
-              </div>
-          </div>
-          </br>
-           <br>
-           <div class="form-group">
-              <label for="nameField" class="col-xs-2">Confirmar contraseña</label>
-              <div class="col-xs-10"><asp:TextBox ID="txtconfirmar" runat="server"  class="form-control" placeholder="Confirmar contraseña" Height="30px" Width="300px" aria-describedby="sizing-addon3" Type="Password"></asp:TextBox>
-         
-              </div>
-          </div>
-          </br>
-              
-                    <div class="form-group">
-               <asp:CompareValidator ID="CompareValidator1" runat="server" 
-            ControlToCompare="txtClave" ControlToValidate="txtconfirmar" 
-            ErrorMessage="No coinciden las contraseñas" BackColor="White" CssClass="alert" ForeColor="Red"></asp:CompareValidator>
- </div>
-                        
-          
-           <br>
-                <div class="form-group">
-              <label for="emailField" class="col-xs-2">Nombre</label>
-              <div class="col-xs-10"><asp:TextBox ID="txtNombre" runat="server"  class="form-control" placeholder="Nombre" Height="30px" Width="300px" aria-describedby="sizing-addon3"></asp:TextBox>
      
-              </div>
-          </div>
-          </br>
-          
-                <br>
-              <div class="form-group">
-              <label for="phoneField" class="col-xs-2">Correo electrónico</label>
-              <div class="col-xs-10"> <asp:TextBox ID="txtCorreo" runat="server"  class="form-control"  pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" placeholder="Correo" Height="30px" Width="300px" aria-describedby="sizing-addon3"></asp:TextBox>
-         
-              </div>
-   </div>
-            </br>   
-                <br>
-                
-          </br>
-        
+              
+
+                        
+    
       
                     <br>
                 <div class="form-group">
@@ -188,19 +139,19 @@
         <div>
            
           <button type="button" class="btn btn-danger" data-action="clear">Nueva</button>
-            <%--<button type="button" class="btn btn-warning" data-action="change-color">Cambiar color</button>--%>
-          <button type="button" class="btn btn-primary" data-action="undo">Deshacer</button>
-         <%-- <button class="button clear" data-action="clear">
+            <%--<button type="button" class="btn btn-warning" data-action="change-color">Cambiar color</button>--%>          <%--<button type="button" class="btn btn-primary" data-action="undo">Deshacer</button>--%>            <%-- <button class="button clear" data-action="clear">
                 Clear</button>--%>
             
             <input type="hidden" id="hfSign" runat="server" />
-            <asp:Button Text="Capturar" runat="server" class="btn btn-warning" data-action="save"
-                OnClick="Save" />
-            
+            <%--<asp:Button Text="Capturar" runat="server" class="btn btn-warning" data-action="save"
+                OnClick="Save" />--%>            
              <%-- <input type="button" id="btnSave" value="Save as Image" /><br />--%>
         </div>
-    
-          
+    <br />
+          <br />
+          <br />
+          <asp:Button Text="Guardar" runat="server" class="btn btn-success" Height="50px" Width="200px" data-action="save"
+                OnClick="Save" />
           <%--<button type="button" class="btn btn-info" data-action="save-svg">Descarga SVG</button>--%>
         
       </div>
@@ -214,12 +165,16 @@
                   
          
 
-                       </div>
+                        </div>
                     <center>
-                     <div class="col-xs-10 col-xs-offset-2">
-                  <asp:Button ID="btn_guardar" runat="server" OnClick="btn_guardar_Click" Text="GUARDAR"  class="btn btn-success" Height="50px" Width="200px"/>
-                        <asp:Button ID="Button1" runat="server" Text="Regresar" class="btn btn-warning" Height="50px" Width="200px" OnClick="Button1_Click1"/>
+                     <div  class="col-xs-10 col-xs-offset-2">
+                         
+                  <%--<asp:Button  runat="server" Text="GUARDAR"  class="btn btn-success" Height="50px" Width="200px" data-action="save"  OnClick="Save"/>--%>
+                        <asp:Button ID="Button1" runat="server" Text="Regresar" class="btn btn-warning" Height="50px" Width="200px" OnClick="Button1_Click2"/>
+                         <asp:Button ID="Button2" runat="server" Text="Cerrar Sesión" CssClass="btn btn-danger" Height="50px" Width="200px" />
                    </div>
+                        
+                          </div>
                         
             </center>
           </br>
@@ -236,23 +191,18 @@
           <br>
         
            </br>        
-    </div>
     <div class="panel">
           ©2017 Universidad Politécnica de Tulancingo.  
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
       </div>
     </div>
-
+    
+    </div>
+        
      <center style="float:right; width:50%; ">
               <center>
-              <h1>    <i class="fa fa-street-view" aria-hidden="true"><asp:Label ID="lblEstado" runat="server" ><span class="label label-danger"> </span></asp:Label></i>  
-                  
-                  </h1>
+              
  <div class="EU_TableScroll" id="showData" style="display: block">
-                  
-             <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="True" CssClass="gridview"  CellPadding="4"  ForeColor="#333333" GridLines="None"    rowheadercolumn="CustomerID" OnSelectedIndexChanged="GridView2_SelectedIndexChanged">
-    
-                  </asp:GridView>
                   
              <br />
             </center>

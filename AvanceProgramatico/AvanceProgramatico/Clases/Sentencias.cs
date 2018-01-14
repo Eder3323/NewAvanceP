@@ -170,9 +170,12 @@ namespace AvanceProgramatico.Clases
                 SqlCommand comando2 = new SqlCommand(sql2, this.con);
                 String sql3 = "Select Matricula,Clave,Tipo from Tbl_Usuarios where Matricula=" + Usuario + " and Clave='" + Clave + "' and Tipo='Coordinador'";
                 SqlCommand comando3 = new SqlCommand(sql3, this.con);
+                String sql5 = "Select Matricula,Clave,Tipo from Tbl_Usuarios where Matricula=" + Usuario + " and Clave='" + Clave + "' and Tipo='Director'";
+                SqlCommand comando5 = new SqlCommand(sql5, this.con);
                 int cantidad = Convert.ToInt32(comando.ExecuteScalar());
                 int cantidad2 = Convert.ToInt32(comando2.ExecuteScalar());
                 int cantidad3 = Convert.ToInt32(comando3.ExecuteScalar());
+                int cantidad5 = Convert.ToInt32(comando5.ExecuteScalar());
                 if (cantidad != 0)
                 {
 
@@ -190,6 +193,10 @@ namespace AvanceProgramatico.Clases
                 {
 
                     Tipo = "Coordinador";
+                }
+                else if (cantidad5!=0)
+                {
+                    Tipo = "Director";
                 }
                 else
                 {
@@ -276,7 +283,7 @@ namespace AvanceProgramatico.Clases
                 int verificas2;
                 cerrar();
                 conectar();
-                String sql = "select Firma from Tbl_Usuarios where Tipo='Coordinador'";
+                String sql = "select Firma from Tbl_Usuarios where Tipo='"+ tipo +"'";
                 SqlCommand comando = new SqlCommand(sql, this.con);
             String firm = comando.ExecuteScalar().ToString(); ;
 
@@ -299,7 +306,7 @@ namespace AvanceProgramatico.Clases
 
         }
 
-        public void InsertFirCor(String firma)
+        public void InsertFirCor(String firma, String tipo)
         {
           
             try
@@ -307,7 +314,7 @@ namespace AvanceProgramatico.Clases
                 cerrar();
                 conectar();
               
-                String sql = "Update Tbl_Usuarios set Firma='"+firma+"' where Tipo='Coordinador'";
+                String sql = "Update Tbl_Usuarios set Firma='"+firma+"' where Tipo='"+tipo+"'";
                 SqlCommand comando = new SqlCommand(sql, this.con);
                 comando.ExecuteNonQuery();
                 cerrar();

@@ -199,5 +199,13 @@ namespace AvanceProgramatico.Paginas
         {
             LogOut();
         }
+
+        protected void GridView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            txtMatricula.Text = GridView2.Rows[GridView2.SelectedIndex].Cells[1].Text;
+
+
+        }
     }
 }

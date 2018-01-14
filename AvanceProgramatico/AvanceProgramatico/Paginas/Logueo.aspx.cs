@@ -58,6 +58,10 @@ namespace AvanceProgramatico
                     Session["logCoor"] = true;
                     Response.Redirect("Coordinador.aspx");
                 }
+                else if (Tipo=="Director")
+                {
+                    Response.Redirect("Direc.aspx");
+                }
                 else//se produjo error con ñandú porque mi muñeca me habló
                 {
                     Response.Write("<script>alert('Usuario o Contraseña incorrectos');</script>");
