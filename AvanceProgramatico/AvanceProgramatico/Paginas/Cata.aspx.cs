@@ -17,7 +17,7 @@ namespace AvanceProgramatico.Paginas
         private Sentencias sentencias;
         public static String url;
         public int eder;
-       
+        
 
 
         string connectionString = ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString();
@@ -26,7 +26,10 @@ namespace AvanceProgramatico.Paginas
         {
             if (!IsPostBack)
             {
-                PopulateGridview();
+
+                lbluser.Text= Session["user"].ToString();
+                    PopulateGridview();
+               
                 
             }
 
@@ -34,15 +37,18 @@ namespace AvanceProgramatico.Paginas
         void PopulateGridview()
         {
             DataTable dtbl = new DataTable();
+            DataTable dtbl2 = new DataTable();
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
                 SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM Tbl_PlanAcademico", sqlCon);
+                string query = ("SELECT contador FROM Tbl_PlanAcademico");
+                SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                 sqlDa.Fill(dtbl);
+                lblconta.Text = Convert.ToString(sqlCmd.ExecuteScalar());
             }
             int ED = dtbl.Rows.Count;
-           
-           
+          
             if (dtbl.Rows.Count > 0 )
             {
                     dtgPlanAcademico.DataSource = dtbl;
@@ -91,7 +97,7 @@ namespace AvanceProgramatico.Paginas
                         {
 
                             sqlCon.Open();
-                        string query = "INSERT INTO Tbl_PlanAcademico (Semana,Tema,Ht,Hp,Bibl,Actividad,Fecha) VALUES (@Semana,@Tema,@Ht,@Hp,@Bibl,@Actividad,@Fecha)";
+                        string query = "INSERT INTO Tbl_PlanAcademico (Semana,Tema,Ht,Hp,Bibl,Actividad,Fecha,id_table,contador) VALUES (@Semana,@Tema,@Ht,@Hp,@Bibl,@Actividad,@Fecha,@id_t,@cont)";
                         SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                         sqlCmd.Parameters.AddWithValue("@Semana", Convert.ToInt32(ederr.ToString()));
                             sqlCmd.Parameters.AddWithValue("@Tema", (dtgPlanAcademico.FooterRow.FindControl("txtTemaFooter") as TextBox).Text.Trim());
@@ -100,7 +106,8 @@ namespace AvanceProgramatico.Paginas
                         sqlCmd.Parameters.AddWithValue("@Bibl", (dtgPlanAcademico.FooterRow.FindControl("txtBiblFooter") as TextBox).Text.Trim());
                         sqlCmd.Parameters.AddWithValue("@Actividad", (dtgPlanAcademico.FooterRow.FindControl("txtActividadFooter") as TextBox).Text.Trim());
                         sqlCmd.Parameters.AddWithValue("@Fecha", (dtgPlanAcademico.FooterRow.FindControl("txtFechaFooter") as TextBox).Text.Trim());
-                           
+                            sqlCmd.Parameters.AddWithValue("@id_t", lbluser.Text);
+                            sqlCmd.Parameters.AddWithValue("@cont", lbluser.Text);
                             sqlCmd.ExecuteNonQuery();
                         PopulateGridview();
                         lblSuccessMessage.Text = "New Record Added";
