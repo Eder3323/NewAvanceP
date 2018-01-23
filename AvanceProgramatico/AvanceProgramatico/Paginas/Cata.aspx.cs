@@ -92,7 +92,7 @@ namespace AvanceProgramatico.Paginas
                     {
                         int ED = dtbl.Rows.Count;
                         int ederr = ED + 1;
-
+                        int contador = Convert.ToInt32(lblconta.Text);
                         using (SqlConnection sqlCon = new SqlConnection(connectionString))
                         {
 
@@ -107,7 +107,7 @@ namespace AvanceProgramatico.Paginas
                         sqlCmd.Parameters.AddWithValue("@Actividad", (dtgPlanAcademico.FooterRow.FindControl("txtActividadFooter") as TextBox).Text.Trim());
                         sqlCmd.Parameters.AddWithValue("@Fecha", (dtgPlanAcademico.FooterRow.FindControl("txtFechaFooter") as TextBox).Text.Trim());
                             sqlCmd.Parameters.AddWithValue("@id_t", lbluser.Text);
-                            sqlCmd.Parameters.AddWithValue("@cont", lbluser.Text);
+                            sqlCmd.Parameters.AddWithValue("@cont", contador);
                             sqlCmd.ExecuteNonQuery();
                         PopulateGridview();
                         lblSuccessMessage.Text = "New Record Added";
