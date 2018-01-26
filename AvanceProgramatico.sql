@@ -50,23 +50,40 @@ create table Tbl_Roles(
 Roles varchar(50) primary key
 )
 Go
-
-
-create table Tbl_Catalogo(
-Profesorma int,
-ALumma int,
-Grupo varchar(50),
-TemasPla varchar(100),
-Actividades varchar(50),
-Fecha datetime,
-siono varchar(30),
-Observaciones varchar(400),
-Firma varchar(max),
-hit varchar(20),
-hip varchar(20),
-didl varchar(20)  
+create table Tbl_PlanAcademico(
+pk_PlanAcademico int primary key identity (1,1),
+Semana varchar(5),
+Tema varchar(550),
+Ht varchar(50),
+Hp varchar(50),
+Bibl varchar(50),
+Actividad varchar(550),
+Fecha varchar(50),
+id_registro varchar(50)
 )
+go
+create proc GuardarCatalogo
+@Semana varchar(5),
+@Tema varchar(550),
+@Ht varchar(50),
+@Hp varchar(50),
+@Bibl varchar(50),
+@Actividad varchar(550),
+@Fecha varchar(50),
+@id_registro varchar(50)
+AS
+begin
+insert into Tbl_PlanAcademico(Semana,Tema,Ht,Hp,Bibl,Actividad,Fecha,id_registro) values(@Semana,@Tema,@Ht,@Hp,@Bibl,@Actividad,@Fecha,@id_registro)
+end
+--drop table Tbl_PlanAcademico
 Go
+select *from Tbl_PlanAcademico
+select *from Tbl_Usuarios
+
+Go
+
+
+
 ---tabla grupos
 insert into Tbl_Grupo values('F1')
 insert into Tbl_Grupo values('F2')
@@ -758,7 +775,7 @@ insert into Tbl_Materias values(8,'Servicios')
 
 select * from Tbl_Materias where fk_Carrera='1'
 select * from Tbl_Carreras
-delete  from Tbl_Materias where fk_Carrera='1'
+---delete  from Tbl_Materias where fk_Carrera='1'
 select * from Tbl_Carreras
 
 
