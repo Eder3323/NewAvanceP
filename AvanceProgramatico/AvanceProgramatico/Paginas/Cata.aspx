@@ -36,11 +36,11 @@
                 OnSelectedIndexChanged="GridView1_SelectedIndexChanged"
                  OnRowCancelingEdit="dtgPlanAcademico_RowCancelingEdit" OnRowCommand="dtgPlanAcademico_RowCommand" 
                 OnRowEditing="dtgPlanAcademico_RowEditing" OnRowUpdating="dtgPlanAcademico_RowUpdating"  
-                OnRowDeleting="dtgPlanAcademico_RowDeleting" CellPadding="4" ForeColor="#333333" GridLines="None" >
+                OnRowDeleting="dtgPlanAcademico_RowDeleting" >
 
                 
 
-<AlternatingRowStyle CssClass="alt" BackColor="White"></AlternatingRowStyle>
+<AlternatingRowStyle CssClass="alt"></AlternatingRowStyle>
 
                 
 
@@ -168,15 +168,8 @@
                        
                     </asp:TemplateField>
                 </Columns>
-                <FooterStyle BackColor="#B40404" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#B40404" Font-Bold="True" ForeColor="White" />
-                <PagerStyle CssClass="pgr" BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
-                <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
-                <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
-                <SortedAscendingCellStyle BackColor="#FDF5AC" />
-                <SortedAscendingHeaderStyle BackColor="#4D0000" />
-                <SortedDescendingCellStyle BackColor="#FCF6C0" />
-                <SortedDescendingHeaderStyle BackColor="#820000" />
+                <PagerStyle CssClass="pgr" />
+                <RowStyle />
             </asp:GridView>
            <br />
             <asp:Label ID="lblSuccessMessage" Text="" runat="server" ForeColor="Green" />

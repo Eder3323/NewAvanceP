@@ -10,7 +10,7 @@
 namespace AvanceProgramatico.Paginas {
     
     
-    public partial class Catalogo {
+    public partial class CatalogoProfesor {
         
         /// <summary>
         /// Control Image1.

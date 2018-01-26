@@ -206,6 +206,7 @@
     <Content Include="Paginas\Alumnos.aspx" />
     <Content Include="Paginas\Cata.aspx" />
     <Content Include="Paginas\Catalogo.aspx" />
+    <Content Include="Paginas\CatalogoProfesor.aspx" />
     <Content Include="Paginas\Configuracion.aspx" />
     <Content Include="Paginas\controlador.asmx" />
     <Content Include="Paginas\Coordinador.aspx" />
@@ -286,6 +287,13 @@
     </Compile>
     <Compile Include="Paginas\Catalogo.aspx.designer.cs">
       <DependentUpon>Catalogo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\CatalogoProfesor.aspx.cs">
+      <DependentUpon>CatalogoProfesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\CatalogoProfesor.aspx.designer.cs">
+      <DependentUpon>CatalogoProfesor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Configuracion.aspx.cs">
       <DependentUpon>Configuracion.aspx</DependentUpon>
