@@ -36,9 +36,9 @@ namespace AvanceProgramatico.Paginas
             {
 
                 grid();
-
+                cargarcombo1();
             }
-            cargarcombo1();
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -48,6 +48,15 @@ namespace AvanceProgramatico.Paginas
 
         protected void btn_guardar_Click(object sender, EventArgs e)
         {
+          
+
+        }
+        protected void Save(object sender, EventArgs e)
+        {
+            string signature = hfSign.Value;
+            
+
+            url = signature;
             try
             {
 
@@ -60,7 +69,7 @@ namespace AvanceProgramatico.Paginas
                     txtConfirmar.Text = "";
                     txtNombre.Text = "";
                     txtCorreo.Text = "";
-                    
+
 
                     Response.Write("<script>alert('La matricula ya se encuentra registrada');</script>");
 
@@ -74,38 +83,38 @@ namespace AvanceProgramatico.Paginas
                     if (IsValid)
                     {
 
-                        this.sentencias.InsertarAlumno(Convert.ToInt32(txtMatricula.Text), txtClave.Text, txtNombre.Text, txtCorreo.Text, url,cmbGrupo.Text);
+                        this.sentencias.InsertarAlumno(Convert.ToInt32(txtMatricula.Text), txtClave.Text, txtNombre.Text, txtCorreo.Text, url, cmbGrupo.Text);
                         Response.Write("<script>alert('Se ha registrado con éxito');</script>");
                         txtMatricula.Text = "";
                         txtClave.Text = "";
                         txtConfirmar.Text = "";
                         txtNombre.Text = "";
                         txtCorreo.Text = "";
-                       
+
 
                         String tipo = "Alumno";
-                       
-                            DataTable dt;
-                            String SQL = "Select Matricula,Nombre,Correo from Tbl_Usuarios where Tipo='" + tipo + "'";
+
+                        DataTable dt;
+                        String SQL = "Select Matricula,Nombre,Correo from Tbl_Usuarios where Tipo='" + tipo + "'";
 
 
-                            string sConstr = System.Configuration.ConfigurationManager.ConnectionStrings["CadenaConexion"].ConnectionString;
-                            using (SqlConnection conn = new SqlConnection(sConstr))
+                        string sConstr = System.Configuration.ConfigurationManager.ConnectionStrings["CadenaConexion"].ConnectionString;
+                        using (SqlConnection conn = new SqlConnection(sConstr))
+                        {
+                            using (SqlCommand comm = new SqlCommand(SQL, conn))
                             {
-                                using (SqlCommand comm = new SqlCommand(SQL, conn))
+                                conn.Open();
+                                using (SqlDataAdapter da = new SqlDataAdapter(comm))
                                 {
-                                    conn.Open();
-                                    using (SqlDataAdapter da = new SqlDataAdapter(comm))
-                                    {
-                                        dt = new DataTable("tbl");
-                                        da.Fill(dt);
-                                    }
+                                    dt = new DataTable("tbl");
+                                    da.Fill(dt);
                                 }
                             }
+                        }
 
-                            GridView2.DataSource = dt;
-                            GridView2.DataBind();
-                        
+                        GridView2.DataSource = dt;
+                        GridView2.DataBind();
+                        txtMatricula.Focus();
                     }
                 }
 
@@ -116,15 +125,6 @@ namespace AvanceProgramatico.Paginas
 
                 Label1.Text = "Error:" + E.Message;
             }
-
-        }
-        protected void Save(object sender, EventArgs e)
-        {
-            string signature = hfSign.Value;
-            
-
-            url = signature;
-
 
         }
         public void Act()
@@ -168,6 +168,7 @@ namespace AvanceProgramatico.Paginas
             SqlCommand cmd = new SqlCommand("select pk_Grupo from Tbl_Grupo", _conexion);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
+
             sda.Fill(ds);
             cmbGrupo.DataSource = ds;
             cmbGrupo.DataTextField = "pk_Grupo";                            // FieldName of Table in DataBase

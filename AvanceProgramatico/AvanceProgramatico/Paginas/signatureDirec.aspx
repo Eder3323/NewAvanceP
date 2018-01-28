@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Configuracion.aspx.cs" Inherits="AvanceProgramatico.Paginas.Configuracion" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="signatureDirec.aspx.cs" Inherits="AvanceProgramatico.Paginas.signatureDirec" %>
 
 <!DOCTYPE html>
 
@@ -81,10 +81,8 @@
     <center>
     <h1>Universidad Politécnica de Tulancingo </h1>
       </div>
-     <a href="Logueo.aspx"><h4>Cerrar mi sesión</h4></a>
       <div class="alert alert-danger" role="alert">
-         
-<center> <strong>Fírma Coordinador</strong> </center> 
+<center> <strong>Registro Director </strong> </center> 
 </div>
     <br>
 <body>
@@ -141,19 +139,19 @@
         <div>
            
           <button type="button" class="btn btn-danger" data-action="clear">Nueva</button>
-          
+            <%--<button type="button" class="btn btn-warning" data-action="change-color">Cambiar color</button>--%>          <%--<button type="button" class="btn btn-primary" data-action="undo">Deshacer</button>--%>            <%-- <button class="button clear" data-action="clear">
+                Clear</button>--%>
             
             <input type="hidden" id="hfSign" runat="server" />
-            <br />
-            <br />
-            <br />
-            <asp:Button Text="Guardar" runat="server" class="btn btn-success" Height="50px" Width="200px" data-action="save"
-                OnClick="Save" />
-             <asp:Button ID="Button1" runat="server" Text="Regresar" class="btn btn-warning" Height="50px" Width="200px" OnClick="Button1_Click2"/>
+            <%--<asp:Button Text="Capturar" runat="server" class="btn btn-warning" data-action="save"
+                OnClick="Save" />--%>            
              <%-- <input type="button" id="btnSave" value="Save as Image" /><br />--%>
         </div>
-    
-          
+    <br />
+          <br />
+          <br />
+          <asp:Button Text="Guardar" runat="server" class="btn btn-success" Height="50px" Width="200px" data-action="save"
+                OnClick="Save" />
           <%--<button type="button" class="btn btn-info" data-action="save-svg">Descarga SVG</button>--%>
         
       </div>
@@ -167,12 +165,16 @@
                   
          
 
-                       </div>
+                        </div>
                     <center>
-                     <div class="col-xs-10 col-xs-offset-2">
-                  <%--<asp:Button ID="btn_guardar" runat="server" OnClick="btn_guardar_Click" Text="GUARDAR"  class="btn btn-success" Height="50px" Width="200px"/>--%>
-                       
+                     <div  class="col-xs-10 col-xs-offset-2">
+                         
+                  <%--<asp:Button  runat="server" Text="GUARDAR"  class="btn btn-success" Height="50px" Width="200px" data-action="save"  OnClick="Save"/>--%>
+                        <asp:Button ID="Button1" runat="server" Text="Regresar" class="btn btn-warning" Height="50px" Width="200px" OnClick="Button1_Click2"/>
+                         <asp:Button ID="Button2" runat="server" Text="Cerrar Sesión" CssClass="btn btn-danger" Height="50px" Width="200px" />
                    </div>
+                        
+                          </div>
                         
             </center>
           </br>
@@ -189,13 +191,14 @@
           <br>
         
            </br>        
-    </div>
     <div class="panel">
           ©2017 Universidad Politécnica de Tulancingo.  
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
       </div>
     </div>
-
+    
+    </div>
+        
      <center style="float:right; width:50%; ">
               <center>
               
@@ -214,4 +217,3 @@
     </form>
 </body>
 </html>
-

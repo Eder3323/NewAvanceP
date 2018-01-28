@@ -16,6 +16,7 @@ namespace AvanceProgramatico.Clases
 
         private SqlDataReader registro;
         private SqlConnection con;
+        private SqlDataReader registro1;  
 
 
 
@@ -39,26 +40,36 @@ namespace AvanceProgramatico.Clases
         public SqlDataReader getUsuarios()
         {
             conectar();
-            String sql = "select id,nombre,correo from usuarios;";
+            String sql = "select Matricula,Clave,Nombre from Tbl_Usuarios;";
 
             SqlCommand comando = new SqlCommand(sql, this.con);
             this.registro = comando.ExecuteReader();
             return this.registro;
         }
-        public void cargarcombo()
+        public SqlDataReader getUsuarios2(int busqueda)
         {
-            //  SqlConnection _conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString());
-            //  _conexion.Open();
-            SqlCommand cmd = new SqlCommand("select Nombre from Tbl_Carreras", con);
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            sda.Fill(ds);
-            //lista.DataSource = ds;
-            //lista.DataTextField = "Nombre";                            // FieldName of Table in DataBase
-            //lista.DataValueField = "Nombre";
-            //lista.DataBind();
+            conectar();
+            if (busqueda >0)
+            {
+                String sql = "select Matricula,Clave,Nombre from Tbl_Usuarios where Matricula like '" + busqueda + "%'";
+                SqlCommand comando = new SqlCommand(sql, this.con);
+                this.registro = comando.ExecuteReader();
+                
+            }
+            else if(busqueda<=0)
+            {
+
+                String sql = "select Matricula,Clave,Nombre from Tbl_Usuarios;";
+                SqlCommand comando = new SqlCommand(sql, this.con);
+                this.registro = comando.ExecuteReader();
+               
+            }
+            return this.registro;
+
+
 
         }
+       
 
         public void InsertarProfesor(int matricula, String clave, String nombre, String correo, String firma)
         {
@@ -73,14 +84,9 @@ namespace AvanceProgramatico.Clases
                             "(" + matricula + ",'" + clave + "','" + nombre + "','" + correo + "','" + firma + "','" + grupo + "','" + tipo + "'," + rol + ")";
             SqlCommand comando = new SqlCommand(sql, con);
             String matricula2 = "P_"+matricula.ToString();
-            String sql2 = "Create table " + matricula2 + "(pk_PlanAcademico int primary key identity (1,1),Semana varchar(5),Tema varchar(550),Ht varchar(50),Hp varchar(50),Bibl varchar(50),Actividad varchar(550),Fecha datetime)";
-
-
-
-            SqlCommand comando2 = new SqlCommand(sql2, con);
+           
             comando.ExecuteNonQuery();
-            comando2.ExecuteNonQuery();
-
+         
 
 
             cerrar();
@@ -170,9 +176,12 @@ namespace AvanceProgramatico.Clases
                 SqlCommand comando2 = new SqlCommand(sql2, this.con);
                 String sql3 = "Select Matricula,Clave,Tipo from Tbl_Usuarios where Matricula=" + Usuario + " and Clave='" + Clave + "' and Tipo='Coordinador'";
                 SqlCommand comando3 = new SqlCommand(sql3, this.con);
+                String sql5 = "Select Matricula,Clave,Tipo from Tbl_Usuarios where Matricula=" + Usuario + " and Clave='" + Clave + "' and Tipo='Director'";
+                SqlCommand comando5 = new SqlCommand(sql5, this.con);
                 int cantidad = Convert.ToInt32(comando.ExecuteScalar());
                 int cantidad2 = Convert.ToInt32(comando2.ExecuteScalar());
                 int cantidad3 = Convert.ToInt32(comando3.ExecuteScalar());
+                int cantidad5 = Convert.ToInt32(comando5.ExecuteScalar());
                 if (cantidad != 0)
                 {
 
@@ -190,6 +199,10 @@ namespace AvanceProgramatico.Clases
                 {
 
                     Tipo = "Coordinador";
+                }
+                else if (cantidad5!=0)
+                {
+                    Tipo = "Director";
                 }
                 else
                 {
@@ -276,7 +289,7 @@ namespace AvanceProgramatico.Clases
                 int verificas2;
                 cerrar();
                 conectar();
-                String sql = "select Firma from Tbl_Usuarios where Tipo='Coordinador'";
+                String sql = "select Firma from Tbl_Usuarios where Tipo='"+ tipo +"'";
                 SqlCommand comando = new SqlCommand(sql, this.con);
             String firm = comando.ExecuteScalar().ToString(); ;
 
@@ -299,7 +312,7 @@ namespace AvanceProgramatico.Clases
 
         }
 
-        public void InsertFirCor(String firma)
+        public void InsertFirCor(String firma, String tipo)
         {
           
             try
@@ -307,7 +320,7 @@ namespace AvanceProgramatico.Clases
                 cerrar();
                 conectar();
               
-                String sql = "Update Tbl_Usuarios set Firma='"+firma+"' where Tipo='Coordinador'";
+                String sql = "Update Tbl_Usuarios set Firma='"+firma+"' where Tipo='"+tipo+"'";
                 SqlCommand comando = new SqlCommand(sql, this.con);
                 comando.ExecuteNonQuery();
                 cerrar();
@@ -324,7 +337,29 @@ namespace AvanceProgramatico.Clases
 
 
         }
-    }
+        public void insertarMaterias(int Matricul, String Nombremateria)
+        {
+            String grupo = "";
+            String tipo = "Profesor";
+            int rol = 2;
+
+            conectar();
+            String sql = "insert into Tbl_Materpro " +
+                            "values " +
+                            "(" + Matricul + ",'" + Nombremateria + "')" ;
+            SqlCommand comando = new SqlCommand(sql, con);
+          
+
+            comando.ExecuteNonQuery();
+
+
+
+            cerrar();
+
+
+        }
+
+        }
 }
 
        

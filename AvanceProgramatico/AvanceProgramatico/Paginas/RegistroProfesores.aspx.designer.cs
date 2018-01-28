@@ -76,31 +76,58 @@ namespace AvanceProgramatico.Paginas {
         protected global::System.Web.UI.WebControls.TextBox txtCorreo;
         
         /// <summary>
-        /// hfSign control.
+        /// UpdatePanel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSign;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// btn_guardar control.
+        /// txtMensaje control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_guardar;
+        protected global::System.Web.UI.WebControls.Label txtMensaje;
         
         /// <summary>
-        /// Button1 control.
+        /// cmbmaterias control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.DropDownList cmbmaterias;
+        
+        /// <summary>
+        /// Button2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
+        
+        /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
+        /// ListBox1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListBox1;
         
         /// <summary>
         /// Button3 control.
@@ -110,6 +137,24 @@ namespace AvanceProgramatico.Paginas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button3;
+        
+        /// <summary>
+        /// hfSign control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSign;
+        
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
         /// Label1 control.

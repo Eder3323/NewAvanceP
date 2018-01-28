@@ -44,6 +44,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\Downloads\itextsharp-all-5.1.1\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\..\..\..\Downloads\itextsharp-all-5.1.1\itextsharp-dll-xtra-5.1.1\itextsharp.xtra.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -211,6 +217,7 @@
     <Content Include="Paginas\controlador.asmx" />
     <Content Include="Paginas\Coordinador.aspx" />
     <Content Include="Paginas\Cordinador1.aspx" />
+    <Content Include="Paginas\Direc.aspx" />
     <Content Include="Paginas\Firma.aspx" />
     <Content Include="Paginas\Logueo.aspx" />
     <Content Include="Paginas\MenuProfesores.aspx" />
@@ -230,6 +237,7 @@
     <Content Include="Paginas\scripts\signature_pad.js" />
     <None Include="Recursos\jquery-1.4.1-vsdoc.js" />
     <Content Include="Paginas\scripts\Site.css" />
+    <Content Include="Paginas\signatureDirec.aspx" />
     <Content Include="Recursos\jquery-1.4.1.js" />
     <Content Include="Recursos\jquery-1.4.1.min.js" />
     <Content Include="Recursos\lapiz-de-dibujo-firma_318-9072.jpg" />
@@ -320,6 +328,13 @@
     <Compile Include="Paginas\Cordinador1.aspx.designer.cs">
       <DependentUpon>Cordinador1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Direc.aspx.cs">
+      <DependentUpon>Direc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Direc.aspx.designer.cs">
+      <DependentUpon>Direc.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Firma.aspx.cs">
       <DependentUpon>Firma.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -368,6 +383,13 @@
     </Compile>
     <Compile Include="Paginas\Reg_Jefe_Grupo.aspx.designer.cs">
       <DependentUpon>Reg_Jefe_Grupo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\signatureDirec.aspx.cs">
+      <DependentUpon>signatureDirec.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\signatureDirec.aspx.designer.cs">
+      <DependentUpon>signatureDirec.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="scripts\Registro_p.aspx.cs">
