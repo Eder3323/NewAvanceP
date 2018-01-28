@@ -94,15 +94,6 @@ namespace AvanceProgramatico.Paginas {
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSign;
         
         /// <summary>
-        /// btn_guardar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_guardar;
-        
-        /// <summary>
         /// Button1 control.
         /// </summary>
         /// <remarks>

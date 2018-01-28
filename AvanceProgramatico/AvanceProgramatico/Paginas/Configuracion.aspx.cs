@@ -56,6 +56,18 @@ namespace AvanceProgramatico.Paginas
 
             
             url = signature;
+            if (url == "")
+            {
+                Response.Write("<script>alert('Por favor capture su firma  ');</script>");
+            }
+            else
+            {
+                lblEsta.Text = "Se ha actualizado su firma!!!";
+                String tipo = "Coordinador";
+                this.sentencias.InsertFirCor(url, tipo);
+                Response.Write("<script>alert('Se ha registrado con éxito su fírma ');</script>");
+            }
+
 
 
         }

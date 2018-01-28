@@ -190,26 +190,27 @@
     <div class="signature-pad--footer">
       <div class="description">Firma aquí </div>
 
-      <div class="signature-pad--actions">
+     
         <div>
-           
+          
           <button type="button" class="btn btn-danger" data-action="clear">Nueva</button>
             <%--<button type="button" class="btn btn-warning" data-action="change-color">Cambiar color</button>--%>
-          <button type="button" class="btn btn-primary" data-action="undo">Deshacer</button>
-         <%-- <button class="button clear" data-action="clear">
-                Clear</button>--%>
+      
+        
             
             <input type="hidden" id="hfSign" runat="server" />
-            <asp:Button Text="Capturar" runat="server" class="btn btn-warning" data-action="save"
+            <br />
+            <br />
+            <br />
+            <asp:Button Text="Guardar" runat="server" class="btn btn-success" Height="50px" Width="200px" data-action="save"
                 OnClick="Save" />
-            
-             <%-- <input type="button" id="btnSave" value="Save as Image" /><br />--%>
+             <asp:Button ID="Button1" runat="server" Text="Regresar" class="btn btn-warning" Height="50px" Width="200px" OnClick="Button1_Click"/>
+           
         </div>
     
-          
-          <%--<button type="button" class="btn btn-info" data-action="save-svg">Descarga SVG</button>--%>
+         
         
-      </div>
+     
     </div>
   </div>
                  <img id="saveimg2" alt="" style="display: none; border: 1px solid #ccc" />
@@ -223,8 +224,8 @@
                        </div>
                     <center>
                      <div class="col-xs-10 col-xs-offset-2">
-                  <asp:Button ID="btn_guardar" runat="server" OnClick="btn_guardar_Click" Text="GUARDAR"  class="btn btn-success" Height="50px" Width="200px"/>
-                        <asp:Button ID="Button1" runat="server" Text="Regresar" class="btn btn-warning" Height="50px" Width="200px" OnClick="Button1_Click"/>
+                 <%-- <asp:Button ID="btn_guardar" runat="server" OnClick="btn_guardar_Click" Text="GUARDAR"  class="btn btn-success" Height="50px" Width="200px"/>--%>
+                       
                    </div>
                         
             </center>

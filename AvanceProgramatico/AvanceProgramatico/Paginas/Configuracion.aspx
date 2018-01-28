@@ -141,15 +141,15 @@
         <div>
            
           <button type="button" class="btn btn-danger" data-action="clear">Nueva</button>
-            <%--<button type="button" class="btn btn-warning" data-action="change-color">Cambiar color</button>--%>
-          <%--<button type="button" class="btn btn-primary" data-action="undo">Deshacer</button>--%>
-            <%-- <button class="button clear" data-action="clear">
-                Clear</button>--%>
+          
             
             <input type="hidden" id="hfSign" runat="server" />
-            <asp:Button Text="Capturar" runat="server" class="btn btn-warning" data-action="save"
+            <br />
+            <br />
+            <br />
+            <asp:Button Text="Guardar" runat="server" class="btn btn-success" Height="50px" Width="200px" data-action="save"
                 OnClick="Save" />
-            
+             <asp:Button ID="Button1" runat="server" Text="Regresar" class="btn btn-warning" Height="50px" Width="200px" OnClick="Button1_Click2"/>
              <%-- <input type="button" id="btnSave" value="Save as Image" /><br />--%>
         </div>
     
@@ -170,8 +170,8 @@
                        </div>
                     <center>
                      <div class="col-xs-10 col-xs-offset-2">
-                  <asp:Button ID="btn_guardar" runat="server" OnClick="btn_guardar_Click" Text="GUARDAR"  class="btn btn-success" Height="50px" Width="200px"/>
-                        <asp:Button ID="Button1" runat="server" Text="Regresar" class="btn btn-warning" Height="50px" Width="200px" OnClick="Button1_Click2"/>
+                  <%--<asp:Button ID="btn_guardar" runat="server" OnClick="btn_guardar_Click" Text="GUARDAR"  class="btn btn-success" Height="50px" Width="200px"/>--%>
+                       
                    </div>
                         
             </center>
