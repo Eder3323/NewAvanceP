@@ -26,7 +26,7 @@ namespace AvanceProgramatico
             this.con = new Conexion();
             this.con.conectar();
             this.sentenc = new Sentencias();
-
+           
 
         }
 
@@ -48,6 +48,7 @@ namespace AvanceProgramatico
                 }
                 else if (Tipo=="Profesor")
                 {
+                    Session["user"] = Convert.ToInt32(this.txtUsuario.Text);
                     Session["logpro"] = true;
                     Response.Redirect("MenuProfesores.aspx");
                     
@@ -55,6 +56,7 @@ namespace AvanceProgramatico
                 else if (Tipo == "Coordinador")
 
                 {
+                    
                     Session["logCoor"] = true;
                     Response.Redirect("Coordinador.aspx");
                 }

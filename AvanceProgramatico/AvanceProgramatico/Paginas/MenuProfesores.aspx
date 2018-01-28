@@ -24,8 +24,9 @@
 <body>
    
    <div id="wrap">
-<div id="showcase" class="noselect"> <a title="Generar Avance Programático" href="../Paginas/Admin.aspx"><img class="cloud9-item" src="../images/ImaMenu/avance.png" alt="Firefox" width="200px" height="200px"></a> <a title="Realizar Firma" href="../Paginas/Admin.aspx"><img class="cloud9-item" src="../images/ImaMenu/firma-c.png" alt="Wyzo"></a>    </div>
+<div id="showcase" class="noselect"> <a title="Generar Avance Programático" href="Cata.aspx"><img class="cloud9-item" src="../images/ImaMenu/avance.png" alt="Firefox" width="200px" height="200px"></a> <a title="Realizar Firma" href="../Paginas/Admin.aspx"><img class="cloud9-item" src="../images/ImaMenu/firma-c.png" alt="Wyzo"></a>    </div>
 <p id="item-title">&nbsp;</p>
+      
 <div class="nav" class="noselect">
 <button class="left">  ← </button>
 <button class="right"> → </button>

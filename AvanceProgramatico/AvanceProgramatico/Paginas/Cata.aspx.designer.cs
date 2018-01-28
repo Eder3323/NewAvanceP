@@ -13,6 +13,15 @@ namespace AvanceProgramatico.Paginas {
     public partial class Cata {
         
         /// <summary>
+        /// Control lbluser.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbluser;
+        
+        /// <summary>
         /// Control form1.
         /// </summary>
         /// <remarks>
@@ -47,5 +56,14 @@ namespace AvanceProgramatico.Paginas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblErrorMessage;
+        
+        /// <summary>
+        /// Control lblconta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblconta;
     }
 }

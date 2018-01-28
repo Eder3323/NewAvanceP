@@ -1,10 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Catalogo.aspx.cs" Inherits="AvanceProgramatico.Paginas.Catalogo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CatalogoProfesor.aspx.cs" Inherits="AvanceProgramatico.Paginas.CatalogoProfesor" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+   
     <title></title>
      <link rel="stylesheet" type="text/css" href="../Bootstrap/css/bootstrap.min.css"/>
 <LINK href="../Estilos/EstiloNavbar.css" rel="stylesheet" type="text/css"/>

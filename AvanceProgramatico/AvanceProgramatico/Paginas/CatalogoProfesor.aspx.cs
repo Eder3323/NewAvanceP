@@ -12,33 +12,33 @@ using AvanceProgramatico.Clases;
 
 namespace AvanceProgramatico.Paginas
 {
-    public partial class Catalogo : System.Web.UI.Page
+    public partial class CatalogoProfesor : System.Web.UI.Page
     {
         private Conexion con;
         private Sentencias sentencias;
         public static String url;
         SqlConnection _conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString());
-        
+
         string connectionString = ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-               // txtProfesor.Text = Session["user"].ToString();
+                // txtProfesor.Text = Session["user"].ToString();
                 cargarcomboCarreras();
                 AgregarSemanas();
-               // PopulateGridview();
+                // PopulateGridview();
             }
-            
-          
+
+
 
         }
 
         private void AgregarSemanas()
         {
             List<int> NumeroColumnas = new List<int>();
-            for (int i = 0; i <=1; i++)
+            for (int i = 0; i <= 1; i++)
             {
                 NumeroColumnas.Add(i);
             }
@@ -47,7 +47,7 @@ namespace AvanceProgramatico.Paginas
             dtgPlanAcademico.DataBind();
             if (dtgPlanAcademico.Rows.Count > 0)
             {
-              // Panel1.Visible = true;
+                // Panel1.Visible = true;
             }
             else
             {
@@ -90,7 +90,7 @@ namespace AvanceProgramatico.Paginas
         {
             //DropDownList cmb = (DropDownList)sender;//objeto que dispara el evento
             //int valor = cmb.SelectedIndex;
-           
+
 
 
         }
@@ -125,14 +125,14 @@ namespace AvanceProgramatico.Paginas
 
         }
 
-       
-        
-             public void cargarcomboMaterias(int numero)
+
+
+        public void cargarcomboMaterias(int numero)
         {
-            
+
             _conexion.Open();
 
-            SqlCommand cmd = new SqlCommand("select  * from Tbl_Materias where fk_Carrera='" + numero+"'", _conexion);
+            SqlCommand cmd = new SqlCommand("select  * from Tbl_Materias where fk_Carrera='" + numero + "'", _conexion);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             sda.Fill(ds);
@@ -152,7 +152,7 @@ namespace AvanceProgramatico.Paginas
 
         protected void btn_guardar_Click(object sender, EventArgs e)
         {
-            
+
 
             // Check Validity
             TextBox txtSemana;
@@ -211,26 +211,26 @@ namespace AvanceProgramatico.Paginas
                         cmd.Parameters.AddWithValue("@Fecha", SqlDbType.VarChar).Value = txtFecha.Text.Trim();
                         cmd.Parameters.AddWithValue("@id_registro", SqlDbType.VarChar).Value = txtSemana.Text.Trim();
 
-                      
+
                         int i = cmd.ExecuteNonQuery();
-                        if (i>0)
-                        {lblSuccessMessage.Text = ("Registros Extosos");}
+                        if (i > 0)
+                        { lblSuccessMessage.Text = ("Registros Extosos"); }
                         else { lblErrorMessage.Text = ("Problema con los registros"); }
 
                         con.Close();
                     }
                     catch (Exception er)
                     {
-                        lblErrorMessage.Text=("ERROR DE LA APP" + er.ToString());
+                        lblErrorMessage.Text = ("ERROR DE LA APP" + er.ToString());
                     }
                     #endregion
 
                 }
 
             }
-           
 
-           
+
+
         }
     }
 }
