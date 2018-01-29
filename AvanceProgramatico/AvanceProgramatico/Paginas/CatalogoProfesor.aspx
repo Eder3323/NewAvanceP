@@ -48,8 +48,7 @@
         <div class="form-group">
               <label for="nameField" class="col-xs-2">Grado</label> 
                  <div class="col-xs-10"> <asp:DropDownList ID="DropDLGrado" runat="server" AutoPostBack="True" Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLGrado_SelectedIndexChanged1">
-                     <asp:ListItem>F11</asp:ListItem>
-                     <asp:ListItem>F12</asp:ListItem>
+                    
                      
                   </asp:DropDownList>
           </div> 
@@ -58,14 +57,14 @@
         <div class="form-group">
               <label for="nameField" class="col-xs-2">Grupo</label> 
                  <div class="col-xs-10"> <asp:DropDownList ID="DropDLGrupo" runat="server"   Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLGrupo_SelectedIndexChanged1">
-                  </asp:DropDownList>
+                  </asp:DropDownList>&nbsp&nbsp<asp:Label  ID="LblRevisarGrupo" Text="" runat="server" ForeColor="Red"></asp:Label>
           </div> 
         </div>
          <br>
         <div class="form-group">
               <label for="nameField" class="col-xs-2">Asignatura</label> 
                  <div class="col-xs-10"> <asp:DropDownList ID="DropDLAsignatura" runat="server"  Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLAsignatura_SelectedIndexChanged1">
-                  </asp:DropDownList>
+                  </asp:DropDownList> <asp:Label  ID="LblRevisaAsignatura" Text="" runat="server" ForeColor="Red" />
                      </div> 
 
                   
@@ -137,7 +136,8 @@
            <br />
             <asp:Label ID="lblErrorMessage" Text="" runat="server" ForeColor="Red" />
             <br />
-
+                  
+                   <br />
         
             
         </div> 

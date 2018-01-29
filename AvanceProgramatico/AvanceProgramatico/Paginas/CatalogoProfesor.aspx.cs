@@ -30,6 +30,7 @@ namespace AvanceProgramatico.Paginas
                 cargarcomboCarreras();
                 cargarcomboPeriodo();
                 AgregarSemanas();
+                
                 // PopulateGridview();
             }
 
@@ -41,8 +42,6 @@ namespace AvanceProgramatico.Paginas
 
         protected void btn_guardar_Click(object sender, EventArgs e)
         {
-
-
             // Check Validity
             TextBox txtSemana;
             TextBox txtTemas;
@@ -65,7 +64,7 @@ namespace AvanceProgramatico.Paginas
                 if (txtSemana == null || txtTemas == null || txtHt == null || txtHp == null ||
                     txtBibl == null || txtActividad == null || txtFecha == null)
                 {
-                    return;
+                    //return;
                 }
 
                 if (string.IsNullOrEmpty(txtSemana.Text.Trim())
@@ -77,7 +76,9 @@ namespace AvanceProgramatico.Paginas
                     || string.IsNullOrEmpty(txtFecha.Text.Trim()))
                 {
                     lblErrorMessage.Text = "Todos Los Campos Deben Ser Rellenados!";
-                    return;
+                    LblRevisaAsignatura.Text = "*** Revisa si este fue su Asignatura que eligió";
+                    LblRevisarGrupo.Text = "*** Revisa si este fue su Grupo que eligió";
+                   // return;
                 }
                 else
                 {

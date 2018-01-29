@@ -49,6 +49,15 @@ namespace AvanceProgramatico.Paginas {
         protected global::System.Web.UI.WebControls.DropDownList DropDLGrupo;
         
         /// <summary>
+        /// Control LblRevisarGrupo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblRevisarGrupo;
+        
+        /// <summary>
         /// Control DropDLAsignatura.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace AvanceProgramatico.Paginas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDLAsignatura;
+        
+        /// <summary>
+        /// Control LblRevisaAsignatura.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblRevisaAsignatura;
         
         /// <summary>
         /// Control DropDLPeriodo.
