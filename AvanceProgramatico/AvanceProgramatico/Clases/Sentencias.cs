@@ -220,12 +220,12 @@ namespace AvanceProgramatico.Clases
 
 
         }
-        public String myfirma()
+        public String myfirma(int Matricula)
         {
             cerrar();
             conectar();
 
-            String sql = "Select Firma from Tbl_Usuarios where Matricula=1530353;";
+            String sql = "Select Firma from Tbl_Usuarios where Matricula="+Matricula+"";
             SqlCommand comando = new SqlCommand(sql, this.con);
             String signature = Convert.ToString(comando.ExecuteScalar());
 

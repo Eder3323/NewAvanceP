@@ -90,6 +90,7 @@
     <Content Include="images\ImaMenu\sesion.png" />
     <Content Include="images\ImaMenu\upt.png" />
     <Content Include="images\ImaMenu\upt6.png" />
+    <Content Include="images\noimage2.jpg" />
     <Content Include="images\regresar.jpg" />
     <Content Include="packages.config" />
     <Content Include="Bootstrap\css\bootstrap-theme.css.map" />

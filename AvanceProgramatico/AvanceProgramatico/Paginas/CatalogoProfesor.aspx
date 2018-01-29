@@ -132,6 +132,12 @@
                     <asp:TextBox ID="txtFecha"   runat="server"></asp:TextBox>
                 </ItemTemplate>
             </asp:TemplateField>
+          
+             <asp:TemplateField HeaderText="FIRMA">
+                <ItemTemplate>
+                  <asp:Image ID="Image2" runat="server"></asp:Image>
+                </ItemTemplate>
+            </asp:TemplateField>
         </Columns>
     </asp:GridView>
             <asp:Button ID="btn_guardar" runat="server" OnClick="btn_guardar_Click" Text="GUARDAR"  class="btn btn-success" Height="50px" Width="200px"/>

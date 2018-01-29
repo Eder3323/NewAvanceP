@@ -25,10 +25,21 @@ namespace AvanceProgramatico.Paginas
         {
             if (!IsPostBack)
             {
-                // txtProfesor.Text = Session["user"].ToString();
-                cargarcomboCarreras();
-                AgregarSemanas();
-                // PopulateGridview();
+                try
+                {
+                    // txtProfesor.Text = Session["user"].ToString();
+                    cargarcomboCarreras();
+                    AgregarSemanas();
+                    //string signature = this.sentencias.myfirma(222);
+                    //Image1.ImageUrl = signature;
+                    // PopulateGridview();
+                }
+                catch (Exception E )
+                {
+
+                    txtProfesor.Text = "Error:" + E.Message;
+                }
+             
             }
 
 
@@ -38,7 +49,7 @@ namespace AvanceProgramatico.Paginas
         private void AgregarSemanas()
         {
             List<int> NumeroColumnas = new List<int>();
-            for (int i = 0; i <= 1; i++)
+            for (int i = 0; i <= 15; i++)
             {
                 NumeroColumnas.Add(i);
             }

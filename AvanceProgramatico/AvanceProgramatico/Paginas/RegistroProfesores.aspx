@@ -113,7 +113,7 @@
                 <br>
             <div class="form-group">
               <label for="nameField" class="col-xs-2">Matrícula</label> 
-                 <div class="col-xs-10"><asp:TextBox ID="txtMatricula" runat="server" class="form-control" placeholder="Matricula" Height="30px" Width="300px" aria-describedby="sizing-addon3"></asp:TextBox>
+                 <div class="col-xs-10"><asp:TextBox ID="txtMatricula" runat="server" class="form-control" placeholder="Matricula" Height="30px" Width="300px" aria-describedby="sizing-addon3" ToolTip="Ingrese la matriucula"></asp:TextBox>
     
     </div>
           </div>
