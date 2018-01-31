@@ -18,13 +18,13 @@
 </head>
      <div class="jumbotron" > 
     <center>
-    <h1>Universidad Politécnica de Tulancingo </h1>
+    <h1>&nbsp&nbsp&nbsp Universidad Politécnica de Tulancingo </h1>
       </div>
       <div class="alert alert-danger" role="alert">
         
 
 <left>
-      <asp:Image ID="Image1"  runat="server" ImageUrl="~/images/upt6.png" width="50" height="50"/>
+     
      <center>
     <strong> Sistema de Gestión Integrado</strong>
          </center>
@@ -40,15 +40,31 @@
         <br>
          <div class="form-group">
               <label for="nameField" class="col-xs-2">Programa Educativo</label> 
-                 <div class="col-xs-10"> <asp:DropDownList ID="DropDLProgramaEdu" runat="server"  AutoPostBack="True" Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged1">
+                 <div class="col-xs-10"> <asp:DropDownList ID="DropDLProgramaEdu" runat="server"  AutoPostBack="True" Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLProgramaEdu_SelectedIndexChanged1">
                   </asp:DropDownList>
     </div>
           </div>
-        
+        <br>
+        <div class="form-group">
+              <label for="nameField" class="col-xs-2">Grado</label> 
+                 <div class="col-xs-10"> <asp:DropDownList ID="DropDLGrado" runat="server" AutoPostBack="True" Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLGrado_SelectedIndexChanged1">
+                     <asp:ListItem>F11</asp:ListItem>
+                     <asp:ListItem>F12</asp:ListItem>
+                     
+                  </asp:DropDownList>
+          </div> 
+        </div>
+        <br>
+        <div class="form-group">
+              <label for="nameField" class="col-xs-2">Grupo</label> 
+                 <div class="col-xs-10"> <asp:DropDownList ID="DropDLGrupo" runat="server"   Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLGrupo_SelectedIndexChanged1">
+                  </asp:DropDownList>
+          </div> 
+        </div>
          <br>
         <div class="form-group">
               <label for="nameField" class="col-xs-2">Asignatura</label> 
-                 <div class="col-xs-10"> <asp:DropDownList ID="DropDLAsignatura" runat="server"  Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged1">
+                 <div class="col-xs-10"> <asp:DropDownList ID="DropDLAsignatura" runat="server"  Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLAsignatura_SelectedIndexChanged1">
                   </asp:DropDownList>
                      </div> 
 
@@ -56,7 +72,7 @@
     </div><br>
         <div class="form-group">
              <label   for="nameField" class="col-xs-2" >Periodo</label> 
-                     <div class="col-xs-10"> <asp:DropDownList ID="DropDLPeriodo" runat="server"  Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged1">
+                     <div class="col-xs-10"> <asp:DropDownList ID="DropDLPeriodo"  runat="server"  Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLPeriodo_SelectedIndexChanged1">
                   </asp:DropDownList>
     </div>
           </div>
@@ -67,26 +83,6 @@
     </div>
           </div>
         <br>
-        <div class="form-group">
-              <label for="nameField" class="col-xs-2">Grupo</label> 
-                 <div class="col-xs-10"> <asp:DropDownList ID="DropDLGrupo" runat="server"  Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged1">
-                     <asp:ListItem>F11</asp:ListItem>
-                     <asp:ListItem>F12</asp:ListItem>
-                     <asp:ListItem>F13</asp:ListItem>
-                     <asp:ListItem>F14</asp:ListItem>
-                     <asp:ListItem>F15</asp:ListItem>
-                     <asp:ListItem>F21</asp:ListItem>
-                     <asp:ListItem>F22</asp:ListItem>
-                     <asp:ListItem>F23</asp:ListItem>
-                     <asp:ListItem>F24</asp:ListItem>
-                     <asp:ListItem>F25</asp:ListItem>
-                     <asp:ListItem>F31</asp:ListItem>
-                     <asp:ListItem>F32</asp:ListItem>
-                  </asp:DropDownList>
-          </div> 
-        </div>
-        
-        
         <br>
             </div>
          
@@ -140,8 +136,9 @@
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
+                  <br>
             <asp:Button ID="btn_guardar" runat="server" OnClick="btn_guardar_Click" Text="GUARDAR"  class="btn btn-success" Height="50px" Width="200px"/>
-           <br />
+           <br><br />
             <asp:Label ID="lblSuccessMessage" Text="" runat="server" ForeColor="Green" />
            <br />
             <asp:Label ID="lblErrorMessage" Text="" runat="server" ForeColor="Red" />
