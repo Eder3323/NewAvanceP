@@ -6,8 +6,26 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+   
+    
+
+    <%--<link href="../Estilos/gridview1.css" rel="stylesheet" type="text/css"/>--%>
+	<script type="text/javascript" src="../Bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript"src="../Bootstrap/js/jquery-3.1.1.min.js"></script>
+
     <link href="../Estilos/calendarshow.css" rel="stylesheet" />
 </head>
+      <div class="jumbotron" > 
+    <center>
+    <h1>Universidad Politécnica de Tulancingo </h1>
+      </div>
+     
+
+      <div class="alert alert-danger" role="alert">
+<center> <strong><h3> Registro de plan academico</h3></strong> </center> 
+</div>
+    <asp:Label ID="lbluser" runat="server" Text="Label"></asp:Label>
+    <br>
 <body>
     <form id="form1" runat="server">
         <div>
@@ -17,11 +35,12 @@
 
                 OnSelectedIndexChanged="GridView1_SelectedIndexChanged"
                  OnRowCancelingEdit="dtgPlanAcademico_RowCancelingEdit" OnRowCommand="dtgPlanAcademico_RowCommand" 
-                OnRowEditing="dtgPlanAcademico_RowEditing" OnRowUpdating="dtgPlanAcademico_RowUpdating"  OnRowDeleting="dtgPlanAcademico_RowDeleting" CellPadding="4" ForeColor="#333333" GridLines="None">
+                OnRowEditing="dtgPlanAcademico_RowEditing" OnRowUpdating="dtgPlanAcademico_RowUpdating"  
+                OnRowDeleting="dtgPlanAcademico_RowDeleting" >
 
                 
 
-<AlternatingRowStyle CssClass="alt" BackColor="White"></AlternatingRowStyle>
+<AlternatingRowStyle CssClass="alt"></AlternatingRowStyle>
 
                 
 
@@ -132,6 +151,7 @@
                           </asp:Calendar>   
                         </FooterTemplate>
                     </asp:TemplateField>
+                
 
                     <asp:TemplateField>
                         <ItemTemplate>
@@ -148,15 +168,8 @@
                        
                     </asp:TemplateField>
                 </Columns>
-                <FooterStyle BackColor="#B40404" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#B40404" Font-Bold="True" ForeColor="White" />
-                <PagerStyle CssClass="pgr" BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
-                <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
-                <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
-                <SortedAscendingCellStyle BackColor="#FDF5AC" />
-                <SortedAscendingHeaderStyle BackColor="#4D0000" />
-                <SortedDescendingCellStyle BackColor="#FCF6C0" />
-                <SortedDescendingHeaderStyle BackColor="#820000" />
+                <PagerStyle CssClass="pgr" />
+                <RowStyle />
             </asp:GridView>
            <br />
             <asp:Label ID="lblSuccessMessage" Text="" runat="server" ForeColor="Green" />
@@ -167,6 +180,10 @@
         
             
         </div>
+        
+        <p>
+            <asp:Label ID="lblconta" runat="server" Text="Label"></asp:Label>
+        </p>
         
     </form>
 </body>

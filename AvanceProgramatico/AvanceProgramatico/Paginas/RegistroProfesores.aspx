@@ -7,7 +7,7 @@
 <head runat="server">
        <link rel="stylesheet" type="text/css" href="../Bootstrap/css/bootstrap.min.css"/>
 <link href="../Estilos/EstiloNavbar.css" rel="stylesheet" type="text/css"/>
-    <%--<link href="../Estilos/gridview1.css" rel="stylesheet" type="text/css"/>--%>
+    <link href="../Estilos/gridview1.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="../Bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript"src="../Bootstrap/js/jquery-3.1.1.min.js"></script>
     
@@ -34,7 +34,7 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
   </script>
-    <%--   <-- ASDASD  --->--%>
+       <%--   <-- ASDASD  --->--%>
 
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -77,45 +77,16 @@
             $("#saveimg2").show();
         });
     });
-</script>--%>
-    <%--DE FIRMA TERIMINA--%>
-     <%--   Gridview--%>
-    <style type="text/css">
-       .gridview th {
-       font-size:large;
-        font-weight:bold;
-color:black;
-border:1px solid black;
-padding:9px;
-}
-
-        td {
-            cursor: pointer;
-             background-color: white;
-              padding: 8px;
-    border: 1px solid black;
-        }
-        .hover_row {
-            background-color:#E6B0AA ;
-        }
-    </style>
-
-    <script type="text/javascript">
-        $(function () {
-            $("[id*=GridView2] td").hover(function () {
-                $("td", $(this).closest("tr")).addClass("hover_row");
-            }, function () {
-                $("td", $(this).closest("tr")).removeClass("hover_row");
-            });
-        });
-    </script>
+</script>--%>    <%--DE FIRMA TERIMINA--%>
 
 
 </head>
     <div class="jumbotron" > 
     <center>
-    <h1>&nbsp&nbsp&nbsp&nbsp&nbsp Universidad Politécnica de Tulancingo </h1>
+    <h1>Universidad Politécnica de Tulancingo </h1>
       </div>
+      <a href="Logueo.aspx"><h4>Cerrar mi sesión</h4></a>
+
       <div class="alert alert-danger" role="alert">
 <center> <strong><h3> Registro de Profesores</h3></strong> </center> 
 </div>
@@ -184,14 +155,41 @@ padding:9px;
                 <br>
               <div class="form-group">
               <label for="phoneField" class="col-xs-2">Correo electrónico</label>
-              <div class="col-xs-10"> <asp:TextBox ID="txtCorreo" runat="server"  class="form-control"  pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" placeholder="Correo" Height="30px" Width="300px" aria-describedby="sizing-addon3"></asp:TextBox>
+              <div class="col-xs-10"> <asp:TextBox ID="txtCorreo" runat="server"  class="form-control"  pattern="^[a-zA-Z0-9.(com|net|org|edu|mil)!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" placeholder="Correo" Height="30px" Width="300px" aria-describedby="sizing-addon3"></asp:TextBox>
          
               </div>
    </div>
             </br>   
                 <br>
+                     <div class="form-group1">
+              <label for="emailField" class="col-xs-2">Materias Asignadas</label>
+              <div class="col-xs-10">
+                 
+                      <br />
+                  <br />
+
+                      <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                          <ContentTemplate>
+                              <asp:Label ID="txtMensaje" runat="server" Text="Materias"></asp:Label>
+                              <br />
+                              <asp:DropDownList ID="cmbmaterias" runat="server" CssClass="btn btn-default " Height="30px" Width="300px">
+                              </asp:DropDownList>
+                              
+                              <asp:Button ID="Button2" runat="server" class="btn btn-success" OnClick="Button2_Click3" Text="+" />
+                              <asp:ScriptManager ID="ScriptManager1" runat="server">
+                              </asp:ScriptManager>
+                              <br>
+                              <asp:ListBox ID="ListBox1"  CssClass="btn btn-default " runat="server" Height="200px" Width="300px" SelectionMode="Single">
+                              </asp:ListBox><asp:Button ID="Button3" class="btn btn-danger" runat="server" Text="-" OnClick="Button3_Click1" />
+                          </ContentTemplate>
+                  </asp:UpdatePanel>
+                  
+
+          </div>
+                       </div>
                 
           </br>
+          <br />
         
       
                     <br>
@@ -216,20 +214,22 @@ padding:9px;
         <div>
            
           <button type="button" class="btn btn-danger" data-action="clear">Nueva</button>
-            <%--<button type="button" class="btn btn-warning" data-action="change-color">Cambiar color</button>--%>
-          <button type="button" class="btn btn-primary" data-action="undo">Deshacer</button>
-         <%-- <button class="button clear" data-action="clear">
-                Clear</button>--%>
+           
+         
+       
             
             <input type="hidden" id="hfSign" runat="server" />
-            <asp:Button Text="Capturar" runat="server" class="btn btn-warning" data-action="save"
+            <br />
+            <br />
+            <br />
+            <asp:Button Text="Guardar" runat="server" class="btn btn-success" Height="50px" Width="200px" data-action="save"
                 OnClick="Save" />
-            
-             <%-- <input type="button" id="btnSave" value="Save as Image" /><br />--%>
+             <asp:Button ID="Button1" runat="server" Text="Regresar" class="btn btn-warning" Height="50px" Width="200px" OnClick="Button1_Click1"/>
+         
         </div>
     
           
-          <%--<button type="button" class="btn btn-info" data-action="save-svg">Descarga SVG</button>--%>
+          
         
       </div>
     </div>
@@ -245,10 +245,8 @@ padding:9px;
                        </div>
                     <center>
                      <div class="col-xs-10 col-xs-offset-2">
-                  <asp:Button ID="btn_guardar" runat="server" OnClick="btn_guardar_Click" Text="GUARDAR"  class="btn btn-success" Height="50px" Width="200px"/>
-                        <asp:Button ID="Button1" runat="server" Text="Regresar" class="btn btn-warning" Height="50px" Width="200px" OnClick="Button1_Click2"/>
-                        
-                         <asp:Button ID="Button3" runat="server" Text="Cerrar Sessión" class="btn btn-danger"  Height="50px" Width="200px" OnClick="Button2_Click"/>
+                         <%-- <asp:Button ID="btn_guardar" runat="server" OnClick="btn_guardar_Click" Text="GUARDAR"  class="btn btn-success" Height="50px" Width="200px"/>--%>
+                       
                    </div>
                         
             </center>
@@ -280,14 +278,12 @@ padding:9px;
                   </h1>
  <div class="EU_TableScroll" id="showData" style="display: block">
                   
-             <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="True" CssClass="gridview"  CellPadding="4"  ForeColor="#333333" GridLines="None">
+             <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="True" CssClass="gridview"  CellPadding="4"  ForeColor="#333333" GridLines="None"    rowheadercolumn="CustomerID" >
     
                   </asp:GridView>
                   
              <br />
             </center>
-             
-           
              
            </div>
              

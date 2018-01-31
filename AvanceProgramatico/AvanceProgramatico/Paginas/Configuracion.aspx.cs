@@ -28,7 +28,7 @@ namespace AvanceProgramatico.Paginas
             this.sentencias = new Sentencias();
             this.sentencias.jquery();
             Actualizacion();
-
+          
         }
 
         protected void btn_guardar_Click(object sender, EventArgs e)
@@ -39,8 +39,9 @@ namespace AvanceProgramatico.Paginas
             }
             else
             {
-                lblEsta.Text = url;
-                this.sentencias.InsertFirCor(url);
+                lblEsta.Text = "Se ha actualizado su firma!!!";
+                String tipo = "Coordinador";
+                this.sentencias.InsertFirCor(url,tipo);
                 Response.Write("<script>alert('Se ha registrado con éxito su fírma ');</script>");
             }
             
@@ -55,6 +56,18 @@ namespace AvanceProgramatico.Paginas
 
             
             url = signature;
+            if (url == "")
+            {
+                Response.Write("<script>alert('Por favor capture su firma  ');</script>");
+            }
+            else
+            {
+                lblEsta.Text = "Se ha actualizado su firma!!!";
+                String tipo = "Coordinador";
+                this.sentencias.InsertFirCor(url, tipo);
+                Response.Write("<script>alert('Se ha registrado con éxito su fírma ');</script>");
+            }
+
 
 
         }
