@@ -1,0 +1,56 @@
+------tabla bibliografias
+  go
+create table Tbl_Bibliografias(
+
+Titulo varchar(50),
+Autor varchar(50),
+Año varchar(50),
+Edicion varchar(50),
+ISBN varchar(50)
+  )
+
+    insert into Tbl_Bibliografias values('Flores en el Atico','aa','2012','io','dd')
+insert into Tbl_Bibliografias  values('Petalos al viento','ahjj','2017','iiiio','ddff')
+insert into Tbl_Bibliografias  values('Si hubiera espinas','ooo','2010','yuu','mm')
+
+Go
+    select * from Tbl_Bibliografias
+	-------tabla Materias---
+ go
+create table Tbl_Asignaturas(
+
+Matricula int primary key,
+ProgramaE varchar(50),
+Asinatura varchar(50),
+Grupo varchar(50),
+
+
+
+----------------------
+
+  insert into Tbl_bibliografias values('Flores en el Atico','aa','2012','oo','io','dd')
+insert into Tbl_bibliografias  values('Petalos al viento','ahjj','2017','oo','iiiio','ddff')
+insert into Tbl_bibliografias  values('Si hubiera espinas','ooo','2010','oo','yuu','mm')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="showcase" class="noselect"> <a title="Registro de Profesores" href="../Paginas/RegistroProfesores.aspx"><img class="cloud9-item" src="../images/ImaMenu/profesores.png" alt="Firefox" width="200px" height="200px"></a> <a title="Cerrar sesión" href="../Paginas/Ajuste_Calendario.aspx"><img class="cloud9-item" src="../images/ImaMenu/sesion.png" alt="Wyzo"></a>  <a title="Registro de Alumnos" href="../Paginas/Reg_Jefe_Grupo.aspx"><img class="cloud9-item" src="../images/ImaMenu/alumnos.png" alt="Chrome"></a> <a title="Realizar Firma" href="../Paginas/Configuracion.aspx"> <img class="cloud9-item" src="../images/ImaMenu/firma-c.png" alt="Internet Explorer">
+
+  )
+  select * from Tbl_Asignaturas
