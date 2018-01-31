@@ -1,31 +1,34 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MenuProfesores.aspx.cs" Inherits="AvanceProgramatico.Paginas.MenuProfesores" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Director.aspx.cs" Inherits="AvanceProgramatico.Paginas.Director" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
- <link rel="stylesheet" type="text/css" href="../Bootstrap/css/bootstrap.min.css">
+    <title></title>
+<link rel="stylesheet" type="text/css" href="../Bootstrap/css/bootstrap.min.css">
      <LINK href="../Estilos/EstiloNavbar.css" rel="stylesheet" type="text/css">
   
 	<script type="text/javascript" src="../Bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript"src="../Bootstrap/js/jquery-3.1.1.min.js"></script>
 
     <link rel="stylesheet" href="../Paginas/scripts/main.css">
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+   
      <meta charset="utf-8">
-    <title></title>
 </head>
-     <div class="jumbotron" > 
+  <div class="jumbotron" > 
     <center>
     <h1>&nbsp&nbsp&nbsp Universidad Politécnica de Tulancingo </h1>
       </div>
       
- 
-      
+     
+    
 <body>
-   
-   <div id="wrap">
-<div id="showcase" class="noselect"> <a title="Cerrar sesión" href="../Paginas/Logueo.aspx"><img class="cloud9-item" src="../images/ImaMenu/Sesion.png" alt="Wyzo"></a><a title="Generar Avance Programático" href="../Paginas/Cata.aspx"><img class="cloud9-item" src="../images/ImaMenu/avance.png" alt="Firefox" width="200px" height="200px"></a> <a title="Realizar Firma" href="../Paginas/Admin.aspx"><img class="cloud9-item" src="../images/ImaMenu/firmar.png" alt="Wyzo"></a>    </div>
-<p id="item-title">&nbsp;</p>
+    
+
+<div id="wrap">
+<div id="showcase" class="noselect"> <a title="Cerrar sesión" href="../Paginas/Logueo.aspx"><img class="cloud9-item" src="../images/ImaMenu/Sesion.png" alt="Wyzo"></a> <a title="Búsqueda de Formato" href="../Paginas/RegistroProfesores.aspx"><img class="cloud9-item"  src="../images/ImaMenu/busq_for.png" alt="Firefox" width="200px" height="200px"></a><a title="Revisar Avance Programático" href="../Paginas/Logueo.aspx"><img class="cloud9-item"  src="../images/ImaMenu/revisar.png" alt="Firefox" width="200px" height="200px">  </div>
+<p id="item-title">&nbsp;&nbsp;</p>
 <div class="nav" class="noselect">
 <button class="left">  ← </button>
 <button class="right"> → </button>

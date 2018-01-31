@@ -7,7 +7,12 @@ Go
 
 Use AvanceProgramatico
 Go
+Create table Tbl_Fechas(
+Id_Semana int primary key identity (1,1), 
+Semana varchar(70)
 
+)
+go
 create Table Tbl_Usuarios(
 Matricula int primary key,
 Clave varchar (30),
@@ -50,8 +55,22 @@ create table Tbl_Roles(
 Roles varchar(50) primary key
 )
 Go
-
-
+create table Tbl_PlanAcademico(
+pk_PlanAcademico int primary key identity (1,1),
+Semana varchar(5),
+Tema varchar(550),
+Ht varchar(50),
+Hp varchar(50),
+Bibl varchar(50),
+Actividad varchar(550),
+Fecha varchar(50),
+Pofesor varchar(50),
+Grupo varchar(50),
+Materia varchar(50)
+)
+Go
+select *from Tbl_PlanAcademico
+go
 create table Tbl_Catalogo(
 Profesorma int,
 ALumma int,
@@ -66,7 +85,61 @@ hit varchar(20),
 hip varchar(20),
 didl varchar(20)  
 )
+---tabla status-
+go
+create table Tbl_Status(
+id_status int,
+
+  )
+
+  select * from Tbl_Status
+
+  insert into Tbl_Status values(1)
+insert into Tbl_Status values(2)
+insert into Tbl_Status values(3)
+insert into Tbl_Status values(4)
 Go
+------tabla asignaturas
+Go
+
+Create table Tbl_Asignaturas
+(
+Matricula int primary key,
+Nombre varchar(50),
+
+
+
+)
+------tabla bibliografias
+Go
+
+Create table Tbl_bibliografias
+(
+
+Titulo varchar(50),
+Autor varchar(50),
+Año  varchar(50),
+Editorial varchar(50),
+Edicion varchar(50),
+ISBN varchar(50)
+)
+
+  select * from Tbl_bibliografias
+  ------tabla bibliografias1
+Go
+
+Create table Tbl_bibliografiasR
+(
+fk_PlanAcademico int, 
+Titulo varchar(50),
+Autor varchar(50),
+Año  varchar(50),
+Editorial varchar(50),
+Edicion varchar(50),
+ISBN varchar(50)
+)
+drop  table  Tbl_bibliografiasR
+select * from Tbl_bibliografiasR
 ---tabla grupos
 insert into Tbl_Grupo values('F1')
 insert into Tbl_Grupo values('F2')
@@ -758,7 +831,7 @@ insert into Tbl_Materias values(8,'Servicios')
 
 select * from Tbl_Materias where fk_Carrera='1'
 select * from Tbl_Carreras
-delete  from Tbl_Materias where fk_Carrera='1'
+---delete  from Tbl_Materias where fk_Carrera='1'
 select * from Tbl_Carreras
 
 

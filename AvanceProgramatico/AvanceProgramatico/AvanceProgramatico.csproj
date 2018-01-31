@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Estilos\calendarshow.css" />
+    <Content Include="Estilos\table_script.js" />
     <Content Include="images\ImagesPlanAcademico\addnew.png" />
     <Content Include="images\ImagesPlanAcademico\calendar.png" />
     <Content Include="images\ImagesPlanAcademico\cancel.png" />
@@ -74,13 +75,13 @@
     <Content Include="images\ImagesPlanAcademico\edit.png" />
     <Content Include="images\ImagesPlanAcademico\save.png" />
     <Content Include="images\ImaMenu\alumnos.png" />
-    <Content Include="images\ImaMenu\alumnos1.png" />
     <Content Include="images\ImaMenu\avance.png" />
-    <Content Include="images\ImaMenu\avancep.png" />
-    <Content Include="images\ImaMenu\calendario.png" />
-    <Content Include="images\ImaMenu\firma-c.png" />
+    <Content Include="images\ImaMenu\baja_prof.png" />
+    <Content Include="images\ImaMenu\busq_for.png" />
+    <Content Include="images\ImaMenu\firmar.png" />
     <Content Include="images\ImaMenu\profesores.png" />
-    <Content Include="images\ImaMenu\registrop.png" />
+    <Content Include="images\ImaMenu\profesores2.png" />
+    <Content Include="images\ImaMenu\revisar.png" />
     <Content Include="images\ImaMenu\sesion.png" />
     <Content Include="images\ImaMenu\upt.png" />
     <Content Include="images\ImaMenu\upt6.png" />
@@ -90,7 +91,7 @@
     <Content Include="Bootstrap\css\bootstrap-theme.min.css.map" />
     <Content Include="Bootstrap\css\bootstrap.css.map" />
     <Content Include="Bootstrap\css\bootstrap.min.css.map" />
-    <Content Include="Bootstrap\Scripts\jquery-1.10.2.min.map" />
+    <Content Include="FontAwesome\Scripts\jquery-1.10.2.min.map" />
     <Content Include="FontAwesome\fonts\fontawesome-webfont.eot" />
     <Content Include="FontAwesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="FontAwesome\fonts\fontawesome-webfont.woff" />
@@ -144,37 +145,37 @@
     <Content Include="Bootstrap\js\jquery-3.1.1.min.js" />
     <Content Include="Bootstrap\js\main.js" />
     <Content Include="Bootstrap\js\npm.js" />
-    <Content Include="Bootstrap\Scripts\bootstrap.js" />
-    <Content Include="Bootstrap\Scripts\bootstrap.min.js" />
+    <Content Include="FontAwesome\Scripts\bootstrap.js" />
+    <Content Include="FontAwesome\Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config" />
-    <None Include="Bootstrap\Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Bootstrap\Scripts\jquery-1.10.2.js" />
-    <Content Include="Bootstrap\Scripts\jquery-1.10.2.min.js" />
-    <Content Include="Bootstrap\Scripts\modernizr-2.6.2.js" />
-    <Content Include="Bootstrap\Scripts\respond.js" />
-    <Content Include="Bootstrap\Scripts\respond.min.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\DetailsView.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\Focus.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\GridView.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\Menu.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\MenuStandards.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\SmartNav.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\TreeView.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\WebForms.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\WebParts.js" />
-    <Content Include="Bootstrap\Scripts\WebForms\WebUIValidation.js" />
-    <None Include="Bootstrap\Scripts\_references.js" />
+    <None Include="FontAwesome\Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="FontAwesome\Scripts\jquery-1.10.2.js" />
+    <Content Include="FontAwesome\Scripts\jquery-1.10.2.min.js" />
+    <Content Include="FontAwesome\Scripts\modernizr-2.6.2.js" />
+    <Content Include="FontAwesome\Scripts\respond.js" />
+    <Content Include="FontAwesome\Scripts\respond.min.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\DetailsView.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\Focus.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\GridView.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\Menu.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\MenuStandards.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\SmartNav.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\TreeView.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\WebForms.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\WebParts.js" />
+    <Content Include="FontAwesome\Scripts\WebForms\WebUIValidation.js" />
+    <None Include="FontAwesome\Scripts\_references.js" />
     <Content Include="Estilos\cord.css" />
     <Content Include="Estilos\cordi.css" />
     <Content Include="Estilos\EstiloNavbar.css" />
@@ -204,12 +205,14 @@
     <Content Include="Paginas\Admin.aspx" />
     <Content Include="Paginas\Ajuste_Calendario.aspx" />
     <Content Include="Paginas\Alumnos.aspx" />
+    <Content Include="Paginas\Asignaturas.aspx" />
     <Content Include="Paginas\Cata.aspx" />
     <Content Include="Paginas\Catalogo.aspx" />
     <Content Include="Paginas\Configuracion.aspx" />
     <Content Include="Paginas\controlador.asmx" />
     <Content Include="Paginas\Coordinador.aspx" />
     <Content Include="Paginas\Cordinador1.aspx" />
+    <Content Include="Paginas\Director.aspx" />
     <Content Include="Paginas\Firma.aspx" />
     <Content Include="Paginas\Logueo.aspx" />
     <Content Include="Paginas\MenuProfesores.aspx" />
@@ -243,7 +246,9 @@
     <Content Include="scripts\signature.css" />
     <Content Include="scripts\signature.js" />
     <Content Include="scripts\Site.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\CerrarSesion.cs" />
@@ -272,6 +277,13 @@
     </Compile>
     <Compile Include="Paginas\Alumnos.aspx.designer.cs">
       <DependentUpon>Alumnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Asignaturas.aspx.cs">
+      <DependentUpon>Asignaturas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Asignaturas.aspx.designer.cs">
+      <DependentUpon>Asignaturas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Cata.aspx.cs">
       <DependentUpon>Cata.aspx</DependentUpon>
@@ -311,6 +323,13 @@
     </Compile>
     <Compile Include="Paginas\Cordinador1.aspx.designer.cs">
       <DependentUpon>Cordinador1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Director.aspx.cs">
+      <DependentUpon>Director.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Director.aspx.designer.cs">
+      <DependentUpon>Director.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Firma.aspx.cs">
       <DependentUpon>Firma.aspx</DependentUpon>

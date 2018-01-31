@@ -102,6 +102,8 @@ namespace AvanceProgramatico.Clases
 
             cerrar();
         }
+
+       
         public void Borrar(int id)
         {
             conectar();
@@ -324,6 +326,36 @@ namespace AvanceProgramatico.Clases
 
 
         }
+
+        public void InsertarBibliografia1(int fk_planA, String titulo, String autor, String año, String editorial, String edicion, String isbn)
+        {
+            conectar();
+            try
+            {
+                String sql = "insert into Tbl_bibliografiasR " +
+                           "values " +
+                           "(" + fk_planA + ",'" + titulo + "','" + autor + "','" + año + "','" + editorial + "','" + edicion + "','" + isbn + "')";
+                SqlCommand comando = new SqlCommand(sql, con);
+
+
+
+                comando.ExecuteNonQuery();
+
+
+
+
+                cerrar();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
+        }
+
+      
+
     }
 }
 
