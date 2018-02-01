@@ -48,8 +48,7 @@
         <div class="form-group">
               <label for="nameField" class="col-xs-2">Grado</label> 
                  <div class="col-xs-10"> <asp:DropDownList ID="DropDLGrado" runat="server" AutoPostBack="True" Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLGrado_SelectedIndexChanged1">
-                     <asp:ListItem>F11</asp:ListItem>
-                     <asp:ListItem>F12</asp:ListItem>
+                    
                      
                   </asp:DropDownList>
           </div> 
@@ -58,14 +57,15 @@
         <div class="form-group">
               <label for="nameField" class="col-xs-2">Grupo</label> 
                  <div class="col-xs-10"> <asp:DropDownList ID="DropDLGrupo" runat="server"   Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLGrupo_SelectedIndexChanged1">
-                  </asp:DropDownList>
+                  </asp:DropDownList>&nbsp&nbsp&nbsp<asp:Label ID="lblGrupo" Text="" runat="server" ForeColor="Red" />
           </div> 
+                     
         </div>
          <br>
         <div class="form-group">
               <label for="nameField" class="col-xs-2">Asignatura</label> 
                  <div class="col-xs-10"> <asp:DropDownList ID="DropDLAsignatura" runat="server"  Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLAsignatura_SelectedIndexChanged1">
-                  </asp:DropDownList>
+                  </asp:DropDownList> &nbsp&nbsp&nbsp<asp:Label ID="lblAsig" Text="" runat="server" ForeColor="Red" />
                      </div> 
 
                   
@@ -78,8 +78,8 @@
           </div>
          <br>
         <div class="form-group">
-              <label for="nameField" class="col-xs-2">Profesor/a</label> 
-                 <div class="col-xs-10"> <asp:TextBox ID="txtProfesor" runat="server" class="form-control" placeholder="Nombre" Height="30px" Width="300px" aria-describedby="sizing-addon3"></asp:TextBox>
+              <label for="nameField" class="col-xs-2">Matricula Profesor/a</label> 
+                 <div class="col-xs-10"> <asp:TextBox ID="txtProfesor" runat="server" class="form-control" placeholder="Matricula" Height="30px" Width="300px" aria-describedby="sizing-addon3"></asp:TextBox>
     </div>
           </div>
         <br>
@@ -143,8 +143,8 @@
            <br />
             <asp:Label ID="lblErrorMessage" Text="" runat="server" ForeColor="Red" />
             <br />
-
-        
+                  <asp:Label ID="LblEdu" runat="server" Text="Label"></asp:Label>
+                  &nbsp&nbsp<br />
             
         </div> 
              
