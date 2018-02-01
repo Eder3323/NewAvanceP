@@ -24,7 +24,7 @@
 <body>
    
    <div id="wrap">
-<div id="showcase" class="noselect"> <a title="Cerrar sesión" href="../Paginas/Logueo.aspx"><img class="cloud9-item" src="../images/ImaMenu/Sesion.png" alt="Wyzo"></a><a title="Generar Avance Programático" href="../Paginas/Cata.aspx"><img class="cloud9-item" src="../images/ImaMenu/avance.png" alt="Firefox" width="200px" height="200px"></a> <a title="Realizar Firma" href="../Paginas/Admin.aspx"><img class="cloud9-item" src="../images/ImaMenu/firmar.png" alt="Wyzo"></a>    </div>
+<div id="showcase" class="noselect"> <a title="Cerrar sesión" href="../Paginas/Logueo.aspx"><img class="cloud9-item" src="../images/ImaMenu/Sesion.png" alt="Wyzo"></a><a title="Generar Avance Programático" href="../Paginas/CatalogoProfesor.aspx"><img class="cloud9-item" src="../images/ImaMenu/avance.png" alt="Firefox" width="200px" height="200px"></a> <a title="Realizar Firma" href="../Paginas/Admin.aspx"><img class="cloud9-item" src="../images/ImaMenu/firmar.png" alt="Wyzo"></a>    </div>
 <p id="item-title">&nbsp;</p>
 <div class="nav" class="noselect">
 <button class="left">  ← </button>

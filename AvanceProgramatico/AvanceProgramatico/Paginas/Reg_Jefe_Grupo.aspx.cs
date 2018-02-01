@@ -165,14 +165,14 @@ namespace AvanceProgramatico.Paginas
         {
             SqlConnection _conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString());
             _conexion.Open();
-            SqlCommand cmd = new SqlCommand("select pk_Grupo from Tbl_Grupo", _conexion);
+            SqlCommand cmd = new SqlCommand("select Grupo from Tbl_Grupo", _conexion);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
 
             sda.Fill(ds);
             cmbGrupo.DataSource = ds;
-            cmbGrupo.DataTextField = "pk_Grupo";                            // FieldName of Table in DataBase
-            cmbGrupo.DataValueField = "pk_Grupo";
+            cmbGrupo.DataTextField = "Grupo";                            // FieldName of Table in DataBase
+            cmbGrupo.DataValueField = "Grupo";
             cmbGrupo.DataBind();
 
         }

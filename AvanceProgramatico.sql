@@ -84,6 +84,11 @@ create table Tbl_Grupo
 (pk_Grupo int,
 Grupo varchar(50) not null)
 go
+create table Tbl_Materpro(
+fk_Matricula int FOREIGN KEY REFERENCES Tbl_Usuarios(Matricula),
+Nombre varchar(50)
+)
+Go
 insert into Tbl_Grupo values(1,'G11')
 insert into Tbl_Grupo values(1,'G12')
 insert into Tbl_Grupo values(1,'G13')
