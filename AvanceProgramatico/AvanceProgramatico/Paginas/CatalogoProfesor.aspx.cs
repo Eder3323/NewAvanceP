@@ -23,6 +23,14 @@ namespace AvanceProgramatico.Paginas
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //if ((Session["user"] == null))
+
+            //{
+            //    Response.Redirect("Logueo.aspx");
+
+
+            //}
+
             if (!IsPostBack)
             {
                 // txtProfesor.Text = Session["user"].ToString();
@@ -33,7 +41,7 @@ namespace AvanceProgramatico.Paginas
                 
                 // PopulateGridview();
             }
-
+            
 
 
         }
@@ -51,6 +59,30 @@ namespace AvanceProgramatico.Paginas
             TextBox txtActividad;
             TextBox txtFecha;
 
+         //programa educativo
+             int indexProEdu = 0;
+             indexProEdu = Convert.ToInt32(DropDLProgramaEdu.SelectedIndex.ToString());
+            string ProgramaEdu = (indexProEdu=indexProEdu+1).ToString();
+
+            //grado
+            int indexGrado = 0;
+            indexGrado = Convert.ToInt32(DropDLGrado.SelectedIndex.ToString());
+            string Grado = (indexGrado = indexGrado + 1).ToString();
+           
+            //asignatura
+            string Asignatura = (DropDLAsignatura.SelectedItem.ToString());
+
+            // Cadena de todo lo de arriba{
+            string idTabla = ProgramaEdu + "_" + Grado + "_" + Asignatura;
+            LblEdu.Text = idTabla.ToString();
+
+            //grupo
+            string Grupo = (DropDLGrupo.SelectedItem.ToString());
+
+            //matricula Profesor
+            string MatriculaP = (txtProfesor.Text.ToString());
+
+
             foreach (GridViewRow row in dtgPlanAcademico.Rows)
             {
                 txtSemana = (TextBox)row.FindControl("txtSemana");
@@ -61,10 +93,11 @@ namespace AvanceProgramatico.Paginas
                 txtActividad = (TextBox)row.FindControl("txtActividad");
                 txtFecha = (TextBox)row.FindControl("txtFecha");
 
+
                 if (txtSemana == null || txtTemas == null || txtHt == null || txtHp == null ||
                     txtBibl == null || txtActividad == null || txtFecha == null)
                 {
-                    //return;
+                    return;
                 }
 
                 if (string.IsNullOrEmpty(txtSemana.Text.Trim())
@@ -75,10 +108,10 @@ namespace AvanceProgramatico.Paginas
                     || string.IsNullOrEmpty(txtActividad.Text.Trim())
                     || string.IsNullOrEmpty(txtFecha.Text.Trim()))
                 {
-                    lblErrorMessage.Text = "Todos Los Campos Deben Ser Rellenados!";
-                    LblRevisaAsignatura.Text = "*** Revisa si este fue su Asignatura que eligió";
-                    LblRevisarGrupo.Text = "*** Revisa si este fue su Grupo que eligió";
-                   // return;
+                    lblErrorMessage.Text = "Todos Los Campos Deben Ser Rellenados! ";
+                    lblGrupo.Text = " ***Revise nuevamente si este fue el Grupo de su elección!";
+                    lblAsig.Text = " ***Revise nuevamente si esta fue la Asignatura de su elección!";
+                    return;
                 }
                 else
                 {
@@ -99,9 +132,11 @@ namespace AvanceProgramatico.Paginas
                         cmd.Parameters.AddWithValue("@Bibl", SqlDbType.VarChar).Value = txtBibl.Text.Trim();
                         cmd.Parameters.AddWithValue("@Actividad", SqlDbType.VarChar).Value = txtActividad.Text.Trim();
                         cmd.Parameters.AddWithValue("@Fecha", SqlDbType.VarChar).Value = txtFecha.Text.Trim();
-                        cmd.Parameters.AddWithValue("@id_registro", SqlDbType.VarChar).Value = txtSemana.Text.Trim();
+                        cmd.Parameters.AddWithValue("@id_tabla", SqlDbType.VarChar).Value = idTabla.ToString().Trim();
+                        cmd.Parameters.AddWithValue("@id_grupo", SqlDbType.VarChar).Value = Grupo.ToString().Trim();
+                        cmd.Parameters.AddWithValue("@id_matriculaProfe", SqlDbType.VarChar).Value = MatriculaP.ToString().Trim();
 
-
+                      
                         int i = cmd.ExecuteNonQuery();
                         if (i > 0)
                         { lblSuccessMessage.Text = ("Registros Extosos"); }

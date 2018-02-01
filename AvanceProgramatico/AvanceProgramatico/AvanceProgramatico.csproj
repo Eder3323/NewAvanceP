@@ -217,7 +217,6 @@
     <Content Include="Paginas\controlador.asmx" />
     <Content Include="Paginas\Coordinador.aspx" />
     <Content Include="Paginas\Cordinador1.aspx" />
-    <Content Include="Paginas\Direc.aspx" />
     <Content Include="Paginas\Firma.aspx" />
     <Content Include="Paginas\Logueo.aspx" />
     <Content Include="Paginas\MenuProfesores.aspx" />
@@ -327,13 +326,6 @@
     </Compile>
     <Compile Include="Paginas\Cordinador1.aspx.designer.cs">
       <DependentUpon>Cordinador1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Paginas\Direc.aspx.cs">
-      <DependentUpon>Direc.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Paginas\Direc.aspx.designer.cs">
-      <DependentUpon>Direc.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Firma.aspx.cs">
       <DependentUpon>Firma.aspx</DependentUpon>
