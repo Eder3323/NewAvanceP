@@ -40,10 +40,12 @@ Hp varchar(50),
 Bibl varchar(50),
 Actividad varchar(550),
 Fecha varchar(50),
-id_registro varchar(50)
+id_tabla varchar(50),
+id_grupo varchar(50),
+id_matriculaProfe varchar(50)
 )
 go
-create proc GuardarCatalogo
+alter proc GuardarCatalogo
 @Semana varchar(5),
 @Tema varchar(550),
 @Ht varchar(50),
@@ -51,11 +53,13 @@ create proc GuardarCatalogo
 @Bibl varchar(50),
 @Actividad varchar(550),
 @Fecha varchar(50),
-@id_registro varchar(50)
+@id_tabla varchar(50),
+@id_grupo varchar(50),
+@id_matriculaProfe varchar(50)
 AS
 begin
-insert into Tbl_PlanAcademico(Semana,Tema,Ht,Hp,Bibl,Actividad,Fecha,id_registro) 
-values(@Semana,@Tema,@Ht,@Hp,@Bibl,@Actividad,@Fecha,@id_registro)
+insert into Tbl_PlanAcademico(Semana,Tema,Ht,Hp,Bibl,Actividad,Fecha,id_tabla,id_grupo,id_matriculaProfe) 
+values(@Semana,@Tema,@Ht,@Hp,@Bibl,@Actividad,@Fecha,@id_tabla,@id_grupo,@id_matriculaProfe)
 end
 --drop table Tbl_PlanAcademico
 Go
