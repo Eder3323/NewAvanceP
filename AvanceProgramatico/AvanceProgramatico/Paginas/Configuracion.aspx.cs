@@ -66,6 +66,7 @@ namespace AvanceProgramatico.Paginas
                 String tipo = "Coordinador";
                 this.sentencias.InsertFirCor(url, tipo);
                 Response.Write("<script>alert('Se ha registrado con éxito su fírma ');</script>");
+                Actualizacion();
             }
 
 
@@ -91,12 +92,16 @@ namespace AvanceProgramatico.Paginas
             if (verificacionfirma==1)
             {
                 lblEsta.Text = "!La firma ya se encuentra en el sistema si desea actualizarla, guarde una vez más!";
+                int matri = 222;
+                String signature = this.sentencias.myfirma(matri);
+                Image1.ImageUrl = signature;
                     
             }
 
             else
             {
                 lblEsta.Text = "!Usted no ha guardado su firma por favor guarde.!";
+                Image1.ImageUrl = "../images/noimage2.jpg";
             }       
 
         }

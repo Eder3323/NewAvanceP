@@ -8,6 +8,8 @@
 <link href="../Estilos/EstiloNavbar.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="../Bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript"src="../Bootstrap/js/jquery-3.1.1.min.js"></script>
+    
+<link rel="stylesheet" href="../FontAwesome/css/font-awesome.min.css">
      <meta charset="utf-8"/>
 
        <%--         de firmas 2we2323--%><%--         de firmas 2we2323--%>
@@ -198,12 +200,17 @@
 
      <center style="float:right; width:50%; ">
               <center>
-              
+            <%--  segundo lado derechop--%>
  <div class="EU_TableScroll" id="showData" style="display: block">
                   
              <br />
             </center>
-             
+
+         <h3>Vista previa de su Fírma <i class="fa fa-pencil-square" aria-hidden="true"></i></h3>
+              <asp:Panel ID="Panel1" runat="server" BorderStyle="Solid" BorderColor="Black" Width="250" Height="250" ToolTip="Guarde o actualizé su fírma">
+                   <asp:Image ID="Image1" runat="server" Width="300" Height="300" BorderStyle="Solid"></asp:Image>
+              </asp:Panel>
+            
            </div>
              
         </div>

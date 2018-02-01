@@ -26,9 +26,17 @@ namespace AvanceProgramatico.Paginas
         {
             if (!IsPostBack)
             {
-
-                lbluser.Text= Session["user"].ToString();
+                try
+                {
+                    lbluser.Text = Session["9991"].ToString();
                     PopulateGridview();
+                }
+                catch (Exception E)
+                {
+
+                    lbluser.Text = "Error:" + E.Message;
+                }
+             
                
                 
             }
