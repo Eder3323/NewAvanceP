@@ -142,6 +142,10 @@ namespace AvanceProgramatico.Paginas
                         else { lblErrorMessage.Text = ("Problema con los registros"); }
 
                         con.Close();
+
+                        idTabla = "";
+                        Grupo = "";
+                        MatriculaP = "";
                     }
                     catch (Exception er)
                     {
