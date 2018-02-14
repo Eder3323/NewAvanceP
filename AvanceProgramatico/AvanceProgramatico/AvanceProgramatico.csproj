@@ -72,6 +72,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Estilos\EstiloNavbar2.css" />
+    <Content Include="Paginas\Director.aspx" />
     <Content Include="Estilos\calendarshow.css" />
     <Content Include="images\ImagesPlanAcademico\addnew.png" />
     <Content Include="images\ImagesPlanAcademico\calendar.png" />
@@ -132,6 +135,10 @@
     <Content Include="FontAwesome\scss\_stacked.scss" />
     <Content Include="FontAwesome\scss\_variables.scss" />
     <Content Include="Clases\ProcesarFirma.ashx" />
+    <Content Include="Bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -218,8 +225,11 @@
     <Content Include="Paginas\controlador.asmx" />
     <Content Include="Paginas\Coordinador.aspx" />
     <Content Include="Paginas\Cordinador1.aspx" />
+    <Content Include="Paginas\Direc.aspx" />
     <Content Include="Paginas\Firma.aspx" />
-    <Content Include="Paginas\Logueo.aspx" />
+    <Content Include="Paginas\Logueo.aspx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Paginas\MenuProfesores.aspx" />
     <Content Include="Paginas\Profesores.aspx" />
     <Content Include="Paginas\PruebaImagen.aspx" />
@@ -252,6 +262,7 @@
     <Content Include="scripts\signature.css" />
     <Content Include="scripts\signature.js" />
     <Content Include="scripts\Site.css" />
+    <Content Include="Paginas\Visuali.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -261,6 +272,13 @@
       <DependentUpon>ProcesarFirma.ashx</DependentUpon>
     </Compile>
     <Compile Include="Clases\Sentencias.cs" />
+    <Compile Include="Paginas\Director.aspx.cs">
+      <DependentUpon>Director.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Director.aspx.designer.cs">
+      <DependentUpon>Director.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Admin.aspx.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -328,6 +346,13 @@
     <Compile Include="Paginas\Cordinador1.aspx.designer.cs">
       <DependentUpon>Cordinador1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Direc.aspx.cs">
+      <DependentUpon>Direc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Direc.aspx.designer.cs">
+      <DependentUpon>Direc.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Firma.aspx.cs">
       <DependentUpon>Firma.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -338,9 +363,11 @@
     <Compile Include="Paginas\Logueo.aspx.cs">
       <DependentUpon>Logueo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Paginas\Logueo.aspx.designer.cs">
       <DependentUpon>Logueo.aspx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Paginas\MenuProfesores.aspx.cs">
       <DependentUpon>MenuProfesores.aspx</DependentUpon>
@@ -391,6 +418,13 @@
     </Compile>
     <Compile Include="scripts\Registro_p.aspx.designer.cs">
       <DependentUpon>Registro_p.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Visuali.aspx.cs">
+      <DependentUpon>Visuali.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Visuali.aspx.designer.cs">
+      <DependentUpon>Visuali.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

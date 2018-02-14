@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace AvanceProgramatico.Paginas
+namespace AvanceProgramatico
 {
     public partial class Director : System.Web.UI.Page
     {

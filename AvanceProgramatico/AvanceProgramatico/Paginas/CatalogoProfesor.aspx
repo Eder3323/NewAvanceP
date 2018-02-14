@@ -38,7 +38,12 @@
     <form id="form1" runat="server">
     <div>
         <br>
+         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+               <ContentTemplate>
          <div class="form-group">
+            
+
+              
               <label for="nameField" class="col-xs-2">Programa Educativo</label> 
                  <div class="col-xs-10"> <asp:DropDownList ID="DropDLProgramaEdu" runat="server"  AutoPostBack="True" Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLProgramaEdu_SelectedIndexChanged1">
                   </asp:DropDownList>
@@ -74,7 +79,11 @@
              <label   for="nameField" class="col-xs-2" >Periodo</label> 
                      <div class="col-xs-10"> <asp:DropDownList ID="DropDLPeriodo"  runat="server"  Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLPeriodo_SelectedIndexChanged1">
                   </asp:DropDownList>
+                         <asp:ScriptManager ID="ScriptManager1" runat="server">
+                              </asp:ScriptManager>
     </div>
+             </ContentTemplate>
+            </asp:UpdatePanel>
           </div>
          <br>
         <div class="form-group">
@@ -139,6 +148,7 @@
                   <br>
             <asp:Button ID="btn_guardar" runat="server" OnClick="btn_guardar_Click" Text="GUARDAR"  class="btn btn-success" Height="50px" Width="200px"/>
            <br><br />
+<center><asp:Button ID="Regresar" runat="server" Text="Regresar" class="btn btn-warning" Height="50px" Width="200px" OnClick="Regresar_Click"></asp:Button></center>
             <asp:Label ID="lblSuccessMessage" Text="" runat="server" ForeColor="Green" />
            <br />
             <asp:Label ID="lblErrorMessage" Text="" runat="server" ForeColor="Red" />

@@ -33,7 +33,7 @@ namespace AvanceProgramatico.Paginas
 
             if (!IsPostBack)
             {
-                // txtProfesor.Text = Session["user"].ToString();
+                txtProfesor.Text = "986";
                 cargarcomboGrado();
                 cargarcomboCarreras();
                 cargarcomboPeriodo();
@@ -73,7 +73,7 @@ namespace AvanceProgramatico.Paginas
 
             // Cadena de todo lo de arriba{
             string idTabla = ProgramaEdu + "_" + Grado + "_" + Asignatura;
-            LblEdu.Text = idTabla.ToString();
+            //LblEdu.Text = idTabla.ToString();
 
             //grupo
             string Grupo = (DropDLGrupo.SelectedItem.ToString());
@@ -108,8 +108,8 @@ namespace AvanceProgramatico.Paginas
                     || string.IsNullOrEmpty(txtFecha.Text.Trim()))
                 {
                     lblErrorMessage.Text = "Todos Los Campos Deben Ser Rellenados! ";
-                    lblGrupo.Text = " ***Revise nuevamente si este fue el Grupo de su elección!";
-                    lblAsig.Text = " ***Revise nuevamente si esta fue la Asignatura de su elección!";
+                    //lblGrupo.Text = " ***Revise nuevamente si este fue el Grupo de su elección!";
+                    //lblAsig.Text = " ***Revise nuevamente si esta fue la Asignatura de su elección!";
                     return;
                 }
                 else
@@ -188,7 +188,7 @@ namespace AvanceProgramatico.Paginas
         private void AgregarSemanas()
         {
             List<int> NumeroColumnas = new List<int>();
-            for (int i = 0; i <= 1; i++)
+            for (int i = 0; i <= 14; i++)
             {
                 NumeroColumnas.Add(i);
             }
@@ -338,6 +338,11 @@ namespace AvanceProgramatico.Paginas
         protected void DropDLGrupo_SelectedIndexChanged1(object sender, EventArgs e)
         {
             
+        }
+
+        protected void Regresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MenuProfesores.aspx");
         }
     }
 }

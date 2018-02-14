@@ -16,7 +16,7 @@ namespace AvanceProgramatico1.Paginas
             {
                 Response.Redirect("Logueo.aspx");
 
-
+                String Matricula = Request.QueryString["valor"];
             }
 
 

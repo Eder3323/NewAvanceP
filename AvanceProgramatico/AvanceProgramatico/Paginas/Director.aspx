@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Director.aspx.cs" Inherits="AvanceProgramatico.Paginas.Director" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Director.aspx.cs" Inherits="AvanceProgramatico.Director" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+   <title></title>
 <link rel="stylesheet" type="text/css" href="../Bootstrap/css/bootstrap.min.css">
      <LINK href="../Estilos/EstiloNavbar.css" rel="stylesheet" type="text/css">
   
@@ -27,7 +27,7 @@
     
 
 <div id="wrap">
-<div id="showcase" class="noselect"> <a title="Cerrar sesión" href="../Paginas/Logueo.aspx"><img class="cloud9-item" src="../images/ImaMenu/Sesion.png" alt="Wyzo"></a> <a title="Búsqueda de Formato" href="../Paginas/RegistroProfesores.aspx"><img class="cloud9-item"  src="../images/ImaMenu/busq_for.png" alt="Firefox" width="200px" height="200px"></a><a title="Revisar Avance Programático" href="../Paginas/Logueo.aspx"><img class="cloud9-item"  src="../images/ImaMenu/revisar.png" alt="Firefox" width="200px" height="200px">  </div>
+<div id="showcase" class="noselect"> <a title="Cerrar sesión" href="../Paginas/Logueo.aspx"><img class="cloud9-item" src="../images/ImaMenu/Sesion.png" alt="Wyzo"></a> <a title="Búsqueda de Formato" href="../Paginas/Direc.aspx"><img class="cloud9-item"  src="../images/ImaMenu/busq_for.png" alt="Firefox" width="200px" height="200px"></a><a title="Revisar Avance Programático" href="../Paginas/Logueo.aspx"><img class="cloud9-item"  src="../images/ImaMenu/revisar.png" alt="Firefox" width="200px" height="200px">  </div>
 <p id="item-title">&nbsp;&nbsp;</p>
 <div class="nav" class="noselect">
 <button class="left">  ← </button>

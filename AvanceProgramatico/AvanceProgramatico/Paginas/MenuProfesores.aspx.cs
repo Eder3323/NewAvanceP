@@ -9,9 +9,11 @@ namespace AvanceProgramatico.Paginas
 {
     public partial class MenuProfesores : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        public static String[] Matricula;
+                protected void Page_Load(object sender, EventArgs e)
         {
-
+          
         }
-    }
+      
+        }
 }

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AvanceProgramatico.Paginas
+namespace AvanceProgramatico
 {
 
 

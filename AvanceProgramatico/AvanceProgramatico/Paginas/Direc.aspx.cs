@@ -30,58 +30,59 @@ namespace AvanceProgramatico.Paginas
         protected void Page_Load(object sender, EventArgs e)
         {
             this.sentencias = new Sentencias();
-            string variable = "0";
-            this.registro = this.sentencias.getUsuarios2(Convert.ToInt32(variable));
+            string variable = "";
+            this.registro = this.sentencias.getUsuarios2(variable);
         }
         public SqlDataReader getRegistro2()
         {
             return this.registro;
         }
-    
-      
+
+
         protected void Button2_Click(object sender, EventArgs e)
         {
             try
             {
-                Response.Clear();
-                Response.ContentType = "application / pdf";
-                Response.Cache.SetCacheability(HttpCacheability.NoCache);
-                //Para crear una instancia de documento de iTextSharp con el tamaño de página y tamaño de margenes correspondientes
-                Document doc = new Document(PageSize.LETTER.Rotate(), 10, 10, 10, 10);
-                //La ruta en donde será guardado el pdf dentro del servidor
-                String path = this.Server.MapPath(".") + "\\Archivos\\MiArchivo.pdf";
+                //Response.Clear();
+                //Response.ContentType = "application / pdf";
+                //Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                ////Para crear una instancia de documento de iTextSharp con el tamaño de página y tamaño de margenes correspondientes
+                //Document doc = new Document(PageSize.LETTER.Rotate(), 10, 10, 10, 10);
+                ////La ruta en donde será guardado el pdf dentro del servidor
+                //String path = this.Server.MapPath(".") + "\\Archivos\\MiArchivo.pdf";
 
-                //Utilizamos System.IO para crear o sobreescribir el archivo si existe
-                FileStream file = new FileStream(path, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
+                ////Utilizamos System.IO para crear o sobreescribir el archivo si existe
+                //FileStream file = new FileStream(path, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
 
-                //iTextSharp para escribir en el documento PDF
-                PdfWriter.GetInstance(doc, file);
-                doc.Open();
-                //Agregamos  el texto que esta dentro de la etiqueta
-              
-                //Se pueden agregar varios solamente añadiendo varias sentencias doc.Add(…)    
-                doc.Add(new Paragraph(lblContenido.Text));
-                doc.Add(new Paragraph("Mytabla"));
-                doc.Close();
+                ////iTextSharp para escribir en el documento PDF
+                //PdfWriter.GetInstance(doc, file);
+                //doc.Open();
+                ////Agregamos  el texto que esta dentro de la etiqueta
 
-                Process.Start(path);
+                ////Se pueden agregar varios solamente añadiendo varias sentencias doc.Add(…)    
+                //doc.Add(new Paragraph(lblContenido.Text));
+                //doc.Add(new Paragraph("Mytabla"));
+                //doc.Close();
+
+                //Process.Start(path);
+                //Response.Redirect("Director.aspx");
 
             }
             catch (Exception W)
             {
 
-                lblContenido.Text = W.ToString();
+                //lblContenido.Text = W.ToString();
             }
-           
+
         }
-         protected void  PruebaAprobar(object sender, EventArgs e)
+        protected void PruebaAprobar(object sender, EventArgs e)
         {
 
         }
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)
         {
-         
+
 
 
 
@@ -89,16 +90,16 @@ namespace AvanceProgramatico.Paginas
 
 
         }
-        
+
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             this.sentencias = new Sentencias();
             String variable = TextBox1.Text;
             if (variable.ToString() == "")
-                variable = "0";
+                variable = "";
 
-            this.registro = this.sentencias.getUsuarios2(Convert.ToInt32(variable));
+            this.registro = this.sentencias.getUsuarios2(variable);
         }
     }
 }

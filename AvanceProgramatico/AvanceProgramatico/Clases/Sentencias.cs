@@ -46,20 +46,20 @@ namespace AvanceProgramatico.Clases
             this.registro = comando.ExecuteReader();
             return this.registro;
         }
-        public SqlDataReader getUsuarios2(int busqueda)
+        public SqlDataReader getUsuarios2(string id_grupo)
         {
             conectar();
-            if (busqueda >0)
+            if (id_grupo !="")
             {
-                String sql = "select Matricula,Clave,Nombre from Tbl_Usuarios where Matricula like '" + busqueda + "%'";
+                String sql = "select DISTINCT id_tabla,id_matriculaProfe,id_grupo from Tbl_PlanAcademico where id_grupo  like '" + id_grupo + "%'";
                 SqlCommand comando = new SqlCommand(sql, this.con);
                 this.registro = comando.ExecuteReader();
                 
             }
-            else if(busqueda<=0)
+            else if(id_grupo == "")
             {
 
-                String sql = "select Matricula,Clave,Nombre from Tbl_Usuarios;";
+                String sql = "select DISTINCT id_tabla,id_matriculaProfe,id_grupo from Tbl_PlanAcademico;";
                 SqlCommand comando = new SqlCommand(sql, this.con);
                 this.registro = comando.ExecuteReader();
                
@@ -236,7 +236,7 @@ namespace AvanceProgramatico.Clases
         {
             cerrar();
             conectar();
-            String sql = "Select Nombre,Correo,Grupo from Tbl_Usuarios where Tipo='" + Tipo + "'";
+            String sql = "Select id_tabla,id_matriculaProfe,id_grupo from Tbl_PlanAcademico where id_grupo='" + Tipo + "'";
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter();
 
@@ -358,8 +358,20 @@ namespace AvanceProgramatico.Clases
 
 
         }
+        public String myfirmadirector(string Matricula)
+        {
+            cerrar();
+            conectar();
+            Matricula = "Director";
 
+            String sql = "Select Firma from Tbl_Usuarios where Tipo='" + Matricula + "'";
+            SqlCommand comando = new SqlCommand(sql, this.con);
+            String signature = Convert.ToString(comando.ExecuteScalar());
+
+            cerrar();
+            return signature;
         }
+    }
 }
 
        

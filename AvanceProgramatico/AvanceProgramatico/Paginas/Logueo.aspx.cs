@@ -48,9 +48,10 @@ namespace AvanceProgramatico
                 }
                 else if (Tipo=="Profesor")
                 {
+                    String Valor = txtUsuario.Text;
                     Session["user"] = Convert.ToInt32(this.txtUsuario.Text);
                     Session["logpro"] = true;
-                    Response.Redirect("MenuProfesores.aspx");
+                    Response.Redirect("MenuProfesores.aspx?valor =" + Valor);
                     
                 }
                 else if (Tipo == "Coordinador")
@@ -62,7 +63,7 @@ namespace AvanceProgramatico
                 }
                 else if (Tipo=="Director")
                 {
-                    Response.Redirect("Direc.aspx");
+                    Response.Redirect("Director.aspx");
                 }
                 else//se produjo error con ñandú porque mi muñeca me habló
                 {

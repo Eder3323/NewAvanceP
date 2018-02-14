@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
     	<link rel="stylesheet" type="text/css" href="../Bootstrap/css/bootstrap.min.css"/>
-<LINK href="../Estilos/EstiloNavbar.css" rel="stylesheet" type="text/css">
+<LINK href="../Estilos/EstiloNavbar2.css" rel="stylesheet" type="text/css">
         <LINK href="../Estilos/piedepagina.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="../Bootstrap/js/bootstrap.min.js"></script>
     
@@ -32,13 +32,14 @@
             <br />
             <br />
               <div class="container">
-        <div class="panel panel-primary">
+        <div class="panel panel-danger">
             <div class="panel-heading">Buscar Avance Programático</div>
             <div class="panel-body">
                <%-- <p>
                     <a href="Add.aspx" class="btn btn-success">Agregar</a>
                 </p>--%>
-                <table id="Mytabla" class="table table-bordered">
+                <div class="datagrid">
+                <table id="Mytabla" >
                     <thead>
                         <tr>
                             <th>Id formato</th>
@@ -54,11 +55,11 @@
                             {
                                 %>
                                 <tr>
-                                    <td><%=getRegistro2()["Matricula"] %></td>
-                                    <td><%=getRegistro2()["Clave"] %></td>
-                                    <td><%=getRegistro2()["Nombre"] %></td>
+                                    <td><%=getRegistro2()["id_tabla"] %></td>
+                                    <td><%=getRegistro2()["id_matriculaProfe"] %></td>
+                                    <td><%=getRegistro2()["id_grupo"] %></td>
                                     <td>
-                                        <a href="Edit.aspx?id=<%=getRegistro2()["Matricula"] %>"><i class="fa fa-file" aria-hidden="false" title="Visualizar"></i></a>
+                                        <a href="Visuali.aspx?id_grupo=<%=getRegistro2()["id_grupo"] %>"><i class="fa fa-file" aria-hidden="false" title="Visualizar"></i></a>
                                       
                                       
                                     </td>
@@ -68,10 +69,11 @@
                         %>
                     </tbody>
                 </table>
+                    </div>
             </div>
-        </div><asp:Label ID="lblContenido" runat="server" Text="The test "></asp:Label>
+        </div>
 
-    </div><asp:Button ID="Button2" runat="server" CssClass="btn btn-success" Text="Mostrar Pdf" OnClick="Button2_Click"></asp:Button>
+    </div><asp:Button ID="Button2" runat="server" CssClass="btn btn-warning" Text="Regresar" OnClick="Button2_Click"></asp:Button>
 
               <script type="text/javascript" src="public/js/jquery.js"></script>
     <script type="text/javascript" src="public/js/funciones.js"></script>
@@ -80,3 +82,4 @@
     </form>
 </body>
 </html>
+
