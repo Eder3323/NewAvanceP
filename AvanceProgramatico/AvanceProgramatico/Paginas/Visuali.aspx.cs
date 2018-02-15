@@ -80,27 +80,21 @@ namespace AvanceProgramatico
         {
             try
             {
-                //Configuración del Mensaje
-                MailMessage mail = new MailMessage();
-                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-                //Especificamos el correo desde el que se enviará el Email y el nombre de la persona que lo envía
-                mail.From = new MailAddress("1530353@upt.edu.mx", "Brandon", Encoding.UTF8);
-                //Aquí ponemos el asunto del correo
-                mail.Subject = "Le notificamos que ha firmado un formato avance prográmatico ";
-                //Aquí ponemos el mensaje que incluirá el correo
-                mail.Body = "Le envia este correo para autenticar que usted ha aprobado un formato de avance prográmatico";
-                //Especificamos a quien enviaremos el Email, no es necesario que sea Gmail, puede ser cualquier otro proveedor
-                mail.To.Add("bsan5293@gmail.com");
-                //Si queremos enviar archivos adjuntos tenemos que especificar la ruta en donde se encuentran
-                //mail.Attachments.Add(new Attachment(@"C:\Documentos\carta.docx"));
+                System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
+                msg.To.Add("guadalupeixayana@gmail.com");
+                msg.From = new MailAddress("bsan5293@gmail.com", "Brandon", System.Text.Encoding.UTF8);
+                msg.Subject = "Prueba de correo a GMail";
+                msg.SubjectEncoding = System.Text.Encoding.UTF8;
+                msg.Body = "Cuerpo del mensaje";
+                msg.BodyEncoding = System.Text.Encoding.UTF8;
+                msg.IsBodyHtml = false;
 
-                //Configuracion del SMTP
-                SmtpServer.Port = 587; //Puerto que utiliza Gmail para sus servicios
-                //Especificamos las credenciales con las que enviaremos el mail
-                SmtpServer.Credentials = new System.Net.NetworkCredential("1530353@upt.edu.mx", "'1530353'");
-                SmtpServer.EnableSsl = true;
-                SmtpServer.Send(mail);
-                Label1.Text = "Mensaje Enviado";
+                //Aquí es donde se hace lo especial
+                SmtpClient client = new SmtpClient();
+                client.Credentials = new System.Net.NetworkCredential("bsan5293@gmail.com", "theuniverseisbigbigbigbig");
+                client.Port = 587;
+                client.Host = "smtp.gmail.com";
+                client.EnableSsl = true; //Esto es para que vaya a través de SSL que es obligatorio con GMail
             }
             catch (Exception ex)
             {

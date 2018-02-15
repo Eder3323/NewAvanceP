@@ -192,7 +192,7 @@ namespace AvanceProgramatico.Paginas
         private void AgregarSemanas()
         {
             List<int> NumeroColumnas = new List<int>();
-            for (int i = 0; i <= 14; i++)
+            for (int i = 0; i <= 1; i++)
             {
                 NumeroColumnas.Add(i);
             }
