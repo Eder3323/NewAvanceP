@@ -67,19 +67,23 @@ namespace AvanceProgramatico.Paginas
             int indexGrado = 0;
             indexGrado = Convert.ToInt32(DropDLGrado.SelectedIndex.ToString());
             string Grado = (indexGrado = indexGrado + 1).ToString();
-           
+
             //asignatura
-            string Asignatura = (DropDLAsignatura.SelectedItem.ToString());
+            string Asignatura = "";
+            Asignatura = (DropDLAsignatura.SelectedItem.ToString());
+
 
             // Cadena de todo lo de arriba{
             string idTabla = ProgramaEdu + "_" + Grado + "_" + Asignatura;
             //LblEdu.Text = idTabla.ToString();
 
             //grupo
-            string Grupo = (DropDLGrupo.SelectedItem.ToString());
+            string Grupo = "";
+             Grupo = (DropDLGrupo.SelectedItem.ToString());
 
             //matricula Profesor
-            string MatriculaP = (txtProfesor.Text.ToString());
+            string MatriculaP = "";
+             MatriculaP = (txtProfesor.Text.ToString());
 
 
             foreach (GridViewRow row in dtgPlanAcademico.Rows)
