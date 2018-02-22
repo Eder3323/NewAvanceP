@@ -74,7 +74,8 @@ namespace AvanceProgramatico.Paginas
 
 
             // Cadena de todo lo de arriba{
-            string idTabla = ProgramaEdu + "_" + Grado + "_" + Asignatura;
+            string idTabla = "";
+            idTabla = ProgramaEdu + "_" + Grado + "_" + Asignatura;
             //LblEdu.Text = idTabla.ToString();
 
             //grupo
