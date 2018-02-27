@@ -155,18 +155,13 @@
             <br />
                   <asp:Label ID="LblEdu" runat="server" Text="Label"></asp:Label>
                   &nbsp&nbsp<br />
-            
         </div> 
-             
-                  
              <br />
             </center>
     
         <div/>
           <%--AREA DE LAS FIRMAS--%>
 
-      
-         
     </form>
      <br/>
     <br/>
