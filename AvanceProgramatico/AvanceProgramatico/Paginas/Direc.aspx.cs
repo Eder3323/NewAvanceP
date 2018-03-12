@@ -12,12 +12,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Web;
-using iTextSharp.text;
-using iTextSharp.text.html.simpleparser;
-using iTextSharp.text.pdf;
-using iTextSharp.text.html;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
+
 
 using System.IO;
 

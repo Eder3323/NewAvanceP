@@ -38,8 +38,11 @@
     <form id="form1" runat="server">
     <div>
         <br>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+                              </asp:ScriptManager>
          <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                <ContentTemplate>
+                   
          <div class="form-group">
             
 
@@ -61,26 +64,28 @@
         <br>
         <div class="form-group">
               <label for="nameField" class="col-xs-2">Grupo</label> 
-                 <div class="col-xs-10"> <asp:DropDownList ID="DropDLGrupo" runat="server"   Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLGrupo_SelectedIndexChanged1">
+                 <div class="col-xs-10"> <asp:DropDownList ID="DropDLGrupo" runat="server" Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLGrupo_SelectedIndexChanged1">
                   </asp:DropDownList>&nbsp&nbsp&nbsp<asp:Label ID="lblGrupo" Text="" runat="server" ForeColor="Red" />
           </div> 
                      
         </div>
          <br>
+                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">  
+                     <ContentTemplate>
         <div class="form-group">
               <label for="nameField" class="col-xs-2">Asignatura</label> 
+            
                  <div class="col-xs-10"> <asp:DropDownList ID="DropDLAsignatura" runat="server"  Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLAsignatura_SelectedIndexChanged1">
                   </asp:DropDownList> &nbsp&nbsp&nbsp<asp:Label ID="lblAsig" Text="" runat="server" ForeColor="Red" />
                      </div> 
-
-                  
+            </ContentTemplate>
+                    </asp:UpdatePanel>
     </div><br>
         <div class="form-group">
              <label   for="nameField" class="col-xs-2" >Periodo</label> 
                      <div class="col-xs-10"> <asp:DropDownList ID="DropDLPeriodo"  runat="server"  Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLPeriodo_SelectedIndexChanged1">
                   </asp:DropDownList>
-                         <asp:ScriptManager ID="ScriptManager1" runat="server">
-                              </asp:ScriptManager>
+                         
     </div>
              </ContentTemplate>
             </asp:UpdatePanel>
@@ -154,7 +159,8 @@
             <asp:Label ID="lblErrorMessage" Text="" runat="server" ForeColor="Red" />
             <br />
                   <asp:Label ID="LblEdu" runat="server" Text="Label"></asp:Label>
-                  &nbsp&nbsp<br />
+                  &nbsp&nbsp<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+                  <br />
         </div> 
              <br />
             </center>

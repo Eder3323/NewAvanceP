@@ -6,7 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
-
+using System.Data;
+using System.Data.SqlClient;
 using System.Configuration;
 using AvanceProgramatico.Clases;
 
@@ -38,7 +39,10 @@ namespace AvanceProgramatico.Paginas
                 cargarcomboCarreras();
                 cargarcomboPeriodo();
                 AgregarSemanas();
-                
+
+             
+               
+
                 // PopulateGridview();
             }
             
@@ -69,14 +73,15 @@ namespace AvanceProgramatico.Paginas
             string Grado = (indexGrado = indexGrado + 1).ToString();
 
             //asignatura
-            string Asignatura = "";
-            Asignatura = (DropDLAsignatura.SelectedItem.ToString());
+            string Asignatura ="" ;
+            Asignatura = (DropDLAsignatura.SelectedItem.Text);
 
 
             // Cadena de todo lo de arriba{
             string idTabla = "";
             idTabla = ProgramaEdu + "_" + Grado + "_" + Asignatura;
-            //LblEdu.Text = idTabla.ToString();
+            LblEdu.Text = "";
+            LblEdu.Text = Asignatura.ToString();
 
             //grupo
             string Grupo = "";
@@ -197,7 +202,7 @@ namespace AvanceProgramatico.Paginas
         private void AgregarSemanas()
         {
             List<int> NumeroColumnas = new List<int>();
-            for (int i = 0; i <= 1; i++)
+            for (int i = 1; i <= 1; i++)
             {
                 NumeroColumnas.Add(i);
             }
@@ -303,9 +308,21 @@ namespace AvanceProgramatico.Paginas
             DropDLAsignatura.DataValueField = "fk_Carrera";
             DropDLAsignatura.DataBind();
             _conexion.Close();
+            int valor = DropDLAsignatura.Items.Count;
+            //lblEstado.Text = valor.ToString();
+
+            if (DropDLAsignatura.Items.Count != 0)
+            {
+               
+            }
+            else
+            {
+                DropDLAsignatura.ClearSelection();
+            }
 
         }
-   
+       
+
         private void cargarcomboPeriodo()
         {
       
@@ -326,7 +343,9 @@ namespace AvanceProgramatico.Paginas
         {
           
         }
+
         
+
         protected void DropDLProgramaEdu_SelectedIndexChanged1(object sender, EventArgs e)
         {
             int numeroProgramaEdu = Convert.ToInt32(DropDLProgramaEdu.SelectedValue);
@@ -343,6 +362,9 @@ namespace AvanceProgramatico.Paginas
             int numeroGrado = Convert.ToInt32(DropDLGrado.SelectedValue);
             cargarcomboMaterias(numeroProgramaEdu, numeroGrado);
             cargarcomboGrupo(numeroGrado);
+            
+
+            
         }
         protected void DropDLGrupo_SelectedIndexChanged1(object sender, EventArgs e)
         {
@@ -352,6 +374,12 @@ namespace AvanceProgramatico.Paginas
         protected void Regresar_Click(object sender, EventArgs e)
         {
             Response.Redirect("MenuProfesores.aspx");
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+           
         }
     }
 }
