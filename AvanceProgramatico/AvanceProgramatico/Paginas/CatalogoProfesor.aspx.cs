@@ -39,7 +39,7 @@ namespace AvanceProgramatico.Paginas
                 cargarcomboCarreras();
                 cargarcomboPeriodo();
                 AgregarSemanas();
-
+                comboMaterias();
              
                
 
@@ -50,6 +50,7 @@ namespace AvanceProgramatico.Paginas
 
         }
 
+       
 
         protected void btn_guardar_Click(object sender, EventArgs e)
         {
@@ -74,7 +75,7 @@ namespace AvanceProgramatico.Paginas
 
             //asignatura
             string Asignatura ="" ;
-            Asignatura = (DropDLAsignatura.SelectedItem.Text);
+            Asignatura = (DropDLAsignatura.SelectedItem.ToString());
 
 
             // Cadena de todo lo de arriba{
@@ -284,43 +285,19 @@ namespace AvanceProgramatico.Paginas
 
             if (DropDLProgramaEdu.Items.Count != 0)
             {
-                int numeroProgramaEdu = Convert.ToInt32(DropDLProgramaEdu.SelectedValue);
-                int numeroGrado = Convert.ToInt32(DropDLGrado.SelectedValue);
-                cargarcomboMaterias(numeroProgramaEdu, numeroGrado);
+                int numeroProgramaEdu2 = Convert.ToInt32(DropDLProgramaEdu.SelectedValue);
+                int numeroGrado2 = Convert.ToInt32(DropDLGrado.SelectedValue);
+                cargarcomboMaterias(numeroProgramaEdu2, numeroGrado2);
             }
             else
             {
                 DropDLAsignatura.ClearSelection();
             }
         }
+      
 
-        public void cargarcomboMaterias(int numeroProgramaEdu, int numeroGrado)
-        {
 
-            _conexion.Open();
-
-            SqlCommand cmd = new SqlCommand("select  * from Tbl_Materias where fk_Carrera='" + numeroProgramaEdu + "' and numGrado='" + numeroGrado + "'", _conexion);
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            sda.Fill(ds);
-            DropDLAsignatura.DataSource = ds;
-            DropDLAsignatura.DataTextField = "Nombre";                            // FieldName of Table in DataBase
-            DropDLAsignatura.DataValueField = "fk_Carrera";
-            DropDLAsignatura.DataBind();
-            _conexion.Close();
-            int valor = DropDLAsignatura.Items.Count;
-            //lblEstado.Text = valor.ToString();
-
-            if (DropDLAsignatura.Items.Count != 0)
-            {
-               
-            }
-            else
-            {
-                DropDLAsignatura.ClearSelection();
-            }
-
-        }
+       
        
 
         private void cargarcomboPeriodo()
@@ -339,18 +316,103 @@ namespace AvanceProgramatico.Paginas
             _conexion.Close();
             
         }
+        private void comboMaterias()
+        {
+            _conexion.Open();
+            SqlCommand cmd = new SqlCommand("select * from Tbl_Materias", _conexion);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            sda.Fill(ds);
+            DropDLAsignatura.DataSource = ds;
+            DropDLAsignatura.DataTextField = "Nombre";                            // FieldName of Table in DataBase
+            DropDLAsignatura.DataValueField = "fk_Carrera";
+            DropDLAsignatura.DataBind();
+
+            _conexion.Close();
+            int valor = DropDLAsignatura.Items.Count;
+            //lblEstado.Text = valor.ToString();
+
+            if (DropDLAsignatura.Items.Count != 0)
+            {
+                int numeroProgramaEdu2 = Convert.ToInt32(DropDLProgramaEdu.SelectedValue);
+                int numeroGrado2 = Convert.ToInt32(DropDLGrado.SelectedValue);
+                cargarcomboMaterias(numeroProgramaEdu2, numeroGrado2);
+            }
+            else
+            {
+                DropDLAsignatura.ClearSelection();
+            }
+        }
+        public void cargarcomboMaterias( int numeroProgramaEdu, int numeroGrado)
+        {
+
+            _conexion.Open();
+
+            SqlCommand cmd = new SqlCommand("select  * from Tbl_Materias where fk_Carrera='" + numeroProgramaEdu + "' and numGrado='" + numeroGrado + "'", _conexion);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            sda.Fill(ds);
+            DropDLAsignatura.DataSource = ds;
+            DropDLAsignatura.DataTextField = "Nombre";                            // FieldName of Table in DataBase
+            DropDLAsignatura.DataValueField = "fk_Carrera";
+            DropDLAsignatura.DataBind();
+            _conexion.Close();
+            int valor = DropDLAsignatura.Items.Count;
+            //lblEstado.Text = valor.ToString();
+
+            if (DropDLAsignatura.Items.Count != 0)
+            {
+                int numeroProgramaEdu2 = Convert.ToInt32(DropDLProgramaEdu.SelectedValue);
+                int numeroGrado2 = Convert.ToInt32(DropDLGrado.SelectedValue);
+                string Asignatura = (Convert.ToString(DropDLAsignatura.SelectedItem));
+                cargarcomboMaterias2(Asignatura, numeroProgramaEdu2, numeroGrado2);
+            }
+            else
+            {
+                DropDLAsignatura.ClearSelection();
+            }
+
+        }
+        private void cargarcomboMaterias2(string asignatura, int numeroProgramaEdu, int numeroGrado)
+        {
+            _conexion.Open();
+
+            SqlCommand cmd = new SqlCommand("select  * from Tbl_Materias where Nombre='" + asignatura + "' and fk_Carrera='" + numeroProgramaEdu + "' and numGrado='" + numeroGrado + "'", _conexion);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            sda.Fill(ds);
+            DropDLAsignatura2.DataSource = ds;
+            DropDLAsignatura2.DataTextField = "Nombre";                            // FieldName of Table in DataBase
+            DropDLAsignatura2.DataValueField = "fk_Carrera";
+            DropDLAsignatura2.DataBind();
+            _conexion.Close();
+            int valor = DropDLAsignatura2.Items.Count;
+            //lblEstado.Text = valor.ToString();
+
+            if (DropDLAsignatura2.Items.Count != 0)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
         protected void DropDLAsignatura_SelectedIndexChanged1(object sender, EventArgs e)
         {
-          
+            int numeroProgramaEdu2 = Convert.ToInt32(DropDLProgramaEdu.SelectedValue);
+            int numeroGrado2 = Convert.ToInt32(DropDLGrado.SelectedValue);
+            cargarcomboMaterias(numeroProgramaEdu2, numeroGrado2);
         }
 
-        
+       
 
+      
         protected void DropDLProgramaEdu_SelectedIndexChanged1(object sender, EventArgs e)
         {
-            int numeroProgramaEdu = Convert.ToInt32(DropDLProgramaEdu.SelectedValue);
-            int numeroGrado = Convert.ToInt32(DropDLGrado.SelectedValue);
-            cargarcomboMaterias(numeroProgramaEdu, numeroGrado);
+            int numeroProgramaEdu2 = Convert.ToInt32(DropDLProgramaEdu.SelectedValue);
+            int numeroGrado2 = Convert.ToInt32(DropDLGrado.SelectedValue);
+            cargarcomboMaterias(numeroProgramaEdu2, numeroGrado2);
         }
         protected void DropDLPeriodo_SelectedIndexChanged1(object sender, EventArgs e)
         {
@@ -358,13 +420,12 @@ namespace AvanceProgramatico.Paginas
         }
         protected void DropDLGrado_SelectedIndexChanged1(object sender, EventArgs e)
         {
-            int numeroProgramaEdu = Convert.ToInt32(DropDLProgramaEdu.SelectedValue);
-            int numeroGrado = Convert.ToInt32(DropDLGrado.SelectedValue);
-            cargarcomboMaterias(numeroProgramaEdu, numeroGrado);
-            cargarcomboGrupo(numeroGrado);
-            
+            int numeroProgramaEdu2 = Convert.ToInt32(DropDLProgramaEdu.SelectedValue);
+            int numeroGrado2 = Convert.ToInt32(DropDLGrado.SelectedValue);
+            cargarcomboMaterias(numeroProgramaEdu2, numeroGrado2);
 
-            
+
+
         }
         protected void DropDLGrupo_SelectedIndexChanged1(object sender, EventArgs e)
         {
@@ -380,6 +441,14 @@ namespace AvanceProgramatico.Paginas
         {
 
            
+        }
+
+        protected void DropDLAsignatura2_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+            int numeroProgramaEdu2 = Convert.ToInt32(DropDLProgramaEdu.SelectedValue);
+            int numeroGrado2 = Convert.ToInt32(DropDLGrado.SelectedValue);
+            string Asignatura = (Convert.ToString(DropDLAsignatura.SelectedItem));
+            cargarcomboMaterias2(Asignatura, numeroProgramaEdu2, numeroGrado2);
         }
     }
 }

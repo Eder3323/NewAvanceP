@@ -65,21 +65,23 @@
         <div class="form-group">
               <label for="nameField" class="col-xs-2">Grupo</label> 
                  <div class="col-xs-10"> <asp:DropDownList ID="DropDLGrupo" runat="server" Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLGrupo_SelectedIndexChanged1">
-                  </asp:DropDownList>&nbsp&nbsp&nbsp<asp:Label ID="lblGrupo" Text="" runat="server" ForeColor="Red" />
+                  </asp:DropDownList>&nbsp&nbsp&nbsp<asp:Label ID="lblGrupo" AutoPostBack="True" Text="" runat="server" ForeColor="Red" />
           </div> 
                      
         </div>
          <br>
-                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">  
-                     <ContentTemplate>
+                 <
+                     
         <div class="form-group">
               <label for="nameField" class="col-xs-2">Asignatura</label> 
             
-                 <div class="col-xs-10"> <asp:DropDownList ID="DropDLAsignatura" runat="server"  Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLAsignatura_SelectedIndexChanged1">
+                 <div class="col-xs-10"> <asp:DropDownList ID="DropDLAsignatura" runat="server"   Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLAsignatura_SelectedIndexChanged1">
                   </asp:DropDownList> &nbsp&nbsp&nbsp<asp:Label ID="lblAsig" Text="" runat="server" ForeColor="Red" />
+                     <asp:DropDownList ID="DropDLAsignatura2" runat="server"  AutoPostBack="True" Css="form-control" Height="30px" Width="300px" OnSelectedIndexChanged="DropDLAsignatura2_SelectedIndexChanged1">
+                  </asp:DropDownList> &nbsp&nbsp&nbsp
                      </div> 
-            </ContentTemplate>
-                    </asp:UpdatePanel>
+           
+                    
     </div><br>
         <div class="form-group">
              <label   for="nameField" class="col-xs-2" >Periodo</label> 
