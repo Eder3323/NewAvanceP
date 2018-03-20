@@ -109,47 +109,43 @@
           <asp:GridView ID="dtgPlanAcademico" runat="server" AutoGenerateColumns="false" CellPadding="3">
         <Columns>
            
-            <asp:TemplateField HeaderText="Semanas" >
+            <asp:TemplateField  HeaderText="Semanas" >
                 <ItemTemplate>
-                    <asp:TextBox ReadOnly="true" Text='<%# (Container.DataItemIndex+1) %>'  ID="txtSemana" runat="server" ></asp:TextBox>
+                    <asp:TextBox ReadOnly="true" Width="120px" Text='<%# (Container.DataItemIndex+1) %>'  ID="txtSemana" runat="server" ></asp:TextBox>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Temas o prácticas planeadas">
+            <asp:TemplateField  HeaderText="Temas o prácticas planeadas">
                 <ItemTemplate>
-                    <asp:TextBox ID="txtTemas" runat="server"></asp:TextBox>
+                    <asp:TextBox Width="400px" ID="txtTemas" runat="server"></asp:TextBox>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="H/T">
                 <ItemTemplate>
-                    <asp:TextBox ID="txtHt" runat="server"></asp:TextBox>
+                    <asp:TextBox Width="50px" ID="txtHt" runat="server"></asp:TextBox>
                 </ItemTemplate>
             </asp:TemplateField>
              <asp:TemplateField HeaderText="H/P">
                 <ItemTemplate>
-                    <asp:TextBox ID="txtHp" runat="server"></asp:TextBox>
+                    <asp:TextBox Width="50px" ID="txtHp" runat="server"></asp:TextBox>
                 </ItemTemplate>
             </asp:TemplateField>
              <asp:TemplateField HeaderText="BIBL">
                 <ItemTemplate>
-                    <asp:TextBox ID="txtBibl" runat="server"></asp:TextBox>
+                    <asp:TextBox Width="50px" ID="txtBibl" runat="server"></asp:TextBox>
                 </ItemTemplate>
             </asp:TemplateField>
              <asp:TemplateField HeaderText="Actividad">
                 <ItemTemplate>
-                    <asp:TextBox ID="txtActividad" runat="server"></asp:TextBox>
+                    <asp:TextBox Width="400px" ID="txtActividad" runat="server"></asp:TextBox>
                 </ItemTemplate>
             </asp:TemplateField>
-             <asp:TemplateField HeaderText="Fecha">
-                <ItemTemplate>
-                    <asp:TextBox ID="txtFecha"   runat="server"></asp:TextBox>
+             <asp:TemplateField HeaderText="Fecha" >
+                <ItemTemplate> 
+                    <asp:TextBox Width="120px" ID="txtFecha"   runat="server"></asp:TextBox>
                 </ItemTemplate>
             </asp:TemplateField>
           
-             <asp:TemplateField HeaderText="FIRMA">
-                <ItemTemplate>
-                  <asp:Image ID="Image2" runat="server"></asp:Image>
-                </ItemTemplate>
-            </asp:TemplateField>
+             
         </Columns>
     </asp:GridView>
                   <br>
