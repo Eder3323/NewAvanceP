@@ -75,7 +75,8 @@ namespace AvanceProgramatico.Paginas
 
             //asignatura
             string Asignatura ="" ;
-            Asignatura = (DropDLAsignatura.SelectedItem.ToString());
+             Asignatura = (Convert.ToString(DropDLAsignatura.SelectedItem));
+         
 
 
             // Cadena de todo lo de arriba{
